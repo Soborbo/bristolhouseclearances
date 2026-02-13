@@ -1,0 +1,80 @@
+---
+/**
+ * About — "Bristol's Most Transparent Clearance Company" section.
+ * Company story with image, key facts, and trust signals.
+ */
+import { Picture } from 'astro:assets';
+import Container from '../ui/Container.astro';
+import aboutImage from '../../assets/img/Bristol-house-clearances10.jpg';
+
+const facts = [
+  'EA Licensed',
+  '\u00A310M Insured',
+  '500+ Properties Cleared',
+  '95% Recycling Rate',
+  '5 Charity Partners',
+];
+---
+
+<section id="about" class="bg-slate-50 py-16 lg:py-20">
+  <Container>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <!-- Text column -->
+      <div>
+        <h2 class="text-3xl font-bold text-brand-navy">
+          Bristol&rsquo;s Most Transparent Clearance Company
+        </h2>
+
+        <p class="text-slate-600 mt-4 leading-relaxed">
+          We started Bristol House Clearances because we saw too many families
+          getting let down at the worst possible time. Vague quotes that doubled
+          on the day. Items fly-tipped in lay-bys. No paperwork, no
+          accountability. We knew Bristol deserved better &mdash; so we built a
+          clearance company around honesty, technology, and genuine care.
+        </p>
+
+        <p class="text-slate-600 mt-4 leading-relaxed">
+          As a local, family-run team based right here in Bristol, we treat every
+          property as if it belonged to someone we know &mdash; because it
+          usually does. Whether we&rsquo;re clearing a loved one&rsquo;s home
+          after probate, helping a landlord turn around a tenancy, or removing
+          years of accumulated clutter, we work with compassion and discretion.
+          Every item is assessed: what can be donated goes to one of our five
+          local charity partners, recyclables are processed properly, and only
+          what truly cannot be saved goes to licensed waste facilities.
+        </p>
+
+        <p class="text-slate-600 mt-4 leading-relaxed">
+          We&rsquo;re also one of the few clearance companies in the South West
+          to offer video surveys, WhatsApp quoting, live photo updates, and a
+          full Donation &amp; Recycling Report after every job. We believe
+          you should know exactly where your items end up &mdash; and exactly
+          what you&rsquo;re paying before we lift a finger. That&rsquo;s not a
+          marketing promise; it&rsquo;s how we run every single job.
+        </p>
+
+        <!-- Key facts strip -->
+        <div class="flex flex-wrap gap-4 mt-6">
+          {facts.map((fact) => (
+            <span class="bg-white rounded-lg px-4 py-2 text-sm font-medium text-brand-navy shadow-sm border border-slate-200">
+              {fact}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Image column -->
+      <div>
+        <Picture
+          src={aboutImage}
+          widths={[320, 640, 960, 1280, 1600]}
+          sizes="(min-width:1024px) 50vw, 100vw"
+          formats={['avif', 'webp']}
+          quality={60}
+          alt="Bristol House Clearances team at work clearing a property"
+          class="rounded-xl w-full h-auto"
+        />
+      </div>
+    </div>
+  </Container>
+</section>

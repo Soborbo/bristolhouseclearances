@@ -1,0 +1,47 @@
+---
+/**
+ * HowItWorks — "Cleared in 3 Simple Steps" section.
+ */
+import Container from '../ui/Container.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const steps = [
+  {
+    number: '1',
+    title: 'Send Photos',
+    description: 'WhatsApp, email, or use our calculator. Takes 60 seconds.',
+  },
+  {
+    number: '2',
+    title: 'Get Your Quote',
+    description: 'Firm price within 2 hours. Your price is locked — it never goes up.',
+  },
+  {
+    number: '3',
+    title: 'We Clear & Clean',
+    description: 'We arrive on time, clear everything, sweep up, and send you a waste transfer note.',
+  },
+];
+---
+
+<section id="how-it-works" class="bg-white py-16 lg:py-20">
+  <Container>
+    <SectionHeading title="Cleared in 3 Simple Steps" />
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 text-center">
+      {steps.map((step) => (
+        <div>
+          <div class="w-12 h-12 rounded-full bg-brand-green text-white font-bold text-lg flex items-center justify-center mx-auto">
+            {step.number}
+          </div>
+          <h3 class="font-semibold text-xl mt-4 text-brand-navy">{step.title}</h3>
+          <p class="text-slate-600 mt-2">{step.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-sm text-slate-500 text-center mt-10">
+      Average job completed in under 3 hours &bull; Eco-friendly disposal &bull; Nothing left behind
+    </p>
+  </Container>
+</section>

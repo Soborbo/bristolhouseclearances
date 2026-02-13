@@ -1,0 +1,29 @@
+<button
+  id="back-to-top"
+  class="fixed bottom-20 md:bottom-8 right-4 z-30 w-11 h-11 bg-brand-navy/80 hover:bg-brand-navy text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 opacity-0 translate-y-4 pointer-events-none"
+  aria-label="Back to top"
+>
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+  </svg>
+</button>
+
+<script>
+  const btn = document.getElementById('back-to-top');
+  const hero = document.getElementById('hero');
+  if (btn && hero) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const show = !entry.isIntersecting;
+        btn.classList.toggle('opacity-0', !show);
+        btn.classList.toggle('translate-y-4', !show);
+        btn.classList.toggle('pointer-events-none', !show);
+      },
+      { threshold: 0 }
+    );
+    observer.observe(hero);
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+</script>

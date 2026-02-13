@@ -1,0 +1,87 @@
+---
+/**
+ * StandoutServices — "Services No One Else in Bristol Offers" section.
+ * Showcases 10 unique service differentiators in a card grid.
+ */
+import Container from '../ui/Container.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const services = [
+  {
+    icon: '\u{1F4F9}',
+    title: 'Video Survey Assessment',
+    description:
+      "Can\u2019t wait for a site visit? Show us the property on a video call and get your firm quote in minutes \u2014 not days. Perfect if you\u2019re managing a clearance from outside Bristol.",
+  },
+  {
+    icon: '\u{1F4F8}',
+    title: 'WhatsApp Photo Quote',
+    description:
+      "Snap a few photos, send them to us on WhatsApp, and we\u2019ll have your locked-in price back to you within 2 hours. No site visit needed for most jobs.",
+  },
+  {
+    icon: '\u{1F512}',
+    title: 'Price Lock Guarantee',
+    description:
+      "Your quote is your final price \u2014 guaranteed. We\u2019ll never add surprise fees on the day. And if there\u2019s less than expected? You pay less.",
+  },
+  {
+    icon: '\u{1F4CA}',
+    title: 'Live Progress Updates',
+    description:
+      "We send you photos as we work \u2014 so you can see your property being transformed in real time. Especially useful if you can\u2019t be there in person.",
+  },
+  {
+    icon: '\u{1F381}',
+    title: 'Charity Donation Report',
+    description:
+      "After every clearance, you receive a Donation & Recycling Report showing exactly where your items went. Your late relative\u2019s furniture could furnish someone\u2019s first home.",
+  },
+  {
+    icon: '\u{23F1}\uFE0F',
+    title: 'Same-Day & Emergency Clearance',
+    description:
+      "Need it gone today? Call before 10am and we\u2019ll have it cleared by this evening. Emergency slots available 7 days a week.",
+  },
+  {
+    icon: '\u{1F3DB}\uFE0F',
+    title: 'Clearance Concierge (Probate)',
+    description:
+      'Managing a probate property from afar? Our Clearance Concierge handles everything: clearance, deep clean, garden tidy, and estate agent photography. One contact, one invoice.',
+  },
+  {
+    icon: '\u{1F3D7}\uFE0F',
+    title: 'Landlord Priority Account',
+    description:
+      'Manage multiple properties? Get priority booking, fixed pricing, and monthly invoicing. Your tenants move out; we handle the rest within 48 hours.',
+  },
+  {
+    icon: '\u{1F9F9}',
+    title: 'Clearance + Deep Clean Package',
+    description:
+      'Why hire two companies? We clear and clean in one visit. Property handed back ready for the next chapter.',
+  },
+  {
+    icon: '\u{1F4CB}',
+    title: 'Free Waste Carrier Licence Check',
+    description:
+      "Before you hire anyone, check they\u2019re licensed. Unlicensed waste carriers can dump your rubbish illegally \u2014 and you could be fined up to \u00A350,000.",
+  },
+];
+---
+
+<section id="standout-services" class="bg-slate-50 py-16 lg:py-20">
+  <Container>
+    <SectionHeading title="Services No One Else in Bristol Offers" />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {services.map((service) => (
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
+          <span class="text-2xl">{service.icon}</span>
+          <h3 class="font-semibold text-lg text-brand-navy mt-2">{service.title}</h3>
+          <p class="text-slate-600 text-sm mt-2 leading-relaxed">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

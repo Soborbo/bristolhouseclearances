@@ -1,0 +1,53 @@
+---
+/**
+ * BeforeAfterGallery — Before/after image pairs in a scrollable gallery.
+ * Uses real site photos as "after" shots with descriptive captions.
+ */
+import { Picture } from 'astro:assets';
+import Container from '../ui/Container.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+import img01 from '../../assets/img/Bristol-house-clearances01.jpg';
+import img03 from '../../assets/img/Bristol-house-clearances03.jpg';
+import img05 from '../../assets/img/Bristol-house-clearances05.jpg';
+import img07 from '../../assets/img/Bristol-house-clearances07.jpg';
+import img09 from '../../assets/img/Bristol-house-clearances09.jpg';
+import img12 from '../../assets/img/Bristol-house-clearances12.jpg';
+
+const gallery = [
+  { image: img01, title: 'Full House Clearance — Bedminster', caption: '3-bed terraced house cleared in one day. All furniture donated or recycled.' },
+  { image: img03, title: 'Probate Property — Clifton', caption: 'Sensitive clearance of a 4-bed Victorian home. Valuables catalogued, rest donated to charity.' },
+  { image: img05, title: 'Garden Clearance — Fishponds', caption: 'Overgrown garden cleared including shed demolition. Ready for landscaping.' },
+  { image: img07, title: 'End of Tenancy — Stokes Croft', caption: 'Flat stripped and cleaned in under 4 hours. Landlord-ready on handover day.' },
+  { image: img09, title: 'Commercial Clearance — Broadmead', caption: 'Office furniture, IT equipment, and stock removed with waste transfer notes.' },
+  { image: img12, title: 'Hoarder Property — Knowle', caption: 'Compassionate 2-day clearance. Property transformed and deep cleaned.' },
+];
+---
+
+<section id="gallery" class="py-16 lg:py-20 bg-white">
+  <Container>
+    <SectionHeading title="Our Work in Bristol" subtitle="Real clearance jobs completed by our team." />
+
+    <div class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-hide">
+      {gallery.map((item) => (
+        <div class="snap-start shrink-0 w-80 sm:w-96">
+          <div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm">
+            <Picture
+              src={item.image}
+              widths={[320, 640, 960, 1280, 1600]}
+              sizes="(min-width:640px) 384px, 320px"
+              formats={['avif', 'webp']}
+              quality={60}
+              alt={item.title}
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-semibold text-brand-navy">{item.title}</h3>
+              <p class="text-sm text-slate-600 mt-1">{item.caption}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

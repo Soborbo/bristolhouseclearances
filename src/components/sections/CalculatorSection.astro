@@ -1,0 +1,14 @@
+---
+import Container from '../ui/Container.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+import Calculator from '../../calculator/Calculator';
+---
+
+<section id="calculator" class="py-16 lg:py-20 bg-slate-50">
+  <Container>
+    <SectionHeading title="Get Your Instant Estimate" subtitle="Select what you need cleared and get an estimated price in seconds." />
+    <div class="max-w-3xl mx-auto">
+      <Calculator client:visible />
+    </div>
+  </Container>
+</section>

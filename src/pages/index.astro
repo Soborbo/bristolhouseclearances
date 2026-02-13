@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FloatingMobileBar from '../components/FloatingMobileBar.astro';
+import BackToTop from '../components/BackToTop.astro';
+import SchemaLocalBusiness from '../components/seo/SchemaLocalBusiness.astro';
+
+// Sections (in page order)
+import Hero from '../components/sections/Hero.astro';
+import TrustBar from '../components/sections/TrustBar.astro';
+import HowItWorks from '../components/sections/HowItWorks.astro';
+import ServicesGrid from '../components/sections/ServicesGrid.astro';
+import CalculatorSection from '../components/sections/CalculatorSection.astro';
+import StandoutServices from '../components/sections/StandoutServices.astro';
+import USPPillars from '../components/sections/USPPillars.astro';
+import PricingGuide from '../components/sections/PricingGuide.astro';
+import Reviews from '../components/sections/Reviews.astro';
+import About from '../components/sections/About.astro';
+import AreasWeCover from '../components/sections/AreasWeCover.astro';
+import CouncilCommercial from '../components/sections/CouncilCommercial.astro';
+import FAQ from '../components/sections/FAQ.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+---
+
+<Layout>
+  <SchemaLocalBusiness slot="head" />
+  <Header />
+  <main id="main-content">
+    <div class="h-[calc(100vh-4rem)] lg:h-[calc(100vh-5rem)] flex flex-col">
+      <Hero />
+      <TrustBar />
+    </div>
+    <HowItWorks />
+    <ServicesGrid />
+    <CalculatorSection />
+    <StandoutServices />
+    <USPPillars />
+    <PricingGuide />
+    <Reviews />
+    <About />
+    <AreasWeCover />
+    <CouncilCommercial />
+    <FAQ />
+    <FinalCTA />
+  </main>
+  <Footer />
+  <FloatingMobileBar />
+  <BackToTop />
+</Layout>

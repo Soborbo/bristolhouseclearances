@@ -1,0 +1,78 @@
+---
+/**
+ * ServicesGrid — "We Clear Everything" service cards with real job photos.
+ */
+import { Picture } from 'astro:assets';
+import Container from '../ui/Container.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+import img01 from '../../assets/img/Bristol-house-clearances01.jpg';
+import img03 from '../../assets/img/Bristol-house-clearances03.jpg';
+import img05 from '../../assets/img/Bristol-house-clearances05.jpg';
+import img07 from '../../assets/img/Bristol-house-clearances07.jpg';
+import img09 from '../../assets/img/Bristol-house-clearances09.jpg';
+import img12 from '../../assets/img/Bristol-house-clearances12.jpg';
+
+const services = [
+  {
+    image: img01,
+    title: 'House Clearance',
+    description: 'Full or partial house clearance — from single rooms to entire properties. Probate, downsizing, or pre-sale.',
+  },
+  {
+    image: img09,
+    title: 'Rubbish & Waste Removal',
+    description: 'Single items to full loads. Furniture, appliances, building waste, general rubbish. Same day available.',
+  },
+  {
+    image: img05,
+    title: 'Garden Clearance',
+    description: 'Overgrown gardens, sheds, decking, fencing, soil, green waste. We leave it ready for landscaping.',
+  },
+  {
+    image: img07,
+    title: 'Commercial & Office Clearance',
+    description: 'Offices, shops, restaurants, warehouses. Desks, IT equipment, stock — fully insured, waste transfer notes provided.',
+  },
+  {
+    image: img03,
+    title: 'End of Tenancy Clearance',
+    description: 'Landlord and tenant clearances. Property left clean and ready for the next occupant.',
+  },
+  {
+    image: img12,
+    title: 'Probate & Bereavement Clearance',
+    description: 'Compassionate, discreet service. We handle everything with care and respect during a difficult time.',
+  },
+];
+---
+
+<section id="services" class="bg-white py-16 lg:py-20">
+  <Container>
+    <SectionHeading title="We Clear Everything" />
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map((service) => (
+        <div class="rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow">
+          <Picture
+            src={service.image}
+            widths={[320, 640, 960]}
+            sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
+            formats={['avif', 'webp']}
+            quality={60}
+            alt={service.title}
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="font-semibold text-lg text-brand-navy">{service.title}</h3>
+            <p class="text-slate-600 text-sm mt-2">{service.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-sm text-slate-500 text-center mt-10">
+      Also: Garage clearance &bull; Loft clearance &bull; Shed clearance &bull; Bulky item collection &bull; Same-day emergency clearance &bull; Hoarder house clearance
+    </p>
+  </Container>
+</section>

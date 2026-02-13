@@ -1,0 +1,13 @@
+name = "bristol-house-clearances"
+compatibility_date = "2026-02-01"
+
+[vars]
+TURNSTILE_SITE_KEY = ""
+
+# Secrets (set via `wrangler secret put`):
+# RESEND_API_KEY
+# GOOGLE_MAPS_API_KEY
+# TURNSTILE_SECRET_KEY
+# SHEETS_WEBHOOK_URL
+# ADMIN_EMAIL
+# FROM_EMAIL

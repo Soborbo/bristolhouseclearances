@@ -1,0 +1,79 @@
+---
+/**
+ * SchemaLocalBusiness — JSON-LD structured data for LocalBusiness + AggregateRating.
+ * Injected in <head> via Layout.
+ */
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://bristolhouseclearances.co.uk/#business",
+  "name": "Bristol House Clearances",
+  "description": "Professional house clearance, rubbish removal, and garden clearance in Bristol, Bath & surrounding areas. EA licensed waste carrier. Same day available.",
+  "url": "https://bristolhouseclearances.co.uk",
+  "telephone": "+44117123456",
+  "email": "info@bristolhouseclearances.co.uk",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bristol",
+    "addressRegion": "South Gloucestershire",
+    "postalCode": "BS34 6FE",
+    "addressCountry": "GB",
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 51.5054,
+    "longitude": -2.5907,
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "07:00",
+      "closes": "19:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "00:00",
+      "closes": "00:00",
+    },
+  ],
+  "priceRange": "££",
+  "currenciesAccepted": "GBP",
+  "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.4545,
+      "longitude": -2.5879,
+    },
+    "geoRadius": "48280",
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Clearance Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "House Clearance" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rubbish Removal" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Garden Clearance" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Clearance" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Probate Clearance" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "End of Tenancy Clearance" } },
+    ],
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "200",
+    "reviewCount": "200",
+  },
+  "sameAs": [
+    "https://www.facebook.com/bristolhouseclearances",
+  ],
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
