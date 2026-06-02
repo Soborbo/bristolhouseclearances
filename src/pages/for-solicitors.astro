@@ -1,0 +1,69 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'For Solicitors' },
+];
+---
+
+<ServiceLayout
+  title="For Solicitors | Probate Clearance Partner — Clearfields"
+  description="Trusted probate clearance partner for Bristol solicitors. Priority scheduling, direct estate invoicing, full inventory and documentation. Refer your clients with confidence."
+  h1="Probate Clearance for Solicitors"
+  breadcrumbs={breadcrumbs}
+  relatedServices={[
+    { title: 'Probate Clearance', href: '/probate-house-clearance/', description: 'Our full probate clearance service' },
+    { title: 'Estate Clearance', href: '/probate-house-clearance/estate-clearance/', description: 'With valuation and auction routing' },
+    { title: 'For Estate Agents', href: '/for-estate-agents/', description: 'Our service for estate agents and letting agents' },
+  ]}
+  faqs={[
+    { q: 'How do you invoice for probate clearances?', a: 'We can invoice directly to the estate, the solicitor\'s firm, or the executor — whichever is most convenient. Our invoices are detailed and suitable for estate accounts.' },
+    { q: 'Can you meet completion deadlines?', a: 'Yes. We offer priority scheduling for probate clearances tied to property sales. We routinely complete clearances within 48 hours of instruction when needed.' },
+    { q: 'What documentation do you provide?', a: 'We provide Waste Transfer Notes, a full inventory, Charity Donation Report and professional invoicing. All suitable for probate records and estate accounts.' },
+  ]}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      A trusted clearance partner for Bristol probate solicitors. Priority scheduling, professional documentation and sensitive handling — so you can refer clients with confidence.
+    </p>
+  </Fragment>
+
+  <h2>Why Bristol Solicitors Choose Us</h2>
+  <p>
+    We work with solicitors across Bristol and the wider South West handling probate cases. Our service is designed to integrate seamlessly with your probate workflow, taking the burden of property clearance off your clients while providing the documentation you need for estate administration.
+  </p>
+
+  <h2>What We Offer Solicitor Referrals</h2>
+  <ul>
+    <li><strong>Priority scheduling</strong> — fast-track clearances to meet exchange and completion deadlines</li>
+    <li><strong>Direct estate invoicing</strong> — invoices formatted for estate accounts, payable on completion</li>
+    <li><strong>Full inventory</strong> — itemised record of all items cleared, suitable for probate records</li>
+    <li><strong>Valuations flagging</strong> — we identify potentially valuable items (antiques, jewellery, art) and can arrange professional valuations</li>
+    <li><strong>Charity Donation Report</strong> — documenting where donated items went</li>
+    <li><strong>Waste Transfer Notes</strong> — legal documentation of waste disposal</li>
+    <li><strong>Single point of contact</strong> — a dedicated coordinator for every case</li>
+    <li><strong>Estate agent liaison</strong> — we coordinate directly with marketing agents when preparing properties for sale</li>
+  </ul>
+
+  <h2>How Referrals Work</h2>
+  <ol>
+    <li><strong>You refer</strong> — introduce your client to us by phone, email or simply share our contact details</li>
+    <li><strong>We quote</strong> — we provide a free, no-obligation quote within 2 hours</li>
+    <li><strong>We clear</strong> — professional, sensitive clearance on the agreed date</li>
+    <li><strong>You receive documentation</strong> — inventory, donation report and Waste Transfer Notes sent to your office</li>
+  </ol>
+
+  <h2>Trusted by Bristol Solicitors</h2>
+  <p>
+    We understand the pressures of probate administration. Properties need to be cleared quickly for sale, but sensitively — families are often grieving. Our team is specifically trained in probate clearance and approaches every job with empathy and professionalism.
+  </p>
+  <p>
+    Our <a href="/probate-house-clearance/">probate clearance service</a> covers everything from initial assessment through to a fully cleared, clean property ready for marketing. Read more about our <a href="/probate-house-clearance/bereavement-clearance/">bereavement clearance approach</a>.
+  </p>
+
+  <h2>Get in Touch</h2>
+  <p>
+    To discuss partnership or refer a client, <a href="/contact/">contact our probate team</a> directly. We're happy to visit your office for an introductory meeting.
+  </p>
+</ServiceLayout>

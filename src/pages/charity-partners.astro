@@ -1,0 +1,71 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Charity Partners' },
+];
+---
+
+<ServiceLayout
+  title="Charity Partners | Donating Your Items Locally — Clearfields"
+  description="We donate usable items to local Bristol charities. SOFA Project, Emmaus Bristol, BHF, Salvation Army. Charity Donation Reports provided."
+  h1="Our Charity Partners"
+  breadcrumbs={breadcrumbs}
+  relatedServices={[
+    { title: 'Environmental Policy', href: '/environmental-policy/', description: 'Our 95% recycling commitment' },
+    { title: 'Probate Clearance', href: '/probate-house-clearance/', description: 'Charity donations are especially valued in probate clearances' },
+    { title: 'House Clearance', href: '/house-clearance/', description: 'All our clearances include charity donations where possible' },
+  ]}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Your items deserve a second life. We partner with five local Bristol charities to ensure usable furniture, clothing and household goods find new homes.
+    </p>
+  </Fragment>
+
+  <h2>Where Your Items Go</h2>
+  <p>
+    One of the things that sets Clearfields apart is our commitment to charity donation. Rather than sending everything to the tip, we carefully sort every clearance and route usable items to local charities. You receive a <strong>Charity Donation Report</strong> after every clearance showing exactly where your items went.
+  </p>
+
+  <h2>SOFA Project</h2>
+  <p>
+    The SOFA Project redistributes quality furniture and household items to people on low incomes across Bristol. They collect large items like sofas, tables, beds and wardrobes and make them available at low cost to people setting up home after homelessness, fleeing domestic abuse, or arriving as refugees.
+  </p>
+  <p><strong>What we donate:</strong> sofas, dining tables, beds, wardrobes, drawers, kitchenware, small appliances.</p>
+
+  <h2>Emmaus Bristol</h2>
+  <p>
+    Emmaus Bristol provides a home and meaningful work for formerly homeless people through their furniture social enterprise. Donated furniture is restored and sold in their shop, with proceeds funding their community of companions.
+  </p>
+  <p><strong>What we donate:</strong> quality furniture, vintage items, collectibles, books, homeware.</p>
+
+  <h2>British Heart Foundation</h2>
+  <p>
+    The BHF accepts a wide range of donated goods for sale in their charity shops, raising funds for heart research. They accept both furniture and smaller household items.
+  </p>
+  <p><strong>What we donate:</strong> furniture, electrical goods (PAT tested), clothing, books, media, ornaments.</p>
+
+  <h2>Salvation Army</h2>
+  <p>
+    The Salvation Army's network across Bristol accepts clothing, furniture and household goods to support their community services and charity shops.
+  </p>
+  <p><strong>What we donate:</strong> clothing, shoes, bags, household textiles, small furniture items.</p>
+
+  <h2>Julian House</h2>
+  <p>
+    Julian House supports vulnerable people across Bath and Bristol, including those experiencing homelessness. Donated items help furnish move-on accommodation and support their charity shops.
+  </p>
+  <p><strong>What we donate:</strong> household essentials, bedding, towels, kitchenware, small furniture.</p>
+
+  <h2>Charity Donation Report</h2>
+  <p>
+    After every clearance, you receive a Charity Donation Report listing what was donated, to which charity, and when. This is particularly valued by <a href="/probate-house-clearance/">probate clients</a> who want to know their loved one's belongings found good homes, and by businesses seeking to demonstrate <a href="/commercial-clearance/">corporate social responsibility</a>.
+  </p>
+
+  <h2>Can You Request a Specific Charity?</h2>
+  <p>
+    Yes. If you have a preferred charity, let us know and we'll do our best to route your items there. We also accept referrals to charities we don't currently partner with, provided they can accept the items.
+  </p>
+</ServiceLayout>

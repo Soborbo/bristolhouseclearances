@@ -1,0 +1,67 @@
+---
+/**
+ * PricingGuide — "Transparent Pricing — No Surprises" with visual load bars.
+ */
+import Container from '../ui/Container.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const tiers = [
+  { load: 'Min',      description: 'Few bags / single items',          price: '£50',  width: '20%' },
+  { load: '¼ Van',    description: 'Small room or garden waste',       price: '£120', width: '40%' },
+  { load: '½ Van',    description: '1-2 rooms or large garden',        price: '£200', width: '60%' },
+  { load: '¾ Van',    description: 'Multiple rooms or office',         price: '£320', width: '80%' },
+  { load: 'Full Van', description: 'Whole property or large job',      price: '£400', width: '100%' },
+];
+---
+
+<section id="pricing" class="bg-white py-16 lg:py-20">
+  <Container>
+    <SectionHeading title="Transparent Pricing — No Surprises" />
+
+    <!-- Pricing rows -->
+    <div class="max-w-3xl mx-auto">
+      {tiers.map((tier) => (
+        <div class="flex items-center gap-4 py-4 border-b border-slate-100">
+          <!-- Load label -->
+          <div class="w-20 shrink-0 font-semibold text-brand-navy text-sm">
+            {tier.load}
+          </div>
+
+          <!-- Bar + description -->
+          <div class="flex-1 min-w-0">
+            <div class="h-3 rounded-full bg-slate-100 overflow-hidden">
+              <div
+                class="h-full rounded-full bg-brand-green"
+                style={`width: ${tier.width}`}
+              ></div>
+            </div>
+            <p class="text-slate-600 text-sm mt-1 truncate">{tier.description}</p>
+          </div>
+
+          <!-- Price -->
+          <div class="w-20 shrink-0 text-right font-bold text-brand-navy">
+            From {tier.price}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Inclusions -->
+    <p class="text-sm text-slate-600 text-center mt-8 max-w-2xl mx-auto">
+      All prices include: labour, loading, transport, eco-friendly disposal, sweep-up, and waste transfer note.
+    </p>
+    <p class="text-sm text-slate-500 text-center mt-2">
+      Need a bigger job? Multiple van loads available — contact us for a firm quote.
+    </p>
+
+    <!-- Comparison box -->
+    <div class="bg-slate-50 rounded-xl p-6 mt-8 max-w-3xl mx-auto text-sm text-slate-700 leading-relaxed">
+      <p class="font-semibold text-brand-navy mb-2">How we compare</p>
+      <p>
+        <strong>Bristol Council bulky waste</strong> = &pound;25 for 1&ndash;3 items (2-week wait).
+        <strong>Skip hire</strong> = &pound;200&ndash;&pound;400+ (permits, loading yourself, 7-day rental).
+        <strong>We</strong> collect same day, load it ourselves, recycle 95%+.
+      </p>
+    </div>
+  </Container>
+</section>

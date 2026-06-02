@@ -1,0 +1,82 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Environmental Policy' },
+];
+---
+
+<ServiceLayout
+  title="Environmental Policy | 95% Recycling Rate — Clearfields"
+  description="Our commitment to sustainable house clearance. 95% recycling rate, charity donations, zero-to-landfill goal. Clearfields environmental policy."
+  h1="Environmental Policy"
+  breadcrumbs={breadcrumbs}
+  relatedServices={[
+    { title: 'House Clearance', href: '/house-clearance/', description: 'Our core clearance service with 95% recycling' },
+    { title: 'Charity Partners', href: '/charity-partners/', description: 'Where your items go after clearance' },
+  ]}
+  faqs={[
+    { q: 'What is your recycling rate?', a: 'We recycle or donate at least 95% of everything we clear. Less than 5% goes to controlled landfill.' },
+    { q: 'Where do donated items go?', a: 'Usable items are donated to local Bristol charities including the SOFA Project, Emmaus Bristol, British Heart Foundation and Salvation Army.' },
+    { q: 'Do you provide proof of recycling?', a: 'Yes. Every customer receives a Charity Donation Report detailing where their items went. We also provide Waste Transfer Notes as legally required.' },
+  ]}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      We believe house clearance and environmental responsibility go hand-in-hand. 95% of everything we clear is recycled or donated to charity.
+    </p>
+  </Fragment>
+
+  <h2>Our Environmental Commitment</h2>
+  <p>
+    At Clearfields, we are committed to minimising our environmental impact. The house clearance industry has historically sent vast quantities of usable items to landfill. We're working to change that — one clearance at a time.
+  </p>
+
+  <h2>95% Recycling Rate</h2>
+  <p>
+    We maintain a minimum 95% diversion-from-landfill rate across all our clearances. This means that for every tonne of material we clear, at least 950kg is recycled, donated or responsibly repurposed. Here's how we achieve this:
+  </p>
+  <ul>
+    <li><strong>On-site sorting</strong> — every item is assessed and categorised during the clearance</li>
+    <li><strong>Charity donation</strong> — furniture, clothing, books, kitchenware and electronics in usable condition go to local charities</li>
+    <li><strong>Materials recycling</strong> — metals, wood, textiles, paper, glass and plastics are sent to licensed recycling facilities</li>
+    <li><strong>WEEE compliance</strong> — electrical items are processed through approved WEEE recycling channels</li>
+    <li><strong>Hazardous waste</strong> — chemicals, paints and asbestos are handled through specialist licensed facilities</li>
+  </ul>
+
+  <h2>Our Charity Partners</h2>
+  <p>We work with five local Bristol charities to ensure usable items find new homes:</p>
+  <ul>
+    <li><strong>SOFA Project</strong> — furniture and household items redistributed to people in need across Bristol</li>
+    <li><strong>Emmaus Bristol</strong> — supporting formerly homeless people through their furniture social enterprise</li>
+    <li><strong>British Heart Foundation</strong> — furniture and electrical items sold in their charity shops</li>
+    <li><strong>Salvation Army</strong> — clothing, furniture and household goods</li>
+    <li><strong>Julian House</strong> — supporting vulnerable people across Bath and Bristol</li>
+  </ul>
+  <p>Learn more about our <a href="/charity-partners/">charity partnerships</a>.</p>
+
+  <h2>Charity Donation Report</h2>
+  <p>
+    After every clearance, you receive a <strong>Charity Donation Report</strong> — a document showing exactly what was donated, to which charity, and when. This provides peace of mind that your items found good homes and is especially valued by probate clients managing estates.
+  </p>
+
+  <h2>Waste Carrier Licensing</h2>
+  <p>
+    We are registered as an Upper Tier Waste Carrier with the Environment Agency. This means we are legally authorised to transport, store and dispose of controlled waste. We provide Waste Transfer Notes for every job as required by law. See our <a href="/licensing-accreditations/">licensing and accreditations</a> page.
+  </p>
+
+  <h2>Our Zero-to-Landfill Goal</h2>
+  <p>
+    Our long-term goal is to achieve a 100% diversion rate — sending absolutely nothing to landfill. While we're not there yet, we're continually improving our processes, building new charity partnerships, and investing in better sorting and recycling infrastructure.
+  </p>
+
+  <h2>Carbon Footprint</h2>
+  <p>We take practical steps to minimise our carbon footprint:</p>
+  <ul>
+    <li>Efficient route planning to reduce unnecessary mileage</li>
+    <li>Full loads wherever possible — we don't run half-empty vans</li>
+    <li>Local partnerships to minimise transport distances</li>
+    <li>Regular vehicle maintenance for optimal fuel efficiency</li>
+  </ul>
+</ServiceLayout>

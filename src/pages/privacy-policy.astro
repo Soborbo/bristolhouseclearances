@@ -1,0 +1,90 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { site } from '../config/site';
+---
+
+<LegalLayout
+  title="Privacy Policy — Clearfields"
+  description="Privacy policy for Clearfields. How we collect, use and protect your personal data. GDPR compliant."
+  h1="Privacy Policy"
+  lastUpdated="March 2026"
+>
+  <h2>Introduction</h2>
+  <p>Clearfields ("we", "us", "our") is committed to protecting your privacy. This policy explains how we collect, use and safeguard your personal data when you use our website ({site.domain}) or our services.</p>
+
+  <h2>Information We Collect</h2>
+  <p>We may collect the following personal information:</p>
+  <ul>
+    <li><strong>Contact details:</strong> name, email address, phone number, postal address and postcode</li>
+    <li><strong>Enquiry details:</strong> information about your clearance requirements, property type and preferred dates</li>
+    <li><strong>Website usage data:</strong> IP address, browser type, pages visited, time spent on site (collected via cookies)</li>
+    <li><strong>Communication records:</strong> emails, WhatsApp messages and phone call logs related to your enquiry or booking</li>
+  </ul>
+
+  <h2>How We Use Your Information</h2>
+  <p>We use your personal data to:</p>
+  <ul>
+    <li>Respond to your enquiries and provide quotes</li>
+    <li>Deliver our clearance services</li>
+    <li>Send booking confirmations and service updates</li>
+    <li>Process payments and maintain financial records</li>
+    <li>Improve our website and services</li>
+    <li>Comply with legal obligations (e.g., waste carrier regulations)</li>
+  </ul>
+  <p>We will <strong>never</strong> sell, rent or share your personal data with third parties for marketing purposes.</p>
+
+  <h2>Legal Basis for Processing</h2>
+  <p>Under GDPR, we process your data on the following bases:</p>
+  <ul>
+    <li><strong>Consent:</strong> when you submit a contact form or sign up for communications</li>
+    <li><strong>Contract:</strong> when necessary to deliver services you have booked</li>
+    <li><strong>Legitimate interest:</strong> to improve our services and respond to enquiries</li>
+    <li><strong>Legal obligation:</strong> to comply with waste carrier and financial regulations</li>
+  </ul>
+
+  <h2>Data Sharing</h2>
+  <p>We may share your data with:</p>
+  <ul>
+    <li><strong>Email service provider (Resend):</strong> to send confirmation emails</li>
+    <li><strong>Cloudflare:</strong> website hosting and security</li>
+    <li><strong>Google:</strong> analytics and Maps services (distance calculation)</li>
+    <li><strong>Payment processors:</strong> to process card payments securely</li>
+  </ul>
+  <p>All third-party processors are GDPR compliant and bound by data processing agreements.</p>
+
+  <h2>Data Retention</h2>
+  <p>We retain your personal data for:</p>
+  <ul>
+    <li><strong>Enquiry data:</strong> 2 years from last contact</li>
+    <li><strong>Customer records:</strong> 6 years (for tax and legal compliance)</li>
+    <li><strong>Waste Transfer Notes:</strong> 2 years (legal requirement)</li>
+    <li><strong>Website analytics:</strong> 26 months</li>
+  </ul>
+
+  <h2>Your Rights</h2>
+  <p>Under GDPR, you have the right to:</p>
+  <ul>
+    <li>Access the personal data we hold about you</li>
+    <li>Rectify inaccurate data</li>
+    <li>Erase your data (right to be forgotten)</li>
+    <li>Restrict or object to processing</li>
+    <li>Data portability</li>
+    <li>Withdraw consent at any time</li>
+  </ul>
+  <p>To exercise any of these rights, contact us at <a href={`mailto:${site.email}`}>{site.email}</a> or call <a href={site.phoneHref}>{site.phone}</a>.</p>
+
+  <h2>Cookies</h2>
+  <p>Our website uses cookies to improve your experience and analyse website traffic. You can manage your cookie preferences through our cookie banner or your browser settings. Essential cookies (required for the website to function) cannot be disabled.</p>
+
+  <h2>Security</h2>
+  <p>We implement appropriate technical and organisational measures to protect your personal data, including encrypted connections (HTTPS), secure hosting via Cloudflare, and restricted access to personal data.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may update this privacy policy from time to time. The latest version will always be available on this page with the "Last updated" date shown above.</p>
+
+  <h2>Contact</h2>
+  <p>For privacy-related enquiries, contact:<br/>
+  Clearfields<br/>
+  Email: <a href={`mailto:${site.email}`}>{site.email}</a><br/>
+  Phone: <a href={site.phoneHref}>{site.phone}</a></p>
+</LegalLayout>

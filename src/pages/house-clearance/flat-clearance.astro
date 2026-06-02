@@ -1,0 +1,116 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'House Clearance', href: '/house-clearance/' },
+  { label: 'Flat Clearance' },
+];
+
+const relatedServices = [
+  { title: 'House Clearance', href: '/house-clearance/', description: 'Complete residential house clearance service' },
+  { title: 'End of Tenancy Clearance', href: '/house-clearance/end-of-tenancy-clearance/', description: 'Fast turnaround for landlords and letting agents' },
+  { title: 'Downsizing Clearance', href: '/house-clearance/downsizing-clearance/', description: 'Helping families move to smaller homes' },
+  { title: 'Furniture Removal', href: '/house-clearance/furniture-removal/', description: 'Individual items or full property furniture removal' },
+];
+
+const faqs = [
+  { q: 'Can you clear a flat on the top floor with no lift?', a: 'Yes. We regularly clear upper-floor flats without lift access across Bristol. Our team is experienced in carrying furniture and appliances down narrow staircases. We protect walls, banisters and flooring with sheeting and corner guards throughout the process.' },
+  { q: 'How much does a flat clearance cost?', a: 'A studio or 1-bed flat clearance typically costs £175-£350. A 2-bed flat ranges from £300-£500. Upper floors without lift access may carry a small supplement due to the additional labour required. We provide fixed quotes — our Price Lock Guarantee means no surprises.' },
+  { q: 'Can you clear a flat if I cannot be there?', a: 'Absolutely. Many of our flat clearance clients are not local — some live overseas. We can arrange key collection from a letting agent, neighbour or lockbox. We send live photo updates throughout the clearance so you can see progress in real time.' },
+  { q: 'Do you handle communal area restrictions?', a: 'Yes. Many Bristol flats have management company rules about moving times, lift usage, and communal area access. We work within these restrictions and can liaise directly with building management to book service lifts, arrange parking permits and agree access times.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Flat Clearance Bristol',
+  description: 'Specialist flat and apartment clearance in Bristol. Upper floors, narrow stairs, no-lift buildings. Fully insured, Price Lock Guarantee.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Clearfields',
+  },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Flat Clearance',
+};
+---
+
+<ServiceLayout
+  title="Flat Clearance Bristol | Flats & Apartments, Any Floor — Clearfields"
+  description="Specialist flat clearance in Bristol. Any floor, narrow stairs, no lift — no problem. From £175, fully insured. Call 0117 123 4567."
+  h1="Flat Clearance Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Specialist clearance for flats and apartments across Bristol. Any floor, any access challenge. From studio flats to penthouses — we clear them all.
+    </p>
+  </Fragment>
+
+  <h2>Flat Clearance Experts in Bristol</h2>
+  <p>
+    Clearing a flat is not the same as clearing a house. Narrow doorways, tight staircases, no lifts, communal area restrictions, parking challenges and neighbour considerations all add complexity. Clearfields has cleared hundreds of flats across the city and we know exactly how to handle these challenges.
+  </p>
+  <p>
+    From purpose-built apartments on the Harbourside to converted Victorian flats in <a href="/areas/clifton/">Clifton</a> and <a href="/areas/redland/">Redland</a>, high-rise blocks in Hartcliffe and Southmead, and maisonettes in <a href="/areas/bedminster/">Bedminster</a> — we have cleared every type of flat Bristol has to offer.
+  </p>
+
+  <h2>Access Challenges We Handle</h2>
+  <p>
+    Our team is equipped and trained for the access issues that make flat clearances more demanding:
+  </p>
+  <ul>
+    <li><strong>Upper floors without lifts</strong> — we carry everything down by hand, safely and efficiently</li>
+    <li><strong>Narrow staircases</strong> — common in converted Victorian and Edwardian properties across Bristol</li>
+    <li><strong>Tight doorways</strong> — furniture is dismantled where needed to fit through narrow openings</li>
+    <li><strong>Communal areas</strong> — we protect shared hallways, stairs and landings with sheeting</li>
+    <li><strong>Parking restrictions</strong> — we arrange permits and can use smaller vehicles where access is tight</li>
+    <li><strong>Building management rules</strong> — we liaise with management companies to book lifts and agree times</li>
+  </ul>
+
+  <h2>What We Clear</h2>
+  <ul>
+    <li><strong>All furniture</strong> — sofas, beds, wardrobes, desks, tables, shelving</li>
+    <li><strong>Appliances</strong> — fridges, freezers, washing machines, dishwashers, ovens</li>
+    <li><strong>General contents</strong> — clothing, kitchenware, books, electronics, personal items</li>
+    <li><strong>Storage areas</strong> — allocated storage cupboards, bike stores, communal loft spaces</li>
+    <li><strong>Balcony and patio</strong> — outdoor furniture, planters, barbecues</li>
+  </ul>
+
+  <h2>Flat Clearance Pricing</h2>
+  <table>
+    <thead>
+      <tr><th>Flat Size</th><th>Ground/1st Floor</th><th>2nd Floor+</th><th>Timeframe</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Studio flat</td><td>£175 – £250</td><td>£200 – £300</td><td>2-3 hours</td></tr>
+      <tr><td>1 bed flat</td><td>£250 – £350</td><td>£300 – £400</td><td>3-4 hours</td></tr>
+      <tr><td>2 bed flat</td><td>£300 – £450</td><td>£350 – £500</td><td>4-6 hours</td></tr>
+      <tr><td>3 bed flat</td><td>£400 – £550</td><td>£450 – £650</td><td>5-7 hours</td></tr>
+    </tbody>
+  </table>
+  <p>
+    Prices include loading, transport, disposal and a besom clean. For a full pricing breakdown, read our <a href="/guides/house-clearance-cost-bristol/">guide to house clearance costs in Bristol</a>.
+  </p>
+
+  <h2>Common Flat Clearance Situations</h2>
+  <p>We clear flats in every circumstance:</p>
+  <ul>
+    <li><strong><a href="/house-clearance/end-of-tenancy-clearance/">End of tenancy</a></strong> — tenant has left items behind</li>
+    <li><strong><a href="/probate-house-clearance/">Probate and bereavement</a></strong> — clearing a loved one's flat with care and sensitivity</li>
+    <li><strong><a href="/house-clearance/downsizing-clearance/">Downsizing</a></strong> — clearing excess items before or after a move</li>
+    <li><strong>Sale preparation</strong> — presenting a flat for viewings or photography</li>
+    <li><strong>Student flats</strong> — end of year clearances for student accommodation</li>
+  </ul>
+
+  <h2>Bristol Coverage</h2>
+  <p>
+    We clear flats across all Bristol postcodes. Our busiest areas for flat clearances include <a href="/areas/clifton/">Clifton</a>, Harbourside, City Centre, Cotham, <a href="/areas/redland/">Redland</a>, Stokes Croft, <a href="/areas/bedminster/">Bedminster</a>, Southville and <a href="/areas/fishponds/">Fishponds</a>. View all <a href="/areas/">areas we cover</a>.
+  </p>
+  <p>
+    Call <strong>0117 123 4567</strong> or send WhatsApp photos for a free, no-obligation quote. Same-day clearance available across Bristol.
+  </p>
+</ServiceLayout>

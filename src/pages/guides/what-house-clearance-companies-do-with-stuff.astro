@@ -1,0 +1,132 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'What Happens to Your Items' },
+];
+
+const faqs = [
+  { q: 'How much of a house clearance actually gets recycled?', a: 'At Clearfields, we recycle or donate over 95% of items we collect. This includes furniture to charity partners, textiles to recycling centres, metals to scrap processors and wood to biomass. Only items that genuinely cannot be reused or recycled go to landfill.' },
+  { q: 'Do house clearance companies sell the items they collect?', a: 'Some do. Reputable companies separate items of value and either donate them to charity or pass them to auction houses. Less scrupulous operators may sell items and still charge you full price. We donate usable items to Bristol charities and pass the savings to you.' },
+  { q: 'Can I choose which charity receives my donated items?', a: 'Yes, if you have a preference we are happy to accommodate it where possible. We work with several Bristol charities including the SOFA Project, Emmaus Bristol and British Heart Foundation. Let us know your preference when booking.' },
+  { q: 'What happens to electrical items from a house clearance?', a: 'Electrical items are handled under WEEE (Waste Electrical and Electronic Equipment) regulations. Working appliances are tested and donated or resold. Non-working items are taken to specialist recycling facilities where materials like copper, steel and plastics are recovered.' },
+];
+---
+
+<GuideLayout
+  title="What House Clearance Companies Do With Your Stuff | Clearfields"
+  description="Where do your items go after a house clearance? Discover the recycling, charity donation and disposal process. Bristol-focused guide with full transparency."
+  h1="What House Clearance Companies Do With Your Stuff"
+  breadcrumbs={breadcrumbs}
+  publishDate="2026-02-25"
+  readingTime="5 min"
+  relatedGuides={[
+    { title: 'Charity House Clearance Bristol', href: '/guides/charity-house-clearance-bristol/' },
+    { title: 'DIY vs Professional House Clearance', href: '/guides/diy-vs-professional-house-clearance/' },
+  ]}
+  relatedServices={[
+    { title: 'House Clearance', href: '/house-clearance/' },
+    { title: 'Furniture Removal', href: '/house-clearance/furniture-removal/' },
+    { title: 'Garden Clearance', href: '/garden-clearance/' },
+  ]}
+  faqs={faqs}
+>
+  <Fragment slot="hero-subtitle">
+    Full transparency on where your items end up after a professional house clearance — from charity shops to recycling centres.
+  </Fragment>
+
+  <p>
+    One of the most common questions we hear is: <em>"What actually happens to everything once you take it away?"</em> It is a fair question — and transparency matters. This guide explains exactly where items go after a professional <a href="/house-clearance/">house clearance</a> in Bristol.
+  </p>
+
+  <h2>The Sorting Process</h2>
+  <p>
+    When our team clears a property, items are not simply thrown into a van and taken to the tip. Everything is sorted into categories during the clearance itself:
+  </p>
+  <ul>
+    <li><strong>Reusable items</strong> — furniture, clothing, kitchenware, books</li>
+    <li><strong>Recyclable materials</strong> — metals, wood, cardboard, glass, textiles</li>
+    <li><strong>Electrical items</strong> — handled under WEEE regulations</li>
+    <li><strong>Hazardous waste</strong> — paint, chemicals, batteries (specialist disposal)</li>
+    <li><strong>General waste</strong> — only items that cannot be reused or recycled</li>
+  </ul>
+  <p>
+    This sorting happens partly on-site and partly at our processing facility. The goal is to divert as much as possible from landfill.
+  </p>
+
+  <h2>Charity Donations</h2>
+  <p>
+    Good quality furniture, clothing, kitchenware and household items are donated to Bristol charities. Our regular <a href="/charity-partners/">charity partners</a> include:
+  </p>
+  <ul>
+    <li><strong>The SOFA Project</strong> — Bristol's largest furniture reuse charity, providing affordable furniture to people in need across the city</li>
+    <li><strong>Emmaus Bristol</strong> — a charity supporting formerly homeless people, with shops in <strong>Stokes Croft</strong> and <strong>Bedminster</strong></li>
+    <li><strong>British Heart Foundation</strong> — furniture and electrical shops across Bristol</li>
+    <li><strong>Bristol charity shops</strong> — smaller local charities that accept clothing, books and bric-a-brac</li>
+  </ul>
+  <p>
+    For every clearance, we provide a Charity Donation Report listing what was donated and where. This is particularly useful for <a href="/probate-house-clearance/">probate clearances</a> where executors need to account for estate assets.
+  </p>
+
+  <h2>Recycling</h2>
+  <p>
+    Items that cannot be reused but contain recyclable materials are taken to specialist facilities:
+  </p>
+  <table>
+    <thead>
+      <tr><th>Material</th><th>Recycling Route</th><th>What It Becomes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Wood</td><td>Biomass processing</td><td>Chipboard, energy generation</td></tr>
+      <tr><td>Metal</td><td>Scrap metal processors</td><td>New metal products</td></tr>
+      <tr><td>Textiles</td><td>Textile recycling</td><td>Insulation, industrial cloths</td></tr>
+      <tr><td>Mattresses</td><td>Specialist recycling</td><td>Steel springs, foam, fabric</td></tr>
+      <tr><td>Cardboard/paper</td><td>Paper mills</td><td>Recycled paper products</td></tr>
+      <tr><td>Electronics</td><td>WEEE facilities</td><td>Copper, precious metals, plastics</td></tr>
+    </tbody>
+  </table>
+  <p>
+    Bristol has excellent recycling infrastructure, and we use local processors wherever possible to minimise transport distances.
+  </p>
+
+  <h2>Items of Value</h2>
+  <p>
+    If we find items that may have significant value during a clearance, we always inform the customer before proceeding. Depending on the situation, valuable items can be:
+  </p>
+  <ul>
+    <li>Returned to the customer or their representative</li>
+    <li>Sent to auction via Bristol-area auction houses</li>
+    <li>Professionally valued for probate purposes</li>
+  </ul>
+  <p>
+    We never sell items from a clearance for our own profit. Our business model is based on the clearance fee, not on reselling your belongings.
+  </p>
+
+  <h2>Responsible Disposal</h2>
+  <p>
+    Only items that genuinely cannot be reused, recycled or donated go to waste processing facilities. Even then, modern waste management recovers energy from residual waste through incineration. True landfill is a last resort.
+  </p>
+  <p>
+    As a licensed waste carrier registered with the Environment Agency, we are legally required to provide Waste Transfer Notes for every clearance. These documents prove that your waste was disposed of legally and responsibly — protecting you from any liability.
+  </p>
+
+  <h2>The Problem with Unlicensed Operators</h2>
+  <p>
+    Unlicensed clearance companies — often advertising low prices on social media or local noticeboards — may illegally fly-tip your items. In Bristol, fly-tipping incidents are investigated by Bristol City Council and the Environment Agency. If your items are traced back to you (through letters, documents or address labels), <strong>you</strong> could face prosecution — even though someone else dumped them.
+  </p>
+  <p>
+    Always use a licensed operator and keep your Waste Transfer Notes. You can verify any company's waste carrier licence on the <a href="https://environment.data.gov.uk/public-register/view/search-waste-carriers-brokers" rel="noopener noreferrer" target="_blank">Environment Agency public register</a>.
+  </p>
+
+  <h2>Our Commitment</h2>
+  <p>
+    We are proud of our 95%+ recycling and donation rate. For full details of our environmental approach, see our <a href="/environmental-policy/">environmental policy</a>. Every clearance we complete in Bristol — from a single room in <strong>Knowle</strong> to a full house in <strong>Westbury Park</strong> — follows the same responsible process.
+  </p>
+
+  <h2>Questions?</h2>
+  <p>
+    If you want to know exactly where your items will go, just ask. <a href="/contact/">Contact us</a> or call <strong>0117 123 4567</strong> — we are always happy to explain our process in detail.
+  </p>
+</GuideLayout>

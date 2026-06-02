@@ -1,0 +1,110 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Garden Clearance' },
+];
+
+const relatedServices = [
+  { title: 'Garage Clearance', href: '/garden-clearance/garage-clearance/', description: 'Clear your garage for parking, conversion or sale' },
+  { title: 'Shed Clearance', href: '/garden-clearance/shed-clearance/', description: 'Shed clearance and removal service' },
+  { title: 'Garden Waste Removal', href: '/garden-clearance/garden-waste-removal/', description: 'Green waste, branches, soil and rubble' },
+  { title: 'Outbuilding Clearance', href: '/garden-clearance/outbuilding-clearance/', description: 'Workshops, summerhouses and outbuildings' },
+];
+
+const faqs = [
+  { q: 'What garden waste do you take?', a: 'We take all garden waste including hedge trimmings, branches, tree cuttings, leaves, grass, soil, rubble, broken garden furniture, pots, fencing, decking, sheds and greenhouses. We also clear garden equipment like mowers, tools and chemicals.' },
+  { q: 'Can you remove a shed or greenhouse?', a: 'Yes, we dismantle and remove sheds, greenhouses, summerhouses, pergolas, decking and fencing. This is included in our garden clearance service or available as a standalone service.' },
+  { q: 'How much does a garden clearance cost in Bristol?', a: 'A small garden clearance starts from around £120 for a quarter van load. Full garden clearances including shed removal typically range from £300 to £800 depending on the size and amount of waste. We provide free quotes.' },
+  { q: 'Do you handle hazardous garden chemicals?', a: 'Yes, we safely dispose of garden chemicals, paints, oils and treated timber in accordance with hazardous waste regulations. These items cannot go in standard recycling and require specialist handling.' },
+  { q: 'Is garden clearance available year-round?', a: 'Yes, we provide garden clearance all year round. Spring and autumn are our busiest seasons, so we recommend booking a few days ahead during these periods. Same-day service is available subject to capacity.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Garden Clearance Bristol',
+  description: 'Professional garden clearance in Bristol. Green waste, sheds, garages, garden furniture, fencing and more. All waste recycled responsibly.',
+  provider: { '@type': 'LocalBusiness', name: 'Clearfields' },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Garden Clearance',
+};
+---
+
+<ServiceLayout
+  title="Garden Clearance Bristol | Green Waste, Sheds & Garages — Clearfields"
+  description="Professional garden clearance in Bristol. Green waste, shed removal, garage clearance, garden furniture. 95% recycled. Free quotes, same-day available."
+  h1="Garden Clearance Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Complete garden clearance including green waste, sheds, garages, garden furniture and outbuildings. We recycle 95% of everything we clear — nothing goes to waste unnecessarily.
+    </p>
+  </Fragment>
+
+  <h2>Complete Garden Clearance Service</h2>
+  <p>
+    Whether you're preparing a garden for landscaping, clearing overgrowth from a neglected property, or simply need a good tidy-up, Clearfields handles it all. We clear gardens of every size — from small courtyard gardens in <a href="/areas/southville/">Southville</a> to large established grounds in <a href="/areas/stoke-bishop/">Stoke Bishop</a>.
+  </p>
+
+  <h2>What We Clear</h2>
+  <ul>
+    <li><strong>Green waste</strong> — hedge trimmings, branches, grass cuttings, leaves, weeds</li>
+    <li><strong>Garden furniture</strong> — tables, chairs, parasols, BBQs</li>
+    <li><strong>Sheds and outbuildings</strong> — dismantled and removed including bases</li>
+    <li><strong>Fencing and decking</strong> — old fencing panels, posts, decking boards</li>
+    <li><strong>Soil, rubble and hardcore</strong> — excavation waste, broken paving</li>
+    <li><strong>Garden equipment</strong> — mowers, strimmers, tools, hoses</li>
+    <li><strong>Pots and planters</strong> — broken or unwanted containers</li>
+    <li><strong>Play equipment</strong> — trampolines, climbing frames, sandpits</li>
+  </ul>
+
+  <h2>Garden Clearance vs Green Waste Only</h2>
+  <p>
+    We offer two levels of garden clearance:
+  </p>
+  <ul>
+    <li><strong>Green waste removal</strong> — just the garden waste (cuttings, soil, branches). Ideal if you've done the gardening yourself and just need the waste taken away.</li>
+    <li><strong>Full garden clearance</strong> — everything goes. We strip the garden back to bare earth/lawn, removing all structures, waste and unwanted items. Perfect for property sales, renovations or starting fresh.</li>
+  </ul>
+
+  <h2>Seasonal Garden Clearance</h2>
+  <p>
+    Bristol gardens need year-round attention. Our most popular seasonal services:
+  </p>
+  <ul>
+    <li><strong>Spring</strong> — post-winter clear-ups, removing dead plants and debris</li>
+    <li><strong>Summer</strong> — overgrowth management, pre-event garden clearance</li>
+    <li><strong>Autumn</strong> — leaf clearance, preparing gardens for winter</li>
+    <li><strong>Winter</strong> — storm damage clear-up, shed and fence removal</li>
+  </ul>
+
+  <h2>Garden Clearance Pricing</h2>
+  <table>
+    <thead>
+      <tr><th>Service</th><th>Typical Price</th><th>Details</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Green waste (¼ van)</td><td>£120</td><td>Few bags or small amount</td></tr>
+      <tr><td>Green waste (½ van)</td><td>£200</td><td>Medium garden tidy</td></tr>
+      <tr><td>Full garden clearance</td><td>£300 – £600</td><td>All waste including structures</td></tr>
+      <tr><td>Shed removal</td><td>£150 – £300</td><td>Dismantle + dispose</td></tr>
+      <tr><td>Large garden / grounds</td><td>From £600</td><td>Bespoke quote required</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Before and After</h2>
+  <p>
+    Our garden transformations speak for themselves. We regularly clear overgrown, neglected gardens and leave them ready for new planting, landscaping or simply enjoying. View our <a href="/case-studies/">case studies</a> to see the difference.
+  </p>
+
+  <h2>Linked Services</h2>
+  <p>
+    Garden clearance often goes hand-in-hand with other clearance work. Many of our clients combine garden clearance with <a href="/house-clearance/">house clearance</a>, <a href="/garden-clearance/garage-clearance/">garage clearance</a> or <a href="/garden-clearance/shed-clearance/">shed removal</a> for a complete property clear-out.
+  </p>
+</ServiceLayout>

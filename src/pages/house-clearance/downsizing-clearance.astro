@@ -1,0 +1,115 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'House Clearance', href: '/house-clearance/' },
+  { label: 'Downsizing Clearance' },
+];
+
+const relatedServices = [
+  { title: 'House Clearance', href: '/house-clearance/', description: 'Complete residential house clearance service' },
+  { title: 'Furniture Removal', href: '/house-clearance/furniture-removal/', description: 'Individual items or full property furniture removal' },
+  { title: 'Probate House Clearance', href: '/probate-house-clearance/', description: 'Sensitive clearance for probate situations' },
+  { title: 'Flat Clearance', href: '/house-clearance/flat-clearance/', description: 'Specialist flat and apartment clearance' },
+];
+
+const faqs = [
+  { q: 'Can you help us decide what to keep?', a: 'While we cannot make decisions for you, our team is experienced in helping families work through the sorting process. We provide clear categories — keep, donate, recycle, dispose — and give you as much time as you need. Many families find it helpful to have a calm, practical presence during what can be an emotional process.' },
+  { q: 'Can you donate items to charity on our behalf?', a: 'Absolutely. We work with local Bristol charities including the SOFA Project, Emmaus Bristol and British Heart Foundation. Good-quality furniture, clothing and household items are donated rather than disposed of. You receive a Charity Donation Report detailing exactly where your items went.' },
+  { q: 'Do you offer a staged approach for downsizing?', a: 'Yes. We understand that downsizing is a process, not an event. We can visit over multiple days or weeks — clearing one room at a time, or starting with items you know you will not need. This staged approach is particularly popular with elderly clients who find a full clearance overwhelming.' },
+  { q: 'How much does a downsizing clearance cost?', a: 'Costs depend on the volume of items being removed. A partial clearance (a few rooms of excess furniture and belongings) typically costs £200-£500. A larger clearance from a 4-5 bedroom property may range from £500-£900. We provide a fixed quote — our Price Lock Guarantee means the price never increases.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Downsizing Clearance Bristol',
+  description: 'Sensitive downsizing clearance in Bristol. Helping families and elderly residents move to smaller homes. Staged approach, charity donations, fully insured.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Clearfields',
+  },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Downsizing Clearance',
+};
+---
+
+<ServiceLayout
+  title="Downsizing Clearance Bristol | Sensitive & Staged — Clearfields"
+  description="Sensitive downsizing clearance in Bristol. Helping families move to smaller homes at their own pace. Charity donations, staged approach. Call 0117 123 4567."
+  h1="Downsizing Clearance Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Helping Bristol families downsize with care and sensitivity. We work at your pace — sorting, donating and clearing so you can focus on your new chapter.
+    </p>
+  </Fragment>
+
+  <h2>Downsizing Made Easier</h2>
+  <p>
+    Moving from a family home to somewhere smaller is one of life's biggest transitions. After years — sometimes decades — of memories, possessions and life lived in one place, the thought of clearing everything can feel overwhelming.
+  </p>
+  <p>
+    Clearfields provides a gentle, patient downsizing service that puts you in control. We don't rush. We don't pressure. We help you sort through your belongings at your own pace, ensuring that treasured items are kept, good-quality possessions go to people who need them, and everything else is recycled or disposed of responsibly.
+  </p>
+
+  <h2>Who Our Downsizing Service Is For</h2>
+  <p>
+    We help all kinds of families across Bristol navigate the downsizing process:
+  </p>
+  <ul>
+    <li><strong>Elderly residents</strong> moving from a family home to a smaller property or retirement accommodation</li>
+    <li><strong>Families</strong> helping elderly parents prepare for a move</li>
+    <li><strong>Couples</strong> whose children have left home and who no longer need the space</li>
+    <li><strong>People relocating</strong> to a smaller property after divorce, retirement or lifestyle change</li>
+    <li><strong>Anyone preparing a property for sale</strong> who needs to clear excess belongings first</li>
+  </ul>
+
+  <h2>Our Sensitive, Staged Approach</h2>
+  <p>
+    We understand that every item in a family home can carry emotional weight. That's why we take a staged approach:
+  </p>
+  <ol>
+    <li><strong>Initial conversation</strong> — we visit the property and talk through what you're hoping to achieve. This is free, no-obligation and completely without pressure.</li>
+    <li><strong>Sorting together</strong> — we work room by room, helping you sort items into keep, donate, recycle and dispose categories. You make every decision — we simply provide the practical support.</li>
+    <li><strong>Careful removal</strong> — items for donation are delivered to local charities. Items for your new home can be set aside for your removal company. Everything else is recycled or disposed of responsibly.</li>
+    <li><strong>Besom clean</strong> — we leave every cleared room swept and tidy, ready for viewings or handover.</li>
+  </ol>
+
+  <h2>Where Your Items Go</h2>
+  <p>
+    One of the most important things for our downsizing clients is knowing that their belongings will be used rather than wasted. We donate good-quality items to Bristol charities including:
+  </p>
+  <ul>
+    <li><strong>SOFA Project</strong> — furniture for families in need across Bristol</li>
+    <li><strong>Emmaus Bristol</strong> — household items supporting formerly homeless residents</li>
+    <li><strong>British Heart Foundation</strong> — furniture, clothing and bric-a-brac</li>
+    <li><strong>Local community groups</strong> — books, toys, kitchenware and more</li>
+  </ul>
+  <p>
+    You receive a full <strong>Charity Donation Report</strong> so you can see exactly where your items went. For many families, knowing that a lifetime of possessions is helping others makes the downsizing process feel much more positive.
+  </p>
+
+  <h2>Bristol Areas We Serve</h2>
+  <p>
+    We help families downsize across all of Bristol. Recent downsizing clearances include properties in <a href="/areas/clifton/">Clifton</a>, Henleaze, Westbury-on-Trym, <a href="/areas/bishopston/">Bishopston</a>, Stoke Bishop, Long Ashton and <a href="/areas/keynsham/">Keynsham</a>. View all <a href="/areas/">areas we cover</a>.
+  </p>
+
+  <h2>Combining Services</h2>
+  <p>
+    Downsizing often involves clearing more than just the main rooms. We can include <a href="/house-clearance/loft-clearance/">loft clearance</a>, <a href="/house-clearance/cellar-clearance/">cellar clearance</a>, and <a href="/garden-clearance/">garden and garage clearance</a> as part of a single, comprehensive service — saving you from coordinating multiple companies.
+  </p>
+  <p>
+    If the downsizing is connected to a bereavement or <a href="/probate-house-clearance/">probate situation</a>, our team is experienced in handling these sensitive circumstances with the compassion they deserve.
+  </p>
+
+  <h2>Start the Conversation</h2>
+  <p>
+    There's no commitment required. Call <strong>0117 123 4567</strong> for a friendly, no-pressure conversation about your downsizing needs. We'll arrange a free visit at a time that suits you and provide a fixed quote with our Price Lock Guarantee.
+  </p>
+</ServiceLayout>

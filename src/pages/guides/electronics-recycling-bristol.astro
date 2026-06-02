@@ -1,0 +1,105 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Electronics Recycling Bristol' },
+];
+
+const faqs = [
+  { q: 'Where can I recycle electronics in Bristol?', a: 'Bristol has three household waste recycling centres (St Philips, Hartcliffe Way, Avonmouth) that accept all electronics for free. Small items like phones and tablets can also be dropped at Currys and Argos stores under the WEEE take-back scheme. Charity shops accept working electronics.' },
+  { q: 'How do I wipe data from old electronics before recycling?', a: 'For phones and tablets, perform a factory reset through the settings menu. For computers, use a secure disk wiping tool like DBAN or the built-in Windows/Mac reset feature. For hard drives with very sensitive data, physical destruction is the safest option — remove the drive and drill through it or use a professional data destruction service.' },
+  { q: 'Can I put electronics in my household recycling bin?', a: 'No. Electronics must not go in household bins — either general waste or recycling. They contain hazardous materials (batteries, mercury, lead) that contaminate other recyclables and can cause fires in waste processing facilities. Always use designated WEEE collection points.' },
+  { q: 'What are WEEE regulations?', a: 'WEEE stands for Waste Electrical and Electronic Equipment. UK WEEE regulations require that electronic waste is collected separately from general waste and processed at licensed facilities to recover valuable materials and safely handle hazardous substances. Retailers must offer take-back when you buy a new equivalent item.' },
+];
+---
+
+<GuideLayout
+  title="Electronics Recycling Bristol — Where to Recycle E-Waste | Clearfields"
+  description="Where to recycle old electronics in Bristol. WEEE regulations, data security tips, recycling centres and professional collection. Complete Bristol e-waste guide."
+  h1="Electronics Recycling in Bristol — Where & How"
+  breadcrumbs={breadcrumbs}
+  publishDate="2026-02-18"
+  readingTime="3 min"
+  relatedGuides={[
+    { title: 'Fridge & Freezer Disposal Bristol', href: '/guides/fridge-freezer-disposal-bristol/' },
+    { title: 'Bristol Recycling Centres', href: '/guides/bristol-recycling-centres/' },
+  ]}
+  relatedServices={[
+    { title: 'House Clearance', href: '/house-clearance/' },
+    { title: 'Office Clearance', href: '/commercial-clearance/office-clearance/' },
+  ]}
+  faqs={faqs}
+>
+  <p>
+    <strong>Old laptops, TVs, phones and other electronics must be recycled separately from household waste.</strong> They contain valuable materials that can be recovered and hazardous substances that need careful handling. This guide covers all your options for recycling electronics in Bristol, plus important data security advice.
+  </p>
+
+  <h2>WEEE Regulations — What You Need to Know</h2>
+  <p>
+    All electronic waste in the UK falls under WEEE (Waste Electrical and Electronic Equipment) regulations. These rules exist because electronics contain materials like lead, mercury, cadmium, and lithium batteries that are hazardous if they enter landfill or general waste streams. WEEE regulations require:
+  </p>
+  <ul>
+    <li>Electronics must be collected separately from general waste</li>
+    <li>Retailers must offer take-back when you buy a replacement</li>
+    <li>Licensed facilities must process e-waste to recover materials safely</li>
+    <li>Local authorities must provide free e-waste collection points</li>
+  </ul>
+
+  <h2>Where to Recycle Electronics in Bristol</h2>
+
+  <h3>Recycling Centres</h3>
+  <p>
+    All three of Bristol's <a href="/guides/bristol-recycling-centres/">household waste recycling centres</a> have dedicated WEEE bays. You can drop off any electronic item for free — from a phone to a television. The centres at St Philips, Hartcliffe Way and Avonmouth are open 7 days a week.
+  </p>
+
+  <h3>Retailer Take-Back</h3>
+  <p>
+    Large electronics retailers in Bristol — including Currys (Cribbs Causeway and Imperial Park), Argos and John Lewis (Cribbs Causeway) — are required to accept small WEEE items in store. When you buy a new item, they must also offer to take back the old equivalent free of charge.
+  </p>
+
+  <h3>Charity Donation</h3>
+  <p>
+    Working electronics in good condition can be donated to charity shops. Bristol charities that accept electronics include the British Heart Foundation, Oxfam and Sue Ryder. Some specialist organisations refurbish old laptops and tablets for people in digital poverty.
+  </p>
+
+  <h2>Data Security — Protect Yourself</h2>
+  <p>
+    Before recycling any device that stored personal data, you must wipe it thoroughly. Identity theft from discarded electronics is a real and growing problem.
+  </p>
+  <ul>
+    <li><strong>Smartphones/tablets</strong> — perform a factory reset (Settings > General > Reset)</li>
+    <li><strong>Laptops/PCs</strong> — use the built-in reset feature or a secure wiping tool like DBAN</li>
+    <li><strong>External hard drives</strong> — format and overwrite, or physically destroy</li>
+    <li><strong>USB drives and memory cards</strong> — format completely, then overwrite with random data</li>
+  </ul>
+  <p>
+    For businesses or sensitive data, consider professional <a href="/commercial-clearance/confidential-waste-disposal/">confidential waste disposal</a> with certified data destruction.
+  </p>
+
+  <h2>Common Electronics and How to Recycle Them</h2>
+  <table>
+    <thead>
+      <tr><th>Item</th><th>Best Option</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>TVs and monitors</td><td>Recycling centre</td><td>CRT TVs contain lead — handle carefully</td></tr>
+      <tr><td>Laptops and PCs</td><td>Recycling centre or donation</td><td>Wipe data first</td></tr>
+      <tr><td>Phones and tablets</td><td>Retailer take-back or donation</td><td>Factory reset before disposal</td></tr>
+      <tr><td>Printers</td><td>Recycling centre</td><td>Remove ink cartridges separately</td></tr>
+      <tr><td>Batteries</td><td>Supermarket collection points</td><td>Never put in general waste — fire risk</td></tr>
+      <tr><td>Cables and chargers</td><td>Recycling centre WEEE bay</td><td>Copper is valuable and recoverable</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Electronics in a House Clearance</h2>
+  <p>
+    When we carry out a <a href="/house-clearance/">house clearance</a>, all electronics are separated and sent to licensed WEEE processing facilities. We provide Waste Transfer Notes as proof of legal disposal. If you're clearing a property with a lot of electronics — perhaps an <a href="/commercial-clearance/office-clearance/">office clearance</a> — we handle all WEEE compliance for you.
+  </p>
+
+  <h2>Need Electronics Collected?</h2>
+  <p>
+    Call us on <strong>0117 123 4567</strong> or <a href="/contact/">get a free quote</a>. We collect from anywhere in Bristol and ensure all electronic waste is recycled at licensed facilities.
+  </p>
+</GuideLayout>

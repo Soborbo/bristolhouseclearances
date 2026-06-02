@@ -1,0 +1,76 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'For Estate Agents' },
+];
+---
+
+<ServiceLayout
+  title="For Estate Agents | Clearance & Void Property Service — Clearfields"
+  description="Fast property clearance for Bristol estate agents and letting agents. End-of-tenancy, void property, pre-marketing clearance. Priority accounts available."
+  h1="Clearance Service for Estate Agents"
+  breadcrumbs={breadcrumbs}
+  relatedServices={[
+    { title: 'End of Tenancy Clearance', href: '/house-clearance/end-of-tenancy-clearance/', description: 'Fast turnaround tenant clearance' },
+    { title: 'Landlord Clearance', href: '/house-clearance/landlord-clearance/', description: 'Priority service for landlords' },
+    { title: 'For Solicitors', href: '/for-solicitors/', description: 'Our service for probate solicitors' },
+  ]}
+  faqs={[
+    { q: 'How fast can you clear a property?', a: 'We offer same-day and next-day clearance for urgent void property and pre-marketing situations. Most properties are cleared within 4-8 hours.' },
+    { q: 'Do you offer accounts for agencies?', a: 'Yes. Our agency account includes priority scheduling, fixed pricing, 30-day payment terms and a dedicated contact. Contact us to set up an account.' },
+    { q: 'Can you coordinate with contractors?', a: 'Yes. We regularly coordinate with cleaners, decorators and tradespeople to prepare properties for market. We can work to tight timelines.' },
+  ]}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Fast, reliable clearance for estate agents and letting agents across Bristol. Pre-marketing clearance, void property turnaround, and end-of-tenancy service.
+    </p>
+  </Fragment>
+
+  <h2>Why Bristol Agents Work With Us</h2>
+  <p>
+    Empty properties don't earn. Every day a void property sits uncleared is a day of lost revenue for your landlord and your agency. Clearfields provides fast, reliable clearance so you can get properties back on the market — or back in front of tenants — as quickly as possible.
+  </p>
+
+  <h2>Services for Agents</h2>
+  <ul>
+    <li><strong>Pre-marketing clearance</strong> — clear a property before photography and viewings</li>
+    <li><strong>End-of-tenancy clearance</strong> — fast turnaround after tenant departure</li>
+    <li><strong>Void property clearance</strong> — clear abandoned contents from rental properties</li>
+    <li><strong>Probate property clearance</strong> — prepare deceased's property for sale</li>
+    <li><strong>Garden and garage clearance</strong> — improve kerb appeal before listing</li>
+    <li><strong>Clearance + deep clean</strong> — combined clearance and professional clean service</li>
+  </ul>
+
+  <h2>Agency Accounts</h2>
+  <p>Our agency account gives you:</p>
+  <ul>
+    <li>Priority scheduling — same-day and next-day availability</li>
+    <li>Fixed pricing — consistent rates across all your properties</li>
+    <li>30-day payment terms</li>
+    <li>Dedicated account contact</li>
+    <li>Monthly reporting and invoicing</li>
+    <li>We Never Cancel guarantee — reliability your landlords can depend on</li>
+  </ul>
+
+  <h2>The Agent Workflow</h2>
+  <ol>
+    <li><strong>Instruct</strong> — call, email or WhatsApp with property details and photos</li>
+    <li><strong>Quote</strong> — fixed price within 2 hours, no site visit needed for standard clearances</li>
+    <li><strong>Schedule</strong> — we work to your timeline, including contractor coordination</li>
+    <li><strong>Clear</strong> — professional clearance with photo documentation</li>
+    <li><strong>Handback</strong> — property returned clean and ready, keys via lockbox or office</li>
+  </ol>
+
+  <h2>Covering All of Bristol</h2>
+  <p>
+    We cover every Bristol postcode plus South Gloucestershire, North Somerset and B&NES. Whether it's a studio flat in the city centre or a 5-bed in <a href="/areas/clifton/">Clifton</a>, our team knows Bristol's properties inside out. View all <a href="/areas/">areas we cover</a>.
+  </p>
+
+  <h2>Get Started</h2>
+  <p>
+    <a href="/contact/">Contact us</a> to set up an agency account or discuss your requirements. We're happy to meet at your office.
+  </p>
+</ServiceLayout>

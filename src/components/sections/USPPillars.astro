@@ -1,0 +1,46 @@
+---
+/**
+ * USPPillars — "Why Bristol Chooses Us" dark section with 4 USP blocks.
+ */
+import Container from '../ui/Container.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const pillars = [
+  {
+    emoji: '\u{1F512}',
+    title: 'Price Lock Guarantee',
+    description: 'Your quote never goes up. If there\'s less, you pay less. No hidden fees, no day-of surprises.',
+  },
+  {
+    emoji: '\u{1F331}',
+    title: 'Zero to Landfill',
+    description: 'Over 95% of everything we collect is recycled, donated to Bristol charities, or sent to energy recovery. We\'ll show you exactly where your items went.',
+  },
+  {
+    emoji: '\u{1F4F1}',
+    title: 'Quote in 2 Hours',
+    description: 'Send photos via WhatsApp or use our calculator. Firm, written quote back to you within 2 hours.',
+  },
+  {
+    emoji: '\u2705',
+    title: 'We Never Cancel',
+    description: 'We confirm, we show up, we deliver. Our guarantee: if we cancel, your job is free when we rebook.',
+  },
+];
+---
+
+<section id="why-us" class="bg-brand-navy text-white py-16 lg:py-20">
+  <Container>
+    <SectionHeading title="Why Bristol Chooses Us" light={true} />
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+      {pillars.map((pillar) => (
+        <div class="bg-white/10 rounded-xl p-6 lg:p-8">
+          <span class="text-3xl">{pillar.emoji}</span>
+          <h3 class="text-xl font-semibold text-white mt-3">{pillar.title}</h3>
+          <p class="text-slate-300 mt-2 text-sm leading-relaxed">{pillar.description}</p>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

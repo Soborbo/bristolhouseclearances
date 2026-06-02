@@ -1,0 +1,106 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Garden Clearance', href: '/garden-clearance/' },
+  { label: 'Garden Waste Removal' },
+];
+
+const relatedServices = [
+  { title: 'Garden Clearance', href: '/garden-clearance/', description: 'Full garden clearance including structures and furniture' },
+  { title: 'Shed Clearance', href: '/garden-clearance/shed-clearance/', description: 'Shed contents clearance and removal' },
+  { title: 'Outbuilding Clearance', href: '/garden-clearance/outbuilding-clearance/', description: 'Workshops, summerhouses and outbuildings' },
+];
+
+const faqs = [
+  { q: 'What counts as garden waste?', a: 'Garden waste (green waste) includes grass cuttings, hedge trimmings, branches, leaves, weeds, dead plants, tree prunings, windfall fruit and small amounts of soil. We also take garden-related items like broken plant pots, old compost bags and plastic edging.' },
+  { q: 'Do you take soil and rubble?', a: 'Yes, we take soil, rubble, broken paving, bricks and hardcore. These are heavier materials and priced separately from green waste. We can provide a combined quote if you have a mix of green waste and heavy materials.' },
+  { q: 'Where does the garden waste go?', a: 'All green waste goes to licensed composting facilities where it is processed into soil conditioner and mulch. We never send garden waste to landfill. Soil and rubble go to aggregate recycling facilities. We provide Waste Transfer Notes confirming responsible disposal.' },
+  { q: 'Can you collect garden waste I\'ve already bagged up?', a: 'Absolutely. If you\'ve done the gardening yourself and just need the waste collected, we offer a straightforward collection service. Leave bags, branches and cuttings in an accessible spot, and we load and take everything away. No need to be home — just let us know where to find it.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Garden Waste Removal Bristol',
+  description: 'Garden waste and green waste removal in Bristol. Hedge trimmings, branches, grass, soil, rubble. 100% recycled at composting facilities. Same-day available.',
+  provider: { '@type': 'LocalBusiness', name: 'Clearfields' },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Garden Waste Removal',
+};
+---
+
+<ServiceLayout
+  title="Garden Waste Removal Bristol | Green Waste Collection — Clearfields"
+  description="Garden waste and green waste removal in Bristol. Hedge trimmings, branches, grass, soil. 100% composted and recycled. Same-day service. Call 0117 123 4567."
+  h1="Garden Waste Removal Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Green waste collection and disposal across Bristol. Everything composted and recycled — nothing goes to landfill. Same-day collection available for bagged waste.
+    </p>
+  </Fragment>
+
+  <h2>Simple, Affordable Green Waste Collection</h2>
+  <p>
+    Sometimes you don't need a full garden clearance — you just need someone to take the waste away. Whether you've had a weekend blitz on the hedges, cleared an overgrown border, or your gardener has left a mountain of cuttings, Clearfields provides fast, affordable green waste collection across every part of Bristol.
+  </p>
+  <p>
+    We operate throughout the city, from the terraced gardens of Totterdown and Easton to the larger plots of Henleaze, Westbury Park and Stoke Bishop. No job is too small — we're happy to collect a few bags or a full van load.
+  </p>
+
+  <h2>What We Collect</h2>
+  <ul>
+    <li><strong>Hedge trimmings</strong> — privet, laurel, leylandii, beech and all other hedging</li>
+    <li><strong>Branches and prunings</strong> — tree branches, shrub cuttings, rose prunings</li>
+    <li><strong>Grass cuttings</strong> — bagged or loose grass from mowing</li>
+    <li><strong>Leaves</strong> — autumn leaf fall, composted leaves, leaf mould</li>
+    <li><strong>Weeds and dead plants</strong> — pulled weeds, spent bedding plants, dead perennials</li>
+    <li><strong>Soil and turf</strong> — excavated soil, old turf, spent compost</li>
+    <li><strong>Rubble and hardcore</strong> — broken paving, bricks, concrete, stone</li>
+  </ul>
+
+  <h2>100% Recycled — Zero Landfill</h2>
+  <p>
+    Every scrap of green waste we collect is taken to licensed composting facilities where it's processed into nutrient-rich soil conditioner and mulch. This is far better than Bristol's brown bin service, which has limited capacity and fortnightly collections. We take any volume, any time, and guarantee that nothing goes to landfill.
+  </p>
+  <p>
+    Heavy materials like soil, rubble and concrete go to aggregate recycling facilities where they're crushed and reprocessed for construction use.
+  </p>
+
+  <h2>How It Works</h2>
+  <ol>
+    <li><strong>Get a quote</strong> — tell us roughly how much waste you have (bags, van loads) and we'll quote a fixed price</li>
+    <li><strong>We collect</strong> — our team arrives, loads everything and sweeps up</li>
+    <li><strong>Waste Transfer Note</strong> — you receive legal documentation confirming proper disposal</li>
+  </ol>
+  <p>
+    Already bagged it up? Even easier. Point us to the pile and we'll load and go. You don't even need to be home.
+  </p>
+
+  <h2>Garden Waste Pricing</h2>
+  <table>
+    <thead>
+      <tr><th>Volume</th><th>Typical Price</th><th>Equivalent To</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Quarter van</td><td>£120</td><td>5-10 bags of green waste</td></tr>
+      <tr><td>Half van</td><td>£200</td><td>10-20 bags or small hedge job</td></tr>
+      <tr><td>Full van</td><td>£300</td><td>Large garden clear-up</td></tr>
+      <tr><td>Soil / rubble</td><td>From £150</td><td>Priced by weight — heavier material</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Need More Than Waste Removal?</h2>
+  <p>
+    If your garden needs more than just a waste collection — perhaps there's a shed to dismantle, a garage to clear, or the whole garden needs stripping back — take a look at our full <a href="/garden-clearance/">garden clearance service</a>, <a href="/garden-clearance/shed-clearance/">shed clearance</a> or <a href="/garden-clearance/garage-clearance/">garage clearance</a>.
+  </p>
+  <p>
+    We also work with landscapers and garden designers who need waste removed from project sites. For regular commercial waste needs, see our <a href="/commercial-clearance/">commercial clearance services</a>. Call <strong>0117 123 4567</strong> for a quick quote — we can often collect same day.
+  </p>
+</ServiceLayout>

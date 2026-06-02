@@ -1,0 +1,125 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Commercial Clearance', href: '/commercial-clearance/' },
+  { label: 'Office Clearance' },
+];
+
+const relatedServices = [
+  { title: 'Commercial Clearance', href: '/commercial-clearance/', description: 'Full range of commercial clearance services in Bristol' },
+  { title: 'Confidential Waste Disposal', href: '/commercial-clearance/confidential-waste-disposal/', description: 'Secure document shredding and data destruction' },
+  { title: 'Warehouse Clearance', href: '/commercial-clearance/warehouse-clearance/', description: 'Industrial and warehouse clearance specialists' },
+];
+
+const faqs = [
+  { q: 'How do you handle IT equipment disposal?', a: 'All IT equipment is processed in compliance with WEEE (Waste Electrical and Electronic Equipment) regulations. Data-bearing devices — hard drives, SSDs, servers, phones, tablets — are either securely wiped to NCSC standards or physically destroyed. We provide individual certificates of data destruction for every device.' },
+  { q: 'Can you clear an office outside business hours?', a: 'Yes. Most of our Bristol office clearances happen evenings, weekends or overnight to minimise disruption. We can work around your business schedule, building access hours and security requirements. Out-of-hours clearance is available at competitive rates.' },
+  { q: 'Do you clear offices that are still partially occupied?', a: 'Yes, we regularly clear sections of offices while other areas remain operational. We use dust sheets, floor protection and clearly marked work zones. Our teams are DBS-checked and briefed on confidentiality requirements.' },
+  { q: 'What happens to office furniture?', a: 'Usable office furniture — desks, chairs, filing cabinets, storage — is donated to Bristol charities or social enterprises where possible. Items in good condition may be sent for resale. Everything else is recycled; we achieve over 90% diversion from landfill on office clearances.' },
+  { q: 'Are you compliant with WEEE regulations?', a: 'Fully compliant. We are registered with the Environment Agency as an Upper Tier Waste Carrier and follow WEEE Directive requirements for all electrical and electronic equipment. We provide full audit trails and can supply compliance reports for your records.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Office Clearance Bristol',
+  description: 'Professional office clearance in Bristol. IT disposal, WEEE compliance, data destruction certificates. Out-of-hours available. Full Duty of Care documentation.',
+  provider: { '@type': 'LocalBusiness', name: 'Clearfields' },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Office Clearance',
+};
+---
+
+<ServiceLayout
+  title="Office Clearance Bristol | IT Disposal & WEEE Compliant — Clearfields"
+  description="Professional office clearance in Bristol. WEEE-compliant IT disposal, data destruction certificates, out-of-hours service. Duty of Care documentation. Call 0117 123 4567."
+  h1="Office Clearance Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      WEEE-compliant office clearance with secure IT disposal, data destruction certificates and full Duty of Care documentation. Available out of hours to minimise business disruption.
+    </p>
+  </Fragment>
+
+  <h2>Bristol's Office Clearance Specialists</h2>
+  <p>
+    Whether you're relocating, downsizing, closing a business or refitting your workspace, Clearfields provides fast, compliant office clearance across the city. From start-up spaces in Finzels Reach to corporate offices on Temple Quay and creative studios in Stokes Croft, we've cleared offices of every size and sector.
+  </p>
+  <p>
+    Our service goes beyond simply removing furniture. We handle the complexities that office clearances bring — data security, WEEE compliance, hazardous materials and the need to work around your operations.
+  </p>
+
+  <h2>What We Clear</h2>
+  <ul>
+    <li><strong>Office furniture</strong> — desks, chairs, meeting tables, reception counters, partitions, shelving</li>
+    <li><strong>IT equipment</strong> — desktops, monitors, laptops, servers, printers, networking hardware</li>
+    <li><strong>Filing and storage</strong> — filing cabinets, plan chests, safes, archive boxes</li>
+    <li><strong>Kitchen and welfare</strong> — fridges, microwaves, dishwashers, vending machines</li>
+    <li><strong>Fit-out materials</strong> — carpet tiles, ceiling tiles, raised floor panels, lighting</li>
+    <li><strong>Signage and branding</strong> — external signs, window graphics, internal wayfinding</li>
+  </ul>
+
+  <h2>Secure IT Disposal and Data Destruction</h2>
+  <p>
+    Data security is non-negotiable. Every data-bearing device we handle is processed through our secure chain of custody:
+  </p>
+  <ol>
+    <li><strong>Asset tagging</strong> — every device is logged with make, model and serial number</li>
+    <li><strong>Secure transport</strong> — devices are sealed in tamper-evident bags</li>
+    <li><strong>Data destruction</strong> — wiped to NCSC HMG Infosec Standard 5 or physically shredded</li>
+    <li><strong>Certification</strong> — individual certificate of destruction issued per device</li>
+  </ol>
+  <p>
+    For businesses handling sensitive data, our <a href="/commercial-clearance/confidential-waste-disposal/">confidential waste disposal service</a> covers paper documents, hard drives and any media requiring certified destruction.
+  </p>
+
+  <h2>WEEE Compliance</h2>
+  <p>
+    The Waste Electrical and Electronic Equipment (WEEE) Directive makes it illegal to dispose of electrical items in general waste. As a registered waste carrier, we ensure that all electrical equipment from your office is processed through approved WEEE treatment facilities. This includes:
+  </p>
+  <ul>
+    <li>Computers, monitors and peripherals</li>
+    <li>Servers and networking equipment</li>
+    <li>Printers, copiers and scanners</li>
+    <li>Telephones and mobile devices</li>
+    <li>Kitchen appliances and vending machines</li>
+    <li>Lighting, including fluorescent tubes and LED panels</li>
+  </ul>
+
+  <h2>Minimal Disruption — Out-of-Hours Service</h2>
+  <p>
+    Most Bristol businesses can't afford downtime during a clearance. That's why we offer flexible scheduling:
+  </p>
+  <ul>
+    <li><strong>Evening clearances</strong> — after your team has left for the day</li>
+    <li><strong>Weekend clearances</strong> — full clearance over Saturday and Sunday</li>
+    <li><strong>Overnight clearances</strong> — for operations that run during standard business hours</li>
+    <li><strong>Staged clearances</strong> — floor by floor or zone by zone to keep areas operational</li>
+  </ul>
+
+  <h2>Office Clearance Pricing</h2>
+  <table>
+    <thead>
+      <tr><th>Office Size</th><th>Typical Price</th><th>Includes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Small (1-5 desks)</td><td>£300 – £600</td><td>Furniture, IT, Waste Transfer Notes</td></tr>
+      <tr><td>Medium (6-20 desks)</td><td>£600 – £1,500</td><td>Full clearance, WEEE, data certificates</td></tr>
+      <tr><td>Large (20+ desks)</td><td>From £1,500</td><td>Bespoke quote, staged if required</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Related Commercial Services</h2>
+  <p>
+    Office clearance often goes hand-in-hand with other commercial work. We also provide <a href="/commercial-clearance/shop-clearance/">shop and retail clearance</a>, <a href="/commercial-clearance/warehouse-clearance/">warehouse clearance</a> for businesses with storage facilities, and <a href="/commercial-clearance/confidential-waste-disposal/">confidential waste disposal</a> for ongoing document destruction needs.
+  </p>
+  <p>
+    If you're an executor clearing a deceased's business premises, our <a href="/probate-house-clearance/estate-clearance/">estate clearance service</a> can handle the commercial property as part of the wider estate. Call us on <strong>0117 123 4567</strong> for a free quote.
+  </p>
+</ServiceLayout>

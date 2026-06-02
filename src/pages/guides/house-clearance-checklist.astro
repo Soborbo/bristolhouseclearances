@@ -1,0 +1,116 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'House Clearance Checklist' },
+];
+
+const faqs = [
+  { q: 'Can I print this house clearance checklist?', a: 'Yes. Use your browser\'s print function (Ctrl+P or Cmd+P) to print this page. The checklist format is designed to work well on paper so you can tick items off as you go.' },
+  { q: 'How long does it take to work through the checklist?', a: 'Most people need 2-4 hours to complete the pre-clearance tasks for a typical 3-bed Bristol property. For larger or heavily furnished homes, allow a full day. Probate properties often take longer due to the need to check for important documents.' },
+  { q: 'What if I cannot complete everything on the checklist before the clearance?', a: 'Do not worry — the checklist is a guide, not a requirement. The most important items are securing personal documents and valuables. Our team can work around any remaining tasks and will check with you before removing anything questionable.' },
+];
+---
+
+<GuideLayout
+  title="House Clearance Checklist — Step-by-Step | Clearfields"
+  description="Printable house clearance checklist. Step-by-step guide covering every task from booking to completion. Perfect for Bristol homeowners and executors."
+  h1="House Clearance Checklist — Step by Step"
+  breadcrumbs={breadcrumbs}
+  publishDate="2026-02-20"
+  readingTime="4 min"
+  relatedGuides={[
+    { title: 'How to Prepare for House Clearance', href: '/guides/how-to-prepare-for-house-clearance/' },
+    { title: 'Clearing a House After Death', href: '/guides/clearing-house-after-death/' },
+  ]}
+  relatedServices={[
+    { title: 'House Clearance', href: '/house-clearance/' },
+    { title: 'Probate House Clearance', href: '/probate-house-clearance/' },
+  ]}
+  faqs={faqs}
+>
+  <Fragment slot="hero-subtitle">
+    A printable, step-by-step checklist to guide you through every stage of a house clearance — from first decisions to final handover.
+  </Fragment>
+
+  <p>
+    Use this checklist to stay organised through your <a href="/house-clearance/">house clearance</a>. It covers everything from initial planning through to the day itself. Print it out and tick items off as you go.
+  </p>
+
+  <h2>Phase 1: Planning (1-2 Weeks Before)</h2>
+  <ul>
+    <li>Decide which items you want to keep, sell, donate or dispose of</li>
+    <li>If probate is involved, confirm the Grant has been received</li>
+    <li>Get quotes from licensed clearance companies — check for Environment Agency registration</li>
+    <li>Book your preferred date and confirm the time</li>
+    <li>Arrange key access if you will not be present</li>
+    <li>Notify your solicitor if this is a <a href="/probate-house-clearance/">probate clearance</a></li>
+    <li>Check property insurance covers the clearance period</li>
+  </ul>
+
+  <h2>Phase 2: Sorting (3-5 Days Before)</h2>
+  <ul>
+    <li>Remove all personal documents (passports, certificates, financial records)</li>
+    <li>Collect all photographs, letters and personal correspondence</li>
+    <li>Remove jewellery, cash and small valuables</li>
+    <li>Check hidden spots — jacket pockets, inside books, under mattresses, behind furniture</li>
+    <li>Separate items bequeathed in a will</li>
+    <li>Move all "keep" items to one clearly marked room or remove from the property</li>
+    <li>Photograph any items you want valued — see our <a href="/guides/probate-valuations/">probate valuations guide</a></li>
+    <li>Label or mark anything the clearance team should not touch</li>
+  </ul>
+
+  <h2>Phase 3: Property Preparation (1-2 Days Before)</h2>
+  <ul>
+    <li>Clear a path through hallways, stairs and doorways</li>
+    <li>Check parking — in tight Bristol streets like those in <strong>Totterdown</strong> or <strong>Montpelier</strong>, reserve a space if possible</li>
+    <li>Ensure electricity is on (needed for lighting in <a href="/house-clearance/loft-clearance/">lofts</a> and cellars)</li>
+    <li>Leave water on for any cleaning needs</li>
+    <li>Unlock all rooms, cupboards, garages and sheds</li>
+    <li>Gather all keys together and label them</li>
+    <li>Remove any items from the <a href="/garden-clearance/">garden</a> you want to keep</li>
+    <li>Inform neighbours about the clearance date and potential vehicle access</li>
+    <li>Note any hazardous materials (paint, chemicals, asbestos) and inform the clearance company</li>
+  </ul>
+
+  <h2>Phase 4: Clearance Day</h2>
+  <ul>
+    <li>Meet the team (or ensure key handover is arranged)</li>
+    <li>Walk through the property together, confirming what is being cleared</li>
+    <li>Point out any items to leave, any areas requiring extra care</li>
+    <li>Confirm any access restrictions (e.g. neighbour boundaries, shared paths)</li>
+    <li>Provide a contact number in case questions arise during the clearance</li>
+    <li>If present, stay available for queries but let the team work efficiently</li>
+  </ul>
+
+  <h2>Phase 5: After the Clearance</h2>
+  <ul>
+    <li>Walk through the cleared property to confirm everything is done</li>
+    <li>Check all rooms, cupboards, loft and cellar are empty</li>
+    <li>Collect your Waste Transfer Notes (legal requirement)</li>
+    <li>Request a Charity Donation Report if needed for records</li>
+    <li>Take photographs of the cleared property for your records</li>
+    <li>Cancel utilities if the property will be empty</li>
+    <li>Arrange final meter readings</li>
+    <li>Notify your estate agent or solicitor that the property is cleared</li>
+    <li>Return keys to the relevant party</li>
+    <li>Contact Bristol Council to update Council Tax status if applicable</li>
+  </ul>
+
+  <h2>Additional Checklist for Probate Properties</h2>
+  <ul>
+    <li>Confirm Grant of Probate has been issued before proceeding</li>
+    <li>Ensure all beneficiaries have had the opportunity to claim bequeathed items</li>
+    <li>Arrange professional valuations for items of significant value</li>
+    <li>Keep itemised records for HMRC estate reporting</li>
+    <li>File Waste Transfer Notes with the estate records</li>
+    <li>Notify the solicitor once clearance is complete</li>
+  </ul>
+
+  <h2>Need Help?</h2>
+  <p>
+    If you would like to discuss your clearance or get a quote, <a href="/contact/">contact us</a> or call <strong>0117 123 4567</strong>. We are happy to walk you through the process and answer any questions — no obligation.
+  </p>
+</GuideLayout>

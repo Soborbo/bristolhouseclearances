@@ -1,0 +1,122 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Council vs Clearance' },
+];
+
+const faqs = [
+  { q: 'How much does Bristol Council bulky waste collection cost?', a: 'Bristol City Council charges £35 for up to 3 bulky items. Additional items are £12 each. You must book online and items must be placed outside your property boundary on the collection day. This service is for Bristol residents only.' },
+  { q: 'How long is the wait for Bristol Council bulky waste collection?', a: 'Typically 2-4 weeks, though during busy periods (post-Christmas, summer) it can be longer. If you need items removed urgently — for a property sale, tenancy change or probate — a professional clearance service can usually attend within 24-48 hours.' },
+  { q: 'Can Bristol Council collect all types of bulky waste?', a: 'No. The council will not collect hazardous waste, building materials, garden waste, commercial waste, tyres, gas bottles or items weighing more than what two people can safely carry. A professional house clearance service can handle all of these.' },
+  { q: 'Is it worth using both council collection and a house clearance service?', a: 'For small quantities of standard furniture, the council service is good value. But if you have more than a few items, the maths tips in favour of a professional clearance — you get everything removed at once with no waiting and no lifting on your part.' },
+];
+---
+
+<GuideLayout
+  title="Bristol Council Bulky Waste vs House Clearance — Comparison | Clearfields"
+  description="Compare Bristol City Council bulky waste collection with professional house clearance. Costs, waiting times, item limits and which option suits you."
+  h1="Bristol Council Bulky Waste vs Professional House Clearance"
+  breadcrumbs={breadcrumbs}
+  publishDate="2026-03-01"
+  readingTime="4 min"
+  relatedGuides={[
+    { title: 'House Clearance Cost Bristol', href: '/guides/house-clearance-cost-bristol/' },
+    { title: 'House Clearance vs Skip Hire', href: '/guides/house-clearance-vs-skip-hire/' },
+  ]}
+  relatedServices={[
+    { title: 'House Clearance', href: '/house-clearance/' },
+    { title: 'Furniture Removal', href: '/house-clearance/furniture-removal/' },
+  ]}
+  faqs={faqs}
+>
+  <Fragment slot="hero-subtitle">
+    A practical comparison of Bristol City Council's bulky waste service and professional house clearance — so you can choose the right option for your situation.
+  </Fragment>
+
+  <p>
+    Bristol City Council offers a bulky waste collection service for residents, and it can be a cost-effective option for small jobs. But for anything more than a few items, a professional <a href="/house-clearance/">house clearance</a> is often faster, easier and better value. Here is how the two options compare.
+  </p>
+
+  <h2>Head-to-Head Comparison</h2>
+  <table>
+    <thead>
+      <tr><th>Feature</th><th>Council Bulky Waste</th><th>Professional Clearance</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Cost</td><td>£35 for 3 items, £12 per extra item</td><td>From £50 (single item) to £600+ (full house)</td></tr>
+      <tr><td>Waiting time</td><td>2-4 weeks</td><td>Usually 24-48 hours</td></tr>
+      <tr><td>Collection point</td><td>Outside your property boundary</td><td>From inside the property</td></tr>
+      <tr><td>Lifting</td><td>You move items outside</td><td>All lifting included</td></tr>
+      <tr><td>Item limits</td><td>Limited types and quantities</td><td>No limits</td></tr>
+      <tr><td>Hazardous items</td><td>Not accepted</td><td>Handled with specialist disposal</td></tr>
+      <tr><td>Recycling</td><td>Council recycling rates</td><td>95%+ recycling and donation</td></tr>
+      <tr><td>Documentation</td><td>Booking confirmation only</td><td>Waste Transfer Notes and Charity Report</td></tr>
+      <tr><td>Availability</td><td>Bristol residents only</td><td>Anyone with a Bristol property</td></tr>
+    </tbody>
+  </table>
+
+  <h2>When Council Bulky Waste Collection Works Well</h2>
+  <p>
+    The council service is a sensible choice when:
+  </p>
+  <ul>
+    <li>You have 3-6 standard items to dispose of (sofas, beds, white goods)</li>
+    <li>You are not in a hurry — you can wait 2-4 weeks</li>
+    <li>You can physically move the items outside your property boundary</li>
+    <li>The items are standard household furniture (no hazardous materials)</li>
+    <li>You live in a ground floor property with good access</li>
+  </ul>
+  <p>
+    For example, if you are replacing a sofa and a bed in your <strong>Filton</strong> flat and can carry them to the pavement, the council service at £35 is excellent value.
+  </p>
+
+  <h2>When Professional Clearance Is the Better Option</h2>
+  <p>
+    A professional clearance makes more sense when:
+  </p>
+  <ul>
+    <li><strong>You have more than 6 items</strong> — at £12 per additional item, costs escalate quickly</li>
+    <li><strong>You need items removed from inside</strong> — upstairs bedrooms, <a href="/house-clearance/loft-clearance/">lofts</a>, cellars</li>
+    <li><strong>You are on a deadline</strong> — property sales, tenancy handovers, probate timelines</li>
+    <li><strong>Items are too heavy to move yourself</strong> — wardrobes, pianos, heavy appliances</li>
+    <li><strong>You have restricted items</strong> — garden waste, building materials, hazardous goods</li>
+    <li><strong>You need documentation</strong> — Waste Transfer Notes for <a href="/probate-house-clearance/">probate</a> or landlord records</li>
+    <li><strong>Access is difficult</strong> — upper floor properties in Bristol's Victorian terraces</li>
+  </ul>
+
+  <h2>Cost Comparison by Scenario</h2>
+  <table>
+    <thead>
+      <tr><th>Scenario</th><th>Council Cost</th><th>Professional Cost</th><th>Better Option</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1 sofa + 1 mattress</td><td>£35</td><td>£80-120</td><td>Council</td></tr>
+      <tr><td>5 items of furniture</td><td>£59</td><td>£120-180</td><td>Council (if you can wait)</td></tr>
+      <tr><td>10 items of furniture</td><td>£119</td><td>£180-250</td><td>Professional (time + labour)</td></tr>
+      <tr><td>Full room clearance</td><td>Not suitable</td><td>£200-350</td><td>Professional</td></tr>
+      <tr><td>Full house clearance</td><td>Not suitable</td><td>£400-600</td><td>Professional</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Bristol-Specific Considerations</h2>
+  <p>
+    A few Bristol-specific factors to bear in mind:
+  </p>
+  <ul>
+    <li><strong>Parking restrictions</strong> — in Controlled Parking Zones (most of inner Bristol), items left on the pavement for council collection can cause obstructions. Streets in <strong>Clifton</strong>, <strong>Redland</strong> and <strong>Cotham</strong> are particularly narrow</li>
+    <li><strong>Weather</strong> — items left outside for council collection can get rain-damaged, making them harder to recycle or donate</li>
+    <li><strong>Flats</strong> — if you live in an upper-floor <a href="/house-clearance/flat-clearance/">flat</a> without a lift, getting heavy items downstairs and outside is a significant challenge</li>
+    <li><strong>Recycling centres</strong> — Bristol's three household recycling centres (St Philips, Hartcliffe, Avonmouth) accept items you bring yourself, but have quantity limits and restricted opening hours</li>
+  </ul>
+
+  <h2>The Practical Answer</h2>
+  <p>
+    For a few standard items with no time pressure, use the council service. For anything more substantial — or if you need speed, convenience and documentation — a professional clearance is the smarter choice.
+  </p>
+  <p>
+    <a href="/contact/">Contact us</a> for a free quote, or call <strong>0117 123 4567</strong>. We can usually give you a price within 2 hours and book a clearance within 24-48 hours.
+  </p>
+</GuideLayout>

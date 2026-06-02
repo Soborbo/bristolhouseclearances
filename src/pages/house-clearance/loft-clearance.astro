@@ -1,0 +1,93 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'House Clearance', href: '/house-clearance/' },
+  { label: 'Loft Clearance' },
+];
+
+const relatedServices = [
+  { title: 'House Clearance', href: '/house-clearance/', description: 'Complete residential house clearance service' },
+  { title: 'Cellar Clearance', href: '/house-clearance/cellar-clearance/', description: 'Cellar and basement clearance for Bristol properties' },
+  { title: 'Downsizing Clearance', href: '/house-clearance/downsizing-clearance/', description: 'Helping families downsize with care' },
+  { title: 'Furniture Removal', href: '/house-clearance/furniture-removal/', description: 'Bulky item and furniture removal' },
+];
+
+const faqs = [
+  { q: 'How much does a loft clearance cost in Bristol?', a: 'A loft clearance typically costs between £150 and £400 depending on the volume of items and ease of access. Lofts with boarding and a fixed ladder are quicker to clear; those requiring a pull-down ladder and careful handling of fragile items may take longer. We provide a fixed quote after seeing photos.' },
+  { q: 'Can you clear a loft before a conversion?', a: 'Yes — this is one of our most common loft clearance requests. We clear everything including old insulation, stored boxes, furniture, water tanks (drained) and any other items. We work alongside architects and builders to ensure the loft is ready for your conversion contractor.' },
+  { q: 'What if there is no proper loft access?', a: 'We bring our own equipment and can access lofts via pull-down ladders, hatches and even scaffolding for external access if needed. Our team is trained to work safely in confined roof spaces. If access is particularly restricted, we will assess this during the quoting stage.' },
+  { q: 'Do you remove old insulation and boarding?', a: 'Yes. We can strip old loft insulation, boarding, shelving and racking as part of the clearance. Any hazardous materials such as suspected asbestos are flagged and handled according to HSE regulations — we will advise you if specialist removal is needed.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Loft Clearance Bristol',
+  description: 'Professional loft clearance in Bristol. Loft conversion prep, storage clearance, old insulation removal. Fully insured, Price Lock Guarantee.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Clearfields',
+  },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Loft Clearance',
+};
+---
+
+<ServiceLayout
+  title="Loft Clearance Bristol | Conversion Prep & Storage — Clearfields"
+  description="Professional loft clearance in Bristol. Conversion prep, storage clearance, old insulation removal. From £150, fully insured. Call 0117 123 4567."
+  h1="Loft Clearance Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Professional loft clearance across Bristol. Whether you're preparing for a loft conversion, reclaiming storage space, or clearing decades of accumulated belongings — we handle it all.
+    </p>
+  </Fragment>
+
+  <h2>Loft Clearance for Every Situation</h2>
+  <p>
+    Bristol's lofts are notorious for becoming the final resting place of decades' worth of belongings. From boxes that haven't been opened since the last move to old furniture, Christmas decorations, suitcases and forgotten family heirlooms — your loft probably holds more than you think.
+  </p>
+  <p>
+    Whether you're preparing for a <strong>loft conversion</strong>, <a href="/house-clearance/downsizing-clearance/">downsizing to a smaller property</a>, selling your home, or simply want to reclaim usable storage space, our team will clear your loft quickly, safely and affordably.
+  </p>
+
+  <h2>What We Clear From Lofts</h2>
+  <ul>
+    <li><strong>Stored belongings</strong> — boxes, bags, suitcases, books, toys, clothing</li>
+    <li><strong>Furniture</strong> — old beds, chairs, tables, wardrobes that were "put up there temporarily"</li>
+    <li><strong>Old insulation and boarding</strong> — stripped ready for conversion contractors</li>
+    <li><strong>Water tanks and pipes</strong> — drained and removed (excluding asbestos)</li>
+    <li><strong>Electrical items</strong> — old TVs, computers, radios, lamps (WEEE compliant disposal)</li>
+    <li><strong>Building materials</strong> — leftover timber, plasterboard, tiles from previous projects</li>
+  </ul>
+
+  <h2>How Our Loft Clearance Works</h2>
+  <ol>
+    <li><strong>Send photos or call</strong> — snap a photo up through the loft hatch or describe the contents. Call <strong>0117 123 4567</strong> or WhatsApp us.</li>
+    <li><strong>Fixed quote within 2 hours</strong> — our Price Lock Guarantee means the price will not change on the day.</li>
+    <li><strong>We clear safely</strong> — our team brings protective sheeting for your landing, carries everything down carefully, and leaves the loft and your home clean and tidy.</li>
+  </ol>
+
+  <h2>Loft Conversions in Bristol</h2>
+  <p>
+    Loft conversions are one of the most popular home improvements in Bristol, adding significant value to Victorian and Edwardian terraces across <a href="/areas/clifton/">Clifton</a>, <a href="/areas/redland/">Redland</a>, <a href="/areas/totterdown/">Totterdown</a> and <a href="/areas/bishopston/">Bishopston</a>. Before your builder can start, the loft needs to be completely cleared — including old insulation, boarding, water tanks and stored items.
+  </p>
+  <p>
+    We work with several Bristol-based architects and builders and can schedule the clearance to fit your build timeline. Need the <a href="/house-clearance/cellar-clearance/">cellar cleared</a> at the same time? We'll do both in one visit.
+  </p>
+
+  <h2>Safe and Insured</h2>
+  <p>
+    Working in lofts requires care. Our team is trained in working at height, in confined spaces, and around potential hazards like old wiring, fragile ceilings and unstable flooring. We carry £10M public liability insurance and are fully licensed waste carriers. Every item is recycled, donated or disposed of responsibly — you receive Waste Transfer Notes and a Charity Donation Report as standard.
+  </p>
+  <p>
+    For a full <a href="/house-clearance/">house clearance</a> that includes the loft, <a href="/garden-clearance/">garden</a> and all rooms, we offer a complete service at a single price. Call <strong>0117 123 4567</strong> for your free quote.
+  </p>
+</ServiceLayout>

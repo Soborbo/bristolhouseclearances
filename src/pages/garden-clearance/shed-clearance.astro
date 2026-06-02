@@ -1,0 +1,106 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Garden Clearance', href: '/garden-clearance/' },
+  { label: 'Shed Clearance' },
+];
+
+const relatedServices = [
+  { title: 'Garden Clearance', href: '/garden-clearance/', description: 'Complete garden clearance including green waste and structures' },
+  { title: 'Garage Clearance', href: '/garden-clearance/garage-clearance/', description: 'Full garage clearance and conversion prep' },
+  { title: 'Outbuilding Clearance', href: '/garden-clearance/outbuilding-clearance/', description: 'Workshops, summerhouses and outbuildings' },
+];
+
+const faqs = [
+  { q: 'Can you remove the shed itself, not just the contents?', a: 'Yes. We dismantle and remove sheds, including the base and any concrete pad if required. We take away all timber, roofing felt, glass, fixings and debris. The area is left clear and level, ready for a new shed, patio or planting.' },
+  { q: 'Do you remove the shed base as well?', a: 'We can remove timber bases and basic concrete pads. For larger or reinforced concrete bases, we may recommend a groundworks contractor. We are happy to advise on the best approach when we see the base during our quote visit.' },
+  { q: 'How long does a shed clearance and removal take?', a: 'Most shed clearances — including dismantling the shed — take 1-3 hours depending on size and contents. Larger sheds or workshops with heavy contents may take half a day. We typically complete the job in a single visit.' },
+  { q: 'What happens to the shed timber?', a: 'Untreated timber is sent for biomass recycling. Treated timber (tanalised or painted) is disposed of separately as it cannot be composted or burned domestically. Metal fixings and fittings are recycled as scrap. We recycle as much material as possible.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Shed Clearance Bristol',
+  description: 'Shed clearance and removal in Bristol. Contents cleared, shed dismantled, base removed. Single-visit service. All waste recycled responsibly.',
+  provider: { '@type': 'LocalBusiness', name: 'Clearfields' },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Shed Clearance',
+};
+---
+
+<ServiceLayout
+  title="Shed Clearance Bristol | Dismantle & Remove — Clearfields"
+  description="Shed clearance and removal in Bristol. We clear contents, dismantle the shed and remove the base. Single-visit service. Free quotes. Call 0117 123 4567."
+  h1="Shed Clearance & Removal Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      We clear the contents, dismantle the shed and remove the base — all in a single visit. Your garden back, with no trace left behind.
+    </p>
+  </Fragment>
+
+  <h2>Complete Shed Clearance and Removal</h2>
+  <p>
+    Old sheds have a way of becoming dumping grounds — years of garden tools, paint pots, broken furniture and forgotten boxes piling up until the shed itself is rotting around them. Clearfields handles the entire job: we clear the contents, dismantle the structure and remove the base, leaving your garden clear and ready for whatever you have planned.
+  </p>
+
+  <h2>Our Shed Clearance Service Includes</h2>
+  <ul>
+    <li><strong>Contents clearance</strong> — everything inside the shed, including tools, chemicals, furniture and general clutter</li>
+    <li><strong>Shed dismantling</strong> — walls, roof, floor, doors and windows carefully taken apart</li>
+    <li><strong>Base removal</strong> — timber bases removed; concrete pad removal available</li>
+    <li><strong>Hazardous items</strong> — paint, oil, chemicals and treated timber disposed of correctly</li>
+    <li><strong>Site clearance</strong> — area left level, tidy and ready for use</li>
+  </ul>
+
+  <h2>Why Remove an Old Shed?</h2>
+  <p>
+    There are plenty of good reasons to get rid of that old shed:
+  </p>
+  <ul>
+    <li><strong>Selling your home</strong> — a rotting shed puts buyers off; a clear garden sells</li>
+    <li><strong>Making space</strong> — reclaim the footprint for a patio, lawn, play area or new shed</li>
+    <li><strong>Safety</strong> — old sheds harbour rot, mould, nesting pests and broken glass</li>
+    <li><strong>Planning</strong> — clearing the way for a garden room, summerhouse or extension</li>
+    <li><strong>Tenancy requirements</strong> — landlords clearing between tenants</li>
+  </ul>
+
+  <h2>Shed Sizes We Handle</h2>
+  <p>
+    From a small 4x4 potting shed in a Bishopston terrace garden to a large 12x8 workshop in Henleaze, we dismantle and remove sheds of all sizes. We also handle:
+  </p>
+  <ul>
+    <li>Greenhouses (glass handled safely)</li>
+    <li>Playhouses and children's dens</li>
+    <li>Log stores and lean-tos</li>
+    <li>Pergolas and garden arches</li>
+  </ul>
+  <p>
+    For larger structures such as workshops, summerhouses or stables, see our <a href="/garden-clearance/outbuilding-clearance/">outbuilding clearance service</a>.
+  </p>
+
+  <h2>Shed Clearance Pricing</h2>
+  <table>
+    <thead>
+      <tr><th>Service</th><th>Typical Price</th><th>Details</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Contents only</td><td>£100 – £200</td><td>Empty the shed, shed stays</td></tr>
+      <tr><td>Contents + dismantle</td><td>£200 – £350</td><td>Clear contents and remove shed</td></tr>
+      <tr><td>Full removal inc. base</td><td>£250 – £450</td><td>Everything including base removal</td></tr>
+      <tr><td>Large shed / workshop</td><td>From £400</td><td>Bespoke quote based on size</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Part of a Bigger Job?</h2>
+  <p>
+    Shed clearance is often part of a wider garden or property project. We frequently combine it with <a href="/garden-clearance/garage-clearance/">garage clearance</a>, <a href="/garden-clearance/garden-waste-removal/">garden waste removal</a> or a full <a href="/garden-clearance/">garden clearance</a>. If you're clearing a whole property — perhaps for sale or during <a href="/probate-house-clearance/">probate</a> — the shed and garden are included in our full house clearance service. Call <strong>0117 123 4567</strong> for a free quote.
+  </p>
+</ServiceLayout>

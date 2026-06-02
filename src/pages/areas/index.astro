@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABanner from '../../components/sections/CTABanner.astro';
+import FloatingMobileBar from '../../components/FloatingMobileBar.astro';
+import BackToTop from '../../components/BackToTop.astro';
+import SchemaLocalBusiness from '../../components/seo/SchemaLocalBusiness.astro';
+import { regions, areas } from '../../config/areas';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Areas We Cover' },
+];
+---
+
+<Layout
+  title="Areas We Cover | House Clearance Across Bristol & Bath — Clearfields"
+  description="House clearance across Bristol, Bath, South Gloucestershire and North Somerset. 50+ areas covered including Clifton, Redland, Bedminster, Fishponds and more."
+>
+  <Header />
+  <main id="main-content">
+    <div class="bg-slate-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <Breadcrumb items={breadcrumbs} />
+      </div>
+    </div>
+
+    <section class="bg-brand-navy text-white py-12 sm:py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Areas We Cover</h1>
+        <p class="text-xl text-slate-300 max-w-2xl">Professional house clearance across Bristol, Bath and all surrounding areas. We cover every postcode within a 30-mile radius.</p>
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <!-- Regional hubs -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {regions.map(region => (
+          <a href={`/areas/${region.slug}/`} class="group bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg hover:border-brand-green transition-all">
+            <h2 class="text-lg font-bold text-brand-navy group-hover:text-brand-green transition-colors mb-2">{region.name}</h2>
+            <p class="text-sm text-slate-500 mb-3">{region.description.slice(0, 80)}...</p>
+            <span class="text-sm text-brand-green font-medium">View areas →</span>
+          </a>
+        ))}
+      </div>
+
+      <!-- All areas by region -->
+      {regions.map(region => {
+        const regionAreas = areas.filter(a => a.regionSlug === region.slug);
+        return (
+          <section class="mb-12">
+            <h2 class="text-2xl font-bold text-brand-navy mb-4">
+              <a href={`/areas/${region.slug}/`} class="hover:text-brand-green transition-colors">{region.name}</a>
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+              {regionAreas.map(area => (
+                <a
+                  href={`/areas/${area.slug}/`}
+                  class="bg-slate-50 hover:bg-brand-green hover:text-white text-slate-700 px-4 py-3 rounded-lg text-sm font-medium text-center transition-colors"
+                >
+                  {area.name}
+                </a>
+              ))}
+            </div>
+          </section>
+        );
+      })}
+
+      <!-- Not in the list? -->
+      <div class="bg-slate-50 rounded-xl p-8 text-center mt-8">
+        <h2 class="text-xl font-bold text-brand-navy mb-2">Don't see your area?</h2>
+        <p class="text-slate-600 mb-4">We cover a 30-mile radius from Bristol. If your area isn't listed, we can probably still help.</p>
+        <a href="/contact/" class="inline-flex items-center gap-2 bg-brand-green hover:bg-brand-green-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+          Check Your Area
+        </a>
+      </div>
+    </div>
+
+    <CTABanner />
+  </main>
+  <Footer />
+  <FloatingMobileBar />
+  <BackToTop />
+  <SchemaLocalBusiness />
+</Layout>

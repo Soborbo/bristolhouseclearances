@@ -1,0 +1,108 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Garden Clearance', href: '/garden-clearance/' },
+  { label: 'Garage Clearance' },
+];
+
+const relatedServices = [
+  { title: 'Garden Clearance', href: '/garden-clearance/', description: 'Complete garden clearance including green waste and structures' },
+  { title: 'Shed Clearance', href: '/garden-clearance/shed-clearance/', description: 'Shed clearance and removal service' },
+  { title: 'House Clearance', href: '/house-clearance/', description: 'Full residential house clearance in Bristol' },
+];
+
+const faqs = [
+  { q: 'Do you clear garages with hazardous items like paint and chemicals?', a: 'Yes. Garages often contain paints, oils, solvents, pesticides, batteries and gas canisters. We handle all of these in compliance with hazardous waste regulations. These items are processed through licensed hazardous waste facilities — they cannot legally go in general waste or standard recycling.' },
+  { q: 'Can you clear a garage ready for conversion?', a: 'Absolutely. Garage conversions are popular in Bristol, and we clear garages to bare shell ready for your builder. We remove all contents, shelving, workbenches, floor coverings and wall-mounted items. We can also remove the garage door if needed.' },
+  { q: 'How much does a garage clearance cost in Bristol?', a: 'A typical single garage clearance costs between £200 and £450 depending on how full it is and whether it contains hazardous items. Double garages typically range from £350 to £650. We provide fixed quotes after assessing the contents — no hidden costs.' },
+  { q: 'Do you recycle items from garage clearances?', a: 'Yes, we recycle over 90% of garage contents. Metal tools, garden equipment, bikes and scrap metal go to recycling. Usable items like power tools, sports equipment and furniture are donated to Bristol charities. Wood, cardboard and plastics are separated and recycled.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Garage Clearance Bristol',
+  description: 'Professional garage clearance in Bristol. Conversion prep, hazardous item disposal, full contents removal. Fixed quotes, same-day available.',
+  provider: { '@type': 'LocalBusiness', name: 'Clearfields' },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Garage Clearance',
+};
+---
+
+<ServiceLayout
+  title="Garage Clearance Bristol | Conversion Prep & Full Clear — Clearfields"
+  description="Professional garage clearance in Bristol. Hazardous item disposal, conversion prep, full contents removal. 90% recycled. Fixed quotes. Call 0117 123 4567."
+  h1="Garage Clearance Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Reclaim your garage. Whether you need space for your car, you're preparing for a conversion, or you're selling up — we clear garages quickly, safely and affordably.
+    </p>
+  </Fragment>
+
+  <h2>Bristol's Garage Clearance Specialists</h2>
+  <p>
+    The garage is often the last space anyone wants to tackle. Years of accumulated tools, paint tins, broken furniture, sports equipment, boxes of "stuff" — it all builds up. Clearfields takes the entire job off your hands. We clear everything, handle hazardous items properly, and leave your garage empty and ready for whatever comes next.
+  </p>
+  <p>
+    We clear garages across every Bristol neighbourhood — from integral garages in Filton and Bradley Stoke to detached garages in Westbury-on-Trym and standalone lock-ups in Bedminster and Southville.
+  </p>
+
+  <h2>What We Clear from Garages</h2>
+  <ul>
+    <li><strong>General contents</strong> — boxes, bags, furniture, household items</li>
+    <li><strong>Tools and equipment</strong> — hand tools, power tools, workbenches, compressors</li>
+    <li><strong>Garden equipment</strong> — mowers, strimmers, hoses, garden furniture</li>
+    <li><strong>Sports and leisure</strong> — bikes, golf clubs, gym equipment, camping gear</li>
+    <li><strong>Hazardous items</strong> — paint, oil, solvents, pesticides, batteries, gas bottles</li>
+    <li><strong>Fixtures</strong> — shelving, racking, workbenches, wall-mounted storage</li>
+    <li><strong>Large items</strong> — chest freezers, washing machines, tumble dryers</li>
+  </ul>
+
+  <h2>Garage Conversion Preparation</h2>
+  <p>
+    Garage conversions are one of the most popular home improvements in Bristol — adding a bedroom, home office or playroom without the cost of an extension. We prepare garages for conversion by:
+  </p>
+  <ul>
+    <li>Removing all contents including hazardous materials</li>
+    <li>Stripping shelving, racking and wall-mounted fixtures</li>
+    <li>Removing workbenches and built-in storage</li>
+    <li>Taking up floor coverings and matting</li>
+    <li>Removing the garage door if instructed by your builder</li>
+  </ul>
+  <p>
+    We leave the space completely empty and ready for your contractor to begin work.
+  </p>
+
+  <h2>Handling Hazardous Items</h2>
+  <p>
+    Garages are the most common place we find hazardous household waste. Old paint tins, white spirit, engine oil, weedkiller, rat poison, aerosols and gas bottles all require specialist disposal. We separate and process these items through licensed hazardous waste facilities — keeping you compliant and keeping harmful materials out of landfill.
+  </p>
+
+  <h2>Garage Clearance Pricing</h2>
+  <table>
+    <thead>
+      <tr><th>Garage Type</th><th>Typical Price</th><th>Includes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Single garage (light)</td><td>£200 – £300</td><td>Contents removal, recycling</td></tr>
+      <tr><td>Single garage (full)</td><td>£300 – £450</td><td>Full clearance including hazardous</td></tr>
+      <tr><td>Double garage</td><td>£350 – £650</td><td>Full clearance, all contents</td></tr>
+      <tr><td>Conversion prep</td><td>£400 – £600</td><td>Strip to shell, fixtures removed</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Combine with Other Services</h2>
+  <p>
+    Garage clearance often comes as part of a bigger project. Many of our clients combine it with <a href="/garden-clearance/shed-clearance/">shed clearance</a>, <a href="/garden-clearance/garden-waste-removal/">garden waste removal</a> or a full <a href="/garden-clearance/">garden clearance</a>. If you're selling a property, we can clear the garage alongside a complete <a href="/house-clearance/">house clearance</a> for a bundled price.
+  </p>
+  <p>
+    For <a href="/probate-house-clearance/">probate properties</a>, the garage is included as standard in our whole-property clearance. Call us on <strong>0117 123 4567</strong> for a free quote.
+  </p>
+</ServiceLayout>

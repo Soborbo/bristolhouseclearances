@@ -1,0 +1,122 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Probate House Clearance', href: '/probate-house-clearance/' },
+  { label: 'Bereavement Clearance' },
+];
+
+const relatedServices = [
+  { title: 'Probate House Clearance', href: '/probate-house-clearance/', description: 'Full probate clearance with inventory and solicitor liaison' },
+  { title: 'Estate Clearance', href: '/probate-house-clearance/estate-clearance/', description: 'Estate clearance with professional valuations' },
+  { title: 'House Clearance', href: '/house-clearance/', description: 'General residential house clearance in Bristol' },
+];
+
+const faqs = [
+  { q: 'How soon after a bereavement can you clear the property?', a: 'There is no set timeframe — we work entirely around your needs. Some families prefer to begin within days, while others wait weeks or months. We never pressure you and can hold your booking until you feel ready. When you are ready, we can usually attend within 2-3 working days.' },
+  { q: 'Can family members be present during the clearance?', a: 'Absolutely. Many families find it helpful to be present, while others prefer not to be there. Both are completely fine. If you are present, we will check with you before removing anything. If you prefer not to attend, we send photo updates throughout and set aside anything personal or sentimental for you to collect.' },
+  { q: 'How do you handle personal and sentimental items?', a: 'We treat every item with respect. Photographs, letters, personal documents, jewellery and keepsakes are carefully set aside in labelled boxes for you to review. Nothing of personal or sentimental value is ever disposed of without your explicit instruction.' },
+  { q: 'Can you recommend bereavement support services in Bristol?', a: 'Yes. We can signpost you to local organisations including Cruse Bereavement Support (Bristol branch), The Compassionate Friends, Bristol Mind bereavement counselling, and Age UK Bristol. We understand that clearing a loved one\'s home is just one part of a much bigger journey.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Bereavement House Clearance Bristol',
+  description: 'Compassionate bereavement house clearance in Bristol. Sensitive, unhurried clearance after the loss of a loved one. Personal items carefully preserved.',
+  provider: { '@type': 'LocalBusiness', name: 'Clearfields' },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Bereavement House Clearance',
+};
+---
+
+<ServiceLayout
+  title="Bereavement Clearance Bristol | Compassionate & Sensitive — Clearfields"
+  description="Compassionate bereavement house clearance in Bristol. We handle your loved one's belongings with sensitivity, care and respect. No rush, no pressure. Call 0117 123 4567."
+  h1="Bereavement House Clearance Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      We understand that clearing a loved one's home is one of the hardest things you'll ever have to do. Our team is here to help — gently, respectfully, and entirely at your pace.
+    </p>
+  </Fragment>
+
+  <h2>We're Here When You're Ready</h2>
+  <p>
+    Losing someone you love changes everything. The thought of clearing their home — the place where they lived, where memories were made — can feel overwhelming and deeply painful. Please know that you don't have to face this alone.
+  </p>
+  <p>
+    At Clearfields, our bereavement clearance service is built around one simple principle: <strong>your feelings come first</strong>. There is no timeline, no pressure, and no judgement. Whether you need us next week or in three months, we will be here when you're ready.
+  </p>
+
+  <h2>How Our Bereavement Service Works</h2>
+  <p>
+    Every bereavement clearance is different, because every person and every family is different. Here is how we typically approach things — but we always adapt to your needs:
+  </p>
+  <ol>
+    <li><strong>A gentle conversation</strong> — we talk with you (by phone, email or in person) to understand your situation and what you need. There's no obligation.</li>
+    <li><strong>A quiet visit</strong> — if helpful, we visit the property with you to understand what's involved. We can also work from photographs if you prefer not to visit.</li>
+    <li><strong>Personal items first</strong> — before any clearance begins, we carefully identify and set aside photographs, letters, jewellery, keepsakes and personal documents.</li>
+    <li><strong>The clearance</strong> — our team works respectfully and quietly through the property. We treat your loved one's belongings with the dignity they deserve.</li>
+    <li><strong>Aftercare</strong> — we provide full documentation including Waste Transfer Notes and a Charity Donation Report showing where usable items found new homes.</li>
+  </ol>
+
+  <h2>Preserving What Matters</h2>
+  <p>
+    We know that a chipped teacup or a well-worn cardigan can hold more value than any antique. Our team is trained to recognise the difference between what has financial value and what has <em>emotional</em> value — and we treat both with equal care.
+  </p>
+  <p>
+    Items we routinely set aside for families include:
+  </p>
+  <ul>
+    <li>Photographs, albums and home videos</li>
+    <li>Letters, cards and personal correspondence</li>
+    <li>Jewellery, watches and personal effects</li>
+    <li>Military medals, service records and memorabilia</li>
+    <li>Children's artwork, school reports and keepsakes</li>
+    <li>Religious items and cultural artefacts</li>
+  </ul>
+
+  <h2>Donations in Their Memory</h2>
+  <p>
+    Many families find comfort in knowing that their loved one's belongings are helping others. We work with Bristol charities including the British Heart Foundation, Emmaus Bristol, and local hospice shops to ensure that usable clothing, furniture and household items find new homes. We provide a full Charity Donation Report so you know exactly where everything went.
+  </p>
+
+  <h2>Working with the Wider Family</h2>
+  <p>
+    Bereavement can be complicated — especially when multiple family members are involved. We're experienced in situations where different relatives have different wishes. We can coordinate with the executor, liaise with <a href="/probate-house-clearance/">probate solicitors</a>, and ensure that everyone has the opportunity to collect items that are meaningful to them before the clearance begins.
+  </p>
+  <p>
+    If the property also requires an <a href="/probate-house-clearance/estate-clearance/">estate clearance with valuations</a>, we can handle that too — identifying items of financial value for the estate while preserving everything of sentimental importance.
+  </p>
+
+  <h2>Bristol Areas We Serve</h2>
+  <p>
+    We provide bereavement clearance across all areas of Bristol including Clifton, Redland, Bishopston, Henleaze, Westbury-on-Trym, Southville, Bedminster, Knowle, Brislington and Fishponds. We also cover Bath, North Somerset and South Gloucestershire.
+  </p>
+
+  <h2>Support Resources</h2>
+  <p>
+    Clearing a loved one's home is just one part of the grieving process. If you or someone in your family would benefit from support, these Bristol-based organisations can help:
+  </p>
+  <ul>
+    <li><strong>Cruse Bereavement Support</strong> — free bereavement counselling and support groups (Bristol branch)</li>
+    <li><strong>The Compassionate Friends</strong> — support for bereaved parents and families</li>
+    <li><strong>Bristol Mind</strong> — bereavement counselling services</li>
+    <li><strong>Age UK Bristol</strong> — practical and emotional support for older people</li>
+    <li><strong>Samaritans</strong> — 24/7 listening service on 116 123</li>
+  </ul>
+
+  <h2>A Gentle First Step</h2>
+  <p>
+    If you're not sure where to start, that's okay. You're welcome to call us on <strong>0117 123 4567</strong> just to talk things through — there's no obligation and no charge for that conversation. We've helped hundreds of Bristol families through this process, and we would be honoured to help yours.
+  </p>
+  <p>
+    You might also find our <a href="/guides/clearing-house-after-death/">guide to clearing a house after a death</a> helpful. It covers the practical steps at your own pace. And if the property needs a full <a href="/house-clearance/">house clearance</a> alongside the bereavement clearance, we can coordinate everything together.
+  </p>
+</ServiceLayout>

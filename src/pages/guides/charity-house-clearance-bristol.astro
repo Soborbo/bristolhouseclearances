@@ -1,0 +1,130 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Charity Clearance' },
+];
+
+const faqs = [
+  { q: 'Will Bristol charities collect furniture from my home?', a: 'Some will. The SOFA Project and British Heart Foundation offer free collection of furniture in good condition. However, they are selective about what they accept, have waiting lists of 1-4 weeks, and will not clear a whole house. For full property clearances, a professional service that donates on your behalf is more practical.' },
+  { q: 'Can I get a tax deduction for donating items from a house clearance?', a: 'In the UK, individuals cannot claim tax relief on donated household goods. However, if the items are part of a probate estate, charitable donations can reduce the Inheritance Tax liability. Speak to your solicitor about this — our Charity Donation Reports provide the documentation you need.' },
+  { q: 'What condition do items need to be in for charity donation?', a: 'Items should be clean, functional and in a condition you would be happy to give to a friend. Charities cannot accept stained mattresses, broken furniture, non-working electrical items without PAT testing, or items with significant wear. Our team assesses each item during the clearance.' },
+  { q: 'How do I know my items actually go to charity?', a: 'We provide a Charity Donation Report with every clearance, listing the items donated and which charity received them. Our charity partners are well-known Bristol organisations. You can verify donations with them directly if you wish.' },
+];
+---
+
+<GuideLayout
+  title="Charity House Clearance Bristol — Donate Items to Local Charities | Clearfields"
+  description="Guide to donating house clearance items to Bristol charities. SOFA Project, Emmaus, BHF and more. How charity clearance works and what gets donated."
+  h1="Charity House Clearance in Bristol — Donating Items to Local Charities"
+  breadcrumbs={breadcrumbs}
+  publishDate="2026-03-03"
+  readingTime="4 min"
+  relatedGuides={[
+    { title: 'What Companies Do With Your Stuff', href: '/guides/what-house-clearance-companies-do-with-stuff/' },
+    { title: 'Probate Clearance Guide', href: '/guides/probate-clearance-guide/' },
+  ]}
+  relatedServices={[
+    { title: 'House Clearance', href: '/house-clearance/' },
+    { title: 'Furniture Removal', href: '/house-clearance/furniture-removal/' },
+    { title: 'Probate House Clearance', href: '/probate-house-clearance/' },
+  ]}
+  faqs={faqs}
+>
+  <Fragment slot="hero-subtitle">
+    How to ensure your unwanted items find new homes through Bristol's network of charities and reuse organisations.
+  </Fragment>
+
+  <p>
+    Many people want their belongings to help others rather than go to waste. Bristol has an excellent network of charities and reuse organisations, and when you use our <a href="/house-clearance/">house clearance service</a>, we ensure that everything reusable is donated to local good causes. This guide explains how charity clearance works in Bristol and introduces the organisations that benefit.
+  </p>
+
+  <h2>Bristol's Key Charity Partners</h2>
+
+  <h3>The SOFA Project</h3>
+  <p>
+    Bristol's largest furniture reuse charity. The SOFA Project collects, refurbishes and sells affordable furniture to people on low incomes across Bristol and South Gloucestershire. They accept sofas, beds, tables, chairs, wardrobes and other household furniture in good condition. Based in <strong>St Philips</strong>, they operate shops and a delivery service.
+  </p>
+
+  <h3>Emmaus Bristol</h3>
+  <p>
+    Emmaus supports formerly homeless people by providing homes and work in their social enterprises. Their shops in <strong>Stokes Croft</strong> and <strong>Bedminster</strong> sell furniture, clothing, books, kitchenware and bric-a-brac. Emmaus accepts a wider range of items than most charities and is one of our most frequent donation partners.
+  </p>
+
+  <h3>British Heart Foundation (BHF)</h3>
+  <p>
+    The BHF has furniture and electrical stores across Bristol that accept larger items including sofas, beds and tested electrical goods. They offer free collection for furniture in good condition and the proceeds fund vital heart research.
+  </p>
+
+  <h3>Other Bristol Charities</h3>
+  <ul>
+    <li><strong>SCOPE</strong> — clothing, books, homeware (multiple Bristol shops)</li>
+    <li><strong>Oxfam</strong> — books, clothing, music (Gloucester Road, Clifton Village)</li>
+    <li><strong>Children's Hospice South West</strong> — general charity shop donations</li>
+    <li><strong>St Peter's Hospice</strong> — Bristol-based charity with shops across the city</li>
+    <li><strong>Re:Work Bristol</strong> — refurbishes IT equipment for community organisations</li>
+  </ul>
+  <p>
+    For a full list of our partners, see our <a href="/charity-partners/">charity partners page</a>.
+  </p>
+
+  <h2>What Can Be Donated?</h2>
+  <table>
+    <thead>
+      <tr><th>Item Category</th><th>Accepted If</th><th>Common Rejections</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Sofas and armchairs</td><td>Fire labels intact, no tears or stains</td><td>Missing fire labels, heavy staining</td></tr>
+      <tr><td>Beds and mattresses</td><td>Clean, no stains, structurally sound</td><td>Stained mattresses (hygiene regulations)</td></tr>
+      <tr><td>Tables and chairs</td><td>Stable, no broken parts</td><td>Wobbly or damaged beyond easy repair</td></tr>
+      <tr><td>Electrical items</td><td>Working, with PAT test</td><td>Non-working, no plug, safety concerns</td></tr>
+      <tr><td>Clothing</td><td>Clean, wearable condition</td><td>Heavily worn, stained, damaged</td></tr>
+      <tr><td>Books</td><td>Good condition, no mould</td><td>Mouldy, water-damaged, encyclopaedias</td></tr>
+      <tr><td>Kitchenware</td><td>Clean, complete sets preferred</td><td>Chipped, cracked, incomplete</td></tr>
+    </tbody>
+  </table>
+
+  <h2>How Charity Clearance Works With Us</h2>
+  <p>
+    When we clear a property, our process ensures maximum donation:
+  </p>
+  <ol>
+    <li><strong>During the clearance</strong> — our team assesses every item for donation suitability</li>
+    <li><strong>Separation</strong> — reusable items are carefully loaded separately from recycling and waste</li>
+    <li><strong>Distribution</strong> — we deliver directly to charity partners, matching items to the most appropriate organisation</li>
+    <li><strong>Documentation</strong> — you receive a Charity Donation Report detailing what went where</li>
+  </ol>
+  <p>
+    This approach is far more efficient than trying to arrange individual charity collections yourself. Charities have limited collection capacity and often cannot handle full house clearances. We bridge that gap.
+  </p>
+
+  <h2>Charity Clearance vs Direct Charity Collection</h2>
+  <p>
+    You might wonder whether it is better to contact charities directly. Here is the comparison:
+  </p>
+  <ul>
+    <li><strong>Charity collection</strong> — free but selective. Long waiting lists (2-4 weeks). Will only take items in good condition. Will not clear a whole property. You must be available during their collection window.</li>
+    <li><strong>Our charity clearance</strong> — we clear everything in one visit. We donate what we can, recycle the rest. You get documentation. One phone call handles it all.</li>
+  </ul>
+  <p>
+    For <a href="/probate-house-clearance/">probate clearances</a>, charity donations can also have Inheritance Tax implications — donations to registered charities may reduce the estate's IHT liability. Our documentation supports this.
+  </p>
+
+  <h2>Making the Most of Charity Donation</h2>
+  <p>
+    To maximise the amount that goes to charity from your clearance:
+  </p>
+  <ul>
+    <li>Keep items clean and dry before the clearance</li>
+    <li>Do not leave furniture in damp rooms or garages where it may deteriorate</li>
+    <li>Keep original fire labels on upholstered furniture — items without labels cannot legally be resold</li>
+    <li>If the property has been empty, check for damp or mould damage on soft furnishings</li>
+  </ul>
+
+  <h2>Get in Touch</h2>
+  <p>
+    Want to ensure your items help Bristol's communities? <a href="/contact/">Contact us</a> or call <strong>0117 123 4567</strong> to discuss your clearance. We will maximise donations and provide full documentation of where everything goes.
+  </p>
+</GuideLayout>

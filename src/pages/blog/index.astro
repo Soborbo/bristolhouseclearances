@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABanner from '../../components/sections/CTABanner.astro';
+import FloatingMobileBar from '../../components/FloatingMobileBar.astro';
+import BackToTop from '../../components/BackToTop.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog' },
+];
+
+const posts = [
+  {
+    title: 'Spring Cleaning & Clearance Guide for Bristol Homes',
+    href: '/blog/spring-cleaning-clearance-guide/',
+    description: 'Practical spring cleaning tips and room-by-room clearance advice for Bristol homeowners. Get your home fresh for the new season.',
+    date: '2026-03-01',
+    category: 'Seasonal',
+  },
+  {
+    title: 'New Year Decluttering — A Fresh Start for Your Bristol Home',
+    href: '/blog/new-year-decluttering-guide/',
+    description: 'Motivation and methods for a New Year declutter. Start the year lighter with our practical Bristol-focused guide.',
+    date: '2026-01-05',
+    category: 'Seasonal',
+  },
+  {
+    title: 'Summer Moving Season — House Clearance Tips for Bristol',
+    href: '/blog/summer-moving-house-clearance/',
+    description: 'Moving house this summer? Tips for clearing out before you move, reducing removal costs and getting your deposit back.',
+    date: '2026-03-10',
+    category: 'Moving',
+  },
+  {
+    title: 'Student House Clearance in Bristol — End of Year Guide',
+    href: '/blog/student-house-clearance-bristol/',
+    description: 'Guide for Bristol students clearing shared houses at the end of the academic year. Avoid deposit deductions and disposal fines.',
+    date: '2026-03-05',
+    category: 'Students',
+  },
+  {
+    title: 'Spring Garden Clearance — Get Your Bristol Garden Ready',
+    href: '/blog/garden-clearance-spring-guide/',
+    description: 'Tips for clearing winter debris, tackling overgrown gardens and getting your outdoor space ready for spring and summer.',
+    date: '2026-02-25',
+    category: 'Garden',
+  },
+];
+---
+
+<Layout
+  title="Blog | House Clearance Tips & Advice — Clearfields"
+  description="House clearance tips, seasonal guides and Bristol-specific advice. Practical articles on decluttering, spring cleaning, moving house and garden clearance."
+>
+  <Header />
+  <main id="main-content">
+    <div class="bg-slate-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <Breadcrumb items={breadcrumbs} />
+      </div>
+    </div>
+
+    <section class="bg-brand-navy text-white py-12 sm:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Blog</h1>
+        <p class="text-xl text-slate-300 max-w-2xl">Practical tips, seasonal advice and Bristol-focused guides to help you clear, declutter and recycle.</p>
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map(post => (
+          <a href={post.href} class="group bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg hover:border-brand-green transition-all">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-block bg-brand-green/10 text-brand-green text-xs font-semibold px-3 py-1 rounded-full">{post.category}</span>
+              <span class="text-xs text-slate-400">{post.date}</span>
+            </div>
+            <h2 class="text-lg font-bold text-brand-navy group-hover:text-brand-green transition-colors mb-2">{post.title}</h2>
+            <p class="text-sm text-slate-500">{post.description}</p>
+            <span class="inline-block mt-4 text-sm text-brand-green font-medium">Read article →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <CTABanner />
+  </main>
+  <Footer />
+  <FloatingMobileBar />
+  <BackToTop />
+</Layout>

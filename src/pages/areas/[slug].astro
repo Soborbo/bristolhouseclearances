@@ -1,0 +1,279 @@
+---
+import AreaLayout from '../../layouts/AreaLayout.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABanner from '../../components/sections/CTABanner.astro';
+import FloatingMobileBar from '../../components/FloatingMobileBar.astro';
+import BackToTop from '../../components/BackToTop.astro';
+import SchemaLocalBusiness from '../../components/seo/SchemaLocalBusiness.astro';
+import { areas, regions, getAreasByRegion, getRegionBySlug, getAreaBySlug } from '../../config/areas';
+
+export function getStaticPaths() {
+  const paths: { params: { slug: string } }[] = [];
+
+  // Regional hub pages
+  for (const region of regions) {
+    paths.push({ params: { slug: region.slug } });
+  }
+
+  // Individual area pages
+  for (const area of areas) {
+    paths.push({ params: { slug: area.slug } });
+  }
+
+  return paths;
+}
+
+const { slug } = Astro.params;
+
+// Determine if this is a region hub or an individual area
+const region = getRegionBySlug(slug!);
+const area = getAreaBySlug(slug!);
+const isRegion = !!region;
+
+// Generate area-specific FAQs based on serviceFocus for differentiation
+function generateAreaFaqs(areaData: typeof areas[0]) {
+  const name = areaData.name;
+  const base = [
+    { q: `How much does house clearance cost in ${name}?`, a: `House clearance in ${name} typically costs between £175 and £900 depending on property size, volume and access. ${areaData.propertyTypes[0]} in ${name} usually fall in the £300-£600 range. We provide free, no-obligation quotes — send us WhatsApp photos or call 0117 123 4567.` },
+  ];
+
+  if (areaData.serviceFocus === 'probate-estate') {
+    base.push(
+      { q: `Do I need probate before clearing a house in ${name}?`, a: `No — as executor, you can arrange a clearance before the Grant of Probate is issued. We work with many ${name} families and solicitors handling probate cases. We provide a full inventory of items suitable for estate records, flag valuable items for professional valuation, and issue Waste Transfer Notes.` },
+      { q: `How do you handle valuable items in ${name} properties?`, a: `${name} properties often contain items of unexpected value. Our team is trained to identify antiques, jewellery, artwork and collectibles. We flag everything for your review before any disposal and can arrange professional valuations or auction house consignment if needed.` },
+    );
+  } else if (areaData.serviceFocus === 'landlord-tenant') {
+    base.push(
+      { q: `How fast can you do an end-of-tenancy clearance in ${name}?`, a: `We offer same-day end-of-tenancy clearance in ${name} subject to availability. For landlords and letting agents with urgent turnarounds, we can often attend within hours. We provide full photographic documentation for deposit dispute records.` },
+      { q: `Do you offer landlord accounts for ${name} properties?`, a: `Yes. Landlords managing multiple properties in ${name} benefit from our priority scheduling, volume discounts and direct invoicing. Many ${name} letting agents add us to their preferred supplier list for fast turnaround between tenancies.` },
+    );
+  } else if (areaData.serviceFocus === 'family-downsizing') {
+    base.push(
+      { q: `Can you help with downsizing in ${name}?`, a: `Absolutely. Many ${name} residents are moving from larger family homes to smaller properties or retirement accommodation. We take a staged approach — working room by room at your pace, sorting items into keep, donate, recycle and dispose. There is no rush and no pressure.` },
+      { q: `What happens to donated items from ${name}?`, a: `Good-quality furniture and household items from ${name} clearances go to local charities including ${areaData.localCharities.join(' and ')}. You receive a Charity Donation Report showing exactly where your items went — many families find this makes the downsizing process feel much more positive.` },
+    );
+  } else {
+    base.push(
+      { q: `What types of clearance do you do in ${name}?`, a: `We handle all types of clearance in ${name}: full house clearance, probate and bereavement clearance, end-of-tenancy clearance for landlords, garden and garage clearance, and single-item furniture removal. Whatever the situation, we have experience handling it.` },
+      { q: `Can you clear a property in ${name} if I'm not local?`, a: `Yes — many of our ${name} clients live elsewhere. We arrange key collection from neighbours, letting agents or lockboxes and send live photo updates throughout the clearance. You can manage the entire process remotely by phone and WhatsApp.` },
+    );
+  }
+
+  base.push(
+    { q: `What recycling centre do you use for ${name}?`, a: `Items from ${name} are processed at ${areaData.nearestRecyclingCentre}. We sort all items on-site before transport — recyclables, charity donations and general waste are separated to achieve our 95%+ recycling rate. You receive full Waste Transfer Notes as standard.` },
+  );
+
+  return base;
+}
+
+// Get nearby areas for sidebar
+function getNearbyAreas(currentSlug: string, regionSlug: string) {
+  return areas
+    .filter(a => a.regionSlug === regionSlug && a.slug !== currentSlug)
+    .slice(0, 6)
+    .map(a => ({ name: a.name, slug: a.slug }));
+}
+---
+
+{isRegion ? (
+  <!-- Regional Hub Page -->
+  <Layout
+    title={`House Clearance ${region.name} | Clearfields`}
+    description={`Professional house clearance across ${region.name}. Covering ${getAreasByRegion(region.slug).map(a => a.name).slice(0, 5).join(', ')} and more. Free quotes, same-day available.`}
+  >
+    <Header />
+    <main id="main-content">
+      <div class="bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <Breadcrumb items={[
+            { label: 'Home', href: '/' },
+            { label: 'Areas', href: '/areas/' },
+            { label: region.name },
+          ]} />
+        </div>
+      </div>
+
+      <section class="bg-brand-navy text-white py-12 sm:py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">House Clearance in {region.name}</h1>
+          <p class="text-xl text-slate-300 max-w-2xl">{region.description}</p>
+        </div>
+      </section>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div class="lg:col-span-2 prose prose-slate prose-lg max-w-none prose-headings:text-brand-navy prose-a:text-brand-green">
+            <p>
+              Clearfields provides professional, fully insured clearance services across all of {region.name}. Whether you need a full <a href="/house-clearance/">house clearance</a>, <a href="/probate-house-clearance/">probate clearance</a>, <a href="/commercial-clearance/">commercial clearance</a> or <a href="/garden-clearance/">garden clearance</a>, our local team is ready to help.
+            </p>
+
+            <h2>Areas We Cover in {region.name}</h2>
+            <div class="not-prose grid grid-cols-2 sm:grid-cols-3 gap-3 my-6">
+              {getAreasByRegion(region.slug).map(a => (
+                <a href={`/areas/${a.slug}/`} class="bg-slate-50 hover:bg-brand-green hover:text-white text-slate-700 px-4 py-3 rounded-lg text-sm font-medium text-center transition-colors">
+                  {a.name}
+                </a>
+              ))}
+            </div>
+
+            <h2>Our Services in {region.name}</h2>
+            <ul>
+              <li><strong><a href="/house-clearance/">House Clearance</a></strong> — full residential clearance from 1-bed flats to 5+ bed houses</li>
+              <li><strong><a href="/probate-house-clearance/">Probate Clearance</a></strong> — sensitive clearance for executors and bereaved families</li>
+              <li><strong><a href="/commercial-clearance/">Commercial Clearance</a></strong> — offices, shops and commercial premises</li>
+              <li><strong><a href="/garden-clearance/">Garden Clearance</a></strong> — gardens, garages, sheds and outbuildings</li>
+            </ul>
+
+            <h2>Why Choose Us for {region.name}?</h2>
+            <ul>
+              <li><strong>Price Lock Guarantee</strong> — your quote never goes up</li>
+              <li><strong>Same-day available</strong> — urgent clearance when you need it</li>
+              <li><strong>95% recycling rate</strong> — items donated to local Bristol charities</li>
+              <li><strong>EA Licensed & Fully Insured</strong> — complete peace of mind</li>
+            </ul>
+
+            <p>
+              For a free quote, <a href="/contact/">contact us</a> or call 0117 123 4567. We typically respond within 2 hours.
+            </p>
+          </div>
+
+          <aside class="lg:col-span-1 space-y-8">
+            <div class="bg-brand-green rounded-xl p-6 text-white text-center">
+              <h3 class="text-xl font-bold mb-2">Free Quote</h3>
+              <p class="text-green-100 text-sm mb-4">Covering all of {region.name}</p>
+              <a href="/contact/" class="block bg-white text-brand-green font-bold py-3 rounded-lg hover:bg-green-50 transition-colors">
+                Get Free Quote
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <CTABanner heading={`Need a Clearance in ${region.name}?`} />
+    </main>
+    <Footer />
+    <FloatingMobileBar />
+    <BackToTop />
+    <SchemaLocalBusiness />
+  </Layout>
+) : area ? (
+  <!-- Individual Area Page -->
+  <AreaLayout
+    title={`House Clearance ${area.name} | From £175, Same Day — Clearfields`}
+    description={`Professional house clearance in ${area.name}, Bristol. Price Lock Guarantee, 95% recycling, same-day available. Covering ${area.postcodes.join(', ')} postcodes. Free quotes.`}
+    h1={`House Clearance in ${area.name}`}
+    area={area.name}
+    breadcrumbs={[
+      { label: 'Home', href: '/' },
+      { label: 'Areas', href: '/areas/' },
+      { label: area.region, href: `/areas/${area.regionSlug}/` },
+      { label: area.name },
+    ]}
+    postcodes={area.postcodes}
+    propertyTypes={area.propertyTypes}
+    nearestRecyclingCentre={area.nearestRecyclingCentre}
+    localCharities={area.localCharities}
+    nearbyAreas={getNearbyAreas(area.slug, area.regionSlug)}
+    faqs={generateAreaFaqs(area)}
+  >
+    <Fragment slot="hero-subtitle">
+      <p class="text-xl text-slate-300 max-w-2xl">{area.description}</p>
+    </Fragment>
+
+    <p>
+      {area.localKnowledge}
+    </p>
+
+    {area.serviceFocus === 'probate-estate' && (
+      <>
+        <h2>Probate & Estate Clearance in {area.name}</h2>
+        <p>
+          {area.name} is one of our busiest areas for <a href="/probate-house-clearance/">probate clearance</a>. The typical property here — {area.propertyTypes.slice(0, 2).map(t => t.toLowerCase()).join(' and ')} — often holds decades of accumulated belongings that need careful sorting before the estate can be settled.
+        </p>
+        <p>
+          As a licensed, insured clearance company, we work directly with executors and solicitors to provide full inventories, flag valuable items for professional valuation, and issue Waste Transfer Notes suitable for estate records. Our <a href="/probate-house-clearance/bereavement-clearance/">bereavement clearance service</a> ensures that every property is handled with sensitivity and respect.
+        </p>
+        {area.avgPropertyPrice && (
+          <p>
+            With average property prices in {area.name} around {area.avgPropertyPrice}, estates here can be substantial. We take the time to identify items of potential value — antiques, jewellery, artwork, first-edition books — and can arrange auction house consignment or professional valuations before any disposal.
+          </p>
+        )}
+      </>
+    )}
+
+    {area.serviceFocus === 'landlord-tenant' && (
+      <>
+        <h2>Landlord & End-of-Tenancy Clearance in {area.name}</h2>
+        <p>
+          {area.name} has an active rental market, and we provide fast <a href="/house-clearance/end-of-tenancy-clearance/">end-of-tenancy clearance</a> for landlords and letting agents who need properties turned around quickly. The typical rental property here — {area.propertyTypes.slice(0, 2).map(t => t.toLowerCase()).join(' and ')} — often needs clearing between tenancies at short notice.
+        </p>
+        <p>
+          Our <a href="/house-clearance/landlord-clearance/">landlord clearance accounts</a> offer priority scheduling, volume discounts across your portfolio, and full photographic documentation suitable for deposit dispute proceedings. We can often attend the same day for urgent jobs.
+        </p>
+      </>
+    )}
+
+    {area.serviceFocus === 'family-downsizing' && (
+      <>
+        <h2>Downsizing & Family Clearance in {area.name}</h2>
+        <p>
+          Many {area.name} residents contact us when <a href="/house-clearance/downsizing-clearance/">downsizing</a> from a family home to a smaller property or retirement accommodation. The {area.propertyTypes.slice(0, 2).map(t => t.toLowerCase()).join(' and ')} in this area have often been family homes for 20-30 years, and the clearance process can feel overwhelming.
+        </p>
+        <p>
+          We take a staged, patient approach — working room by room at your pace. Items in good condition go to our <a href="/charity-partners/">charity partners</a> including {area.localCharities.join(' and ')}. You receive a Charity Donation Report showing exactly where your belongings went, which many families find genuinely comforting.
+        </p>
+      </>
+    )}
+
+    {area.serviceFocus === 'mixed' && (
+      <>
+        <h2>House Clearance Services in {area.name}</h2>
+        <p>
+          {area.name} generates a varied mix of clearance work. The properties here — {area.propertyTypes.map(t => t.toLowerCase()).join(', ')} — mean we handle everything from full <a href="/house-clearance/">residential clearances</a> and <a href="/probate-house-clearance/">probate work</a> to <a href="/house-clearance/end-of-tenancy-clearance/">end-of-tenancy clearances</a> for landlords and <a href="/garden-clearance/">garden clearance</a>.
+        </p>
+        <p>
+          Whatever the situation in {area.name}, the process is the same: send us photos via WhatsApp or call <strong>0117 123 4567</strong>, receive a fixed-price quote within 2 hours, and we handle everything from there — loading, transport, sorting, recycling and charity donation. Your quote is locked and will not increase on the day.
+        </p>
+      </>
+    )}
+
+    <h2>What We Clear in {area.name}</h2>
+    <ul>
+      <li><strong>Full house contents</strong> — furniture, appliances, clothing, kitchenware, everything</li>
+      <li><strong>Lofts and cellars</strong> — <a href="/house-clearance/loft-clearance/">loft clearance</a> and <a href="/house-clearance/cellar-clearance/">cellar clearance</a> included</li>
+      <li><strong>Gardens, garages and sheds</strong> — <a href="/garden-clearance/">garden clearance</a> and outbuildings</li>
+      {area.serviceFocus === 'probate-estate' && <li><strong>Estate valuables</strong> — flagged for valuation before any disposal</li>}
+      {area.serviceFocus === 'landlord-tenant' && <li><strong>Abandoned tenant belongings</strong> — photographed and documented for legal compliance</li>}
+      <li><strong>Specialist items</strong> — fridges, mattresses, electronics (WEEE compliant), <a href="/guides/paint-chemicals-disposal-bristol/">chemicals and paint</a></li>
+    </ul>
+
+    <h2>Pricing for {area.name}</h2>
+    <table>
+      <thead>
+        <tr><th>Property Size</th><th>Typical Price</th><th>Timeframe</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1 bed flat / studio</td><td>£175 – £300</td><td>2-4 hours</td></tr>
+        <tr><td>2-3 bed house</td><td>£300 – £500</td><td>4-6 hours</td></tr>
+        <tr><td>4-5 bed house</td><td>£500 – £900</td><td>1 day</td></tr>
+        {(area.serviceFocus === 'probate-estate' || area.tier === 1) && <tr><td>Large / heavily furnished</td><td>From £900</td><td>1-2 days</td></tr>}
+      </tbody>
+    </table>
+    <p>
+      Prices include loading, transport, disposal, recycling and a besom clean. For a detailed breakdown, see our <a href="/guides/house-clearance-cost-bristol/">Bristol house clearance cost guide</a>.
+      {area.serviceFocus === 'landlord-tenant' && <> Landlords with multiple properties benefit from our <a href="/house-clearance/landlord-clearance/">portfolio discounts</a>.</>}
+    </p>
+
+    <h2>Recycling & Donation from {area.name}</h2>
+    <p>
+      We recycle or donate at least 95% of items cleared from {area.name} properties. The nearest recycling centre is {area.nearestRecyclingCentre}, where we process all non-donatable items. Usable furniture and household goods go to our <a href="/charity-partners/">charity partners</a> — {area.localCharities.join(', ')} — and you receive a full Charity Donation Report.
+    </p>
+
+    <p>
+      For a free, no-obligation quote for house clearance in {area.name}, call <strong>0117 123 4567</strong> or <a href="/contact/">send us details online</a>. We respond within 2 hours and offer same-day clearance subject to availability.
+    </p>
+  </AreaLayout>
+) : null}

@@ -1,0 +1,120 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Commercial Clearance', href: '/commercial-clearance/' },
+  { label: 'Confidential Waste Disposal' },
+];
+
+const relatedServices = [
+  { title: 'Commercial Clearance', href: '/commercial-clearance/', description: 'Full commercial clearance services in Bristol' },
+  { title: 'Office Clearance', href: '/commercial-clearance/office-clearance/', description: 'Complete office clearance with IT disposal' },
+  { title: 'House Clearance', href: '/house-clearance/', description: 'Residential house clearance in Bristol' },
+];
+
+const faqs = [
+  { q: 'Do you provide certificates of destruction?', a: 'Yes. Every confidential waste job comes with a Certificate of Destruction confirming the date, method and volume of materials destroyed. For IT equipment, we provide individual certificates per device listing make, model and serial number. These certificates are your proof of GDPR compliance.' },
+  { q: 'What shredding standard do you use?', a: 'Paper documents are shredded to DIN 66399 P-3 standard as a minimum, which produces particles of no more than 320mm². For highly sensitive documents (financial, medical, legal), we offer P-4 and P-5 cross-cut shredding. Hard drives are shredded to particles no larger than 10mm.' },
+  { q: 'Can you provide regular confidential waste collection?', a: 'Yes. We offer scheduled collections — weekly, fortnightly or monthly — with secure console bins provided at your premises. We also supply lockable sacks for smaller volumes. Regular contracts include preferential rates and dedicated account management.' },
+  { q: 'Is your confidential waste service GDPR compliant?', a: 'Fully GDPR compliant. We maintain a documented chain of custody from collection to destruction. Our process is auditable, and we provide all documentation you need to demonstrate compliance to the ICO. We carry full insurance including professional indemnity for data handling.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Confidential Waste Disposal Bristol',
+  description: 'Secure confidential waste disposal in Bristol. GDPR-compliant document shredding, hard drive destruction, certificates of destruction. Regular collection available.',
+  provider: { '@type': 'LocalBusiness', name: 'Clearfields' },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Confidential Waste Disposal',
+};
+---
+
+<ServiceLayout
+  title="Confidential Waste Disposal Bristol | GDPR Compliant Shredding — Clearfields"
+  description="Secure confidential waste disposal in Bristol. GDPR-compliant document shredding, hard drive destruction, certificates of destruction. Regular collections available. Call 0117 123 4567."
+  h1="Confidential Waste Disposal Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      GDPR-compliant confidential waste disposal with certified document shredding and hard drive destruction. Protecting Bristol businesses from data breaches since day one.
+    </p>
+  </Fragment>
+
+  <h2>Secure Document and Data Destruction</h2>
+  <p>
+    Every business generates confidential waste — client records, financial documents, employee files, medical records, legal papers. Under GDPR and the Data Protection Act 2018, you have a legal obligation to destroy this data securely. Clearfields provides a fully auditable, certified destruction service that keeps your business compliant and your data safe.
+  </p>
+
+  <h2>What We Destroy</h2>
+  <ul>
+    <li><strong>Paper documents</strong> — files, folders, archives, correspondence, financial records</li>
+    <li><strong>Hard drives and SSDs</strong> — internal and external drives, server drives</li>
+    <li><strong>Optical media</strong> — CDs, DVDs, Blu-rays, backup tapes</li>
+    <li><strong>Mobile devices</strong> — phones, tablets, USB drives, memory cards</li>
+    <li><strong>ID and access materials</strong> — staff badges, key cards, branded uniforms</li>
+    <li><strong>Specialist media</strong> — microfilm, X-rays, photographic negatives</li>
+  </ul>
+
+  <h2>Our Secure Process</h2>
+  <ol>
+    <li><strong>Collection</strong> — materials collected from your premises in sealed, tamper-evident containers by vetted staff</li>
+    <li><strong>Chain of custody</strong> — documented transfer from your premises to the destruction facility</li>
+    <li><strong>Destruction</strong> — paper shredded to DIN 66399 standard; hard drives physically shredded or degaussed</li>
+    <li><strong>Certification</strong> — Certificate of Destruction issued with date, method, volume and operator details</li>
+    <li><strong>Recycling</strong> — shredded paper is baled and sent for recycling; metals are recovered from destroyed devices</li>
+  </ol>
+
+  <h2>Shredding Standards</h2>
+  <p>
+    We offer multiple security levels depending on the sensitivity of your documents:
+  </p>
+  <table>
+    <thead>
+      <tr><th>Security Level</th><th>Standard</th><th>Suitable For</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>P-3 (Standard)</td><td>Particles ≤ 320mm²</td><td>General business documents, internal memos</td></tr>
+      <tr><td>P-4 (Enhanced)</td><td>Particles ≤ 160mm²</td><td>Financial records, HR files, contracts</td></tr>
+      <tr><td>P-5 (High Security)</td><td>Particles ≤ 30mm²</td><td>Medical records, legal files, classified documents</td></tr>
+      <tr><td>H-3 (Hard Drive)</td><td>Particles ≤ 10mm</td><td>Hard drives, SSDs, backup media</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Regular Collection Service</h2>
+  <p>
+    For businesses generating ongoing confidential waste, we provide scheduled collections with secure containers at your premises:
+  </p>
+  <ul>
+    <li><strong>Console bins</strong> — lockable units for office use, emptied on schedule</li>
+    <li><strong>Secure sacks</strong> — tamper-evident bags for smaller volumes</li>
+    <li><strong>Archive collection</strong> — bulk collection of stored records past retention dates</li>
+    <li><strong>Flexible scheduling</strong> — weekly, fortnightly, monthly or on-demand</li>
+  </ul>
+
+  <h2>Who Uses This Service</h2>
+  <p>
+    We provide confidential waste disposal for Bristol businesses across all sectors including:
+  </p>
+  <ul>
+    <li>Solicitors and legal practices</li>
+    <li>Accountants and financial services</li>
+    <li>Medical and dental surgeries</li>
+    <li>Schools, colleges and universities</li>
+    <li>Recruitment agencies and HR departments</li>
+    <li>Estate agents and property managers</li>
+  </ul>
+
+  <h2>Part of a Bigger Clearance?</h2>
+  <p>
+    Confidential waste disposal is often needed as part of a larger project. If you're clearing an entire office, our <a href="/commercial-clearance/office-clearance/">office clearance service</a> includes confidential waste handling as standard. For businesses closing retail premises, our <a href="/commercial-clearance/shop-clearance/">shop clearance team</a> can secure customer records and financial documents during the clearance.
+  </p>
+  <p>
+    We also handle confidential documents found during residential clearances — <a href="/probate-house-clearance/">probate properties</a> often contain sensitive financial and legal papers that require careful handling. Call <strong>0117 123 4567</strong> for a free quote or to set up a regular collection.
+  </p>
+</ServiceLayout>

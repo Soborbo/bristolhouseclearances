@@ -1,0 +1,100 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'About Us' },
+];
+
+const faqs = [
+  { q: 'How long have you been operating in Bristol?', a: 'Clearfields has been serving Bristol, Bath and surrounding areas for over 10 years. In that time we\'ve cleared over 500 properties across every postcode in the region.' },
+  { q: 'Are you a licensed waste carrier?', a: 'Yes. We are registered as an Upper Tier Waste Carrier with the Environment Agency. We also hold £10M public liability insurance and provide Waste Transfer Notes for every job.' },
+  { q: 'What is your recycling rate?', a: 'We recycle or donate at least 95% of everything we clear. Usable items go to local Bristol charities including the SOFA Project, Emmaus Bristol and the British Heart Foundation.' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  mainEntity: {
+    '@type': 'LocalBusiness',
+    name: 'Clearfields',
+    description: 'Professional house clearance service in Bristol, Bath and surrounding areas.',
+  },
+};
+---
+
+<ServiceLayout
+  title="About Us | Clearfields — Bristol's Most Trusted Clearance Service"
+  description="Learn about Clearfields — over 500 properties cleared, 95% recycling rate, EA licensed, £10M insured. Bristol's most transparent clearance company."
+  h1="About Clearfields"
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+  schema={schema}
+  relatedServices={[
+    { title: 'House Clearance', href: '/house-clearance/', description: 'Our core residential clearance service' },
+    { title: 'Probate Clearance', href: '/probate-house-clearance/', description: 'Sensitive probate and bereavement clearance' },
+    { title: 'Commercial Clearance', href: '/commercial-clearance/', description: 'Business and commercial premises clearance' },
+  ]}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Bristol's most transparent house clearance company. Over 500 properties cleared, 95% recycled, and a 4.9-star Google rating from 200+ reviews.
+    </p>
+  </Fragment>
+
+  <h2>Our Story</h2>
+  <p>
+    Clearfields was founded with a simple belief: house clearance should be transparent, fair and environmentally responsible. Too many people had experienced hidden fees, no-show crews and items ending up in landfill when they didn't need to.
+  </p>
+  <p>
+    We set out to do things differently. From day one, we introduced our <strong>Price Lock Guarantee</strong> — the price we quote is the price you pay, no surprises on the day. We invested in building relationships with local Bristol charities so that as many items as possible could be rehomed rather than scrapped. And we committed to a <strong>"We Never Cancel" policy</strong> because reliability shouldn't be a bonus — it should be standard.
+  </p>
+
+  <h2>What Sets Us Apart</h2>
+  <ul>
+    <li><strong>Price Lock Guarantee</strong> — your quote is final. It won't increase when we arrive.</li>
+    <li><strong>95% Recycling Rate</strong> — we recycle or donate at least 95% of items cleared</li>
+    <li><strong>We Never Cancel</strong> — rain or shine, we turn up. Every time.</li>
+    <li><strong>Same-Day Available</strong> — urgent clearance when you need it most</li>
+    <li><strong>Full Documentation</strong> — Waste Transfer Notes, Charity Donation Reports, inventories</li>
+    <li><strong>Live Photo Updates</strong> — see progress in real time via WhatsApp</li>
+  </ul>
+
+  <h2>Our Numbers</h2>
+  <p>The facts behind the service:</p>
+  <ul>
+    <li><strong>500+</strong> properties cleared across Bristol, Bath and beyond</li>
+    <li><strong>4.9★</strong> average Google review rating from 200+ verified reviews</li>
+    <li><strong>95%+</strong> of items recycled or donated to charity</li>
+    <li><strong>5</strong> local charity partners receiving regular donations</li>
+    <li><strong>0</strong> cancellations — we have never cancelled on a customer</li>
+  </ul>
+
+  <h2>Our Charity Partners</h2>
+  <p>
+    We work with five Bristol-based charities to ensure usable items find new homes rather than going to waste. Our current partners include:
+  </p>
+  <ul>
+    <li><strong>SOFA Project</strong> — furniture and household items for people in need</li>
+    <li><strong>Emmaus Bristol</strong> — supporting formerly homeless people through social enterprise</li>
+    <li><strong>British Heart Foundation</strong> — furniture and electrical goods</li>
+    <li><strong>Salvation Army</strong> — clothing, furniture and household items</li>
+    <li><strong>Julian House</strong> — supporting vulnerable people across Bath and Bristol</li>
+  </ul>
+  <p>
+    After every clearance, you receive a <strong>Charity Donation Report</strong> detailing exactly where your items went. Learn more about our <a href="/charity-partners/">charity partnerships</a>.
+  </p>
+
+  <h2>Environmental Commitment</h2>
+  <p>
+    We believe every clearance company has a responsibility to minimise waste. Our approach is simple: everything gets sorted. Items in good condition go to charity. Recyclable materials go to licensed recycling facilities. Only genuinely non-recyclable waste goes to controlled landfill — and that accounts for less than 5% of what we clear.
+  </p>
+  <p>
+    Read more about our <a href="/environmental-policy/">environmental policy</a> and our approach to sustainable clearance.
+  </p>
+
+  <h2>Serving All of Bristol</h2>
+  <p>
+    We cover every Bristol postcode plus Bath, South Gloucestershire, North Somerset and surrounding areas. From <a href="/areas/clifton/">Clifton's</a> Georgian townhouses to <a href="/areas/fishponds/">Fishponds'</a> Victorian terraces, we know Bristol's properties and access challenges inside out. View all <a href="/areas/">areas we cover</a>.
+  </p>
+</ServiceLayout>

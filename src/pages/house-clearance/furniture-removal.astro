@@ -1,0 +1,133 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'House Clearance', href: '/house-clearance/' },
+  { label: 'Furniture Removal' },
+];
+
+const relatedServices = [
+  { title: 'House Clearance', href: '/house-clearance/', description: 'Complete residential house clearance service' },
+  { title: 'Flat Clearance', href: '/house-clearance/flat-clearance/', description: 'Specialist flat and apartment clearance' },
+  { title: 'End of Tenancy Clearance', href: '/house-clearance/end-of-tenancy-clearance/', description: 'Fast turnaround for landlords and letting agents' },
+  { title: 'Downsizing Clearance', href: '/house-clearance/downsizing-clearance/', description: 'Helping families move to smaller homes' },
+];
+
+const faqs = [
+  { q: 'How much does it cost to remove a sofa in Bristol?', a: 'A single sofa removal typically costs £50-£80 depending on size, access and location. If you have multiple items, it is often more cost-effective to group them together — two or three items from the same property rarely costs much more than one. We provide exact quotes in advance.' },
+  { q: 'How does your service compare to Bristol council bulky waste collection?', a: 'Bristol City Council charges from £32 per item with a minimum 2-week wait and no flexibility on timing. We offer same-day collection, carry items from any room (council requires items at the kerbside), remove any type of furniture, and recycle/donate wherever possible. We also handle items the council will not accept.' },
+  { q: 'Do you take old mattresses?', a: 'Yes. We collect and responsibly dispose of mattresses of all sizes. Mattresses cannot be donated for hygiene reasons but are recycled where possible — springs are separated for metal recycling and fabric is processed at specialist facilities. Single mattress collection from £40.' },
+  { q: 'Can you remove furniture from upstairs rooms?', a: 'Absolutely. We carry furniture from any room in the house — bedrooms, lofts, cellars, upper floors. If an item will not fit through a doorway or down stairs, we dismantle it on site. Walls and flooring are protected with sheeting and corner guards.' },
+  { q: 'What happens to the furniture you collect?', a: 'Usable furniture in good condition is donated to local charities including the SOFA Project and Emmaus Bristol. Items that cannot be donated are dismantled and recycled — wood, metal, foam and fabric are separated for recycling. We achieve a 95% recycling and donation rate across all items collected.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Furniture Removal Bristol',
+  description: 'Furniture removal and collection in Bristol. Single items or full house. Same-day available, 95% recycled or donated. Better than council bulky waste.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Clearfields',
+  },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Furniture Removal',
+};
+---
+
+<ServiceLayout
+  title="Furniture Removal Bristol | Single Items From £40 — Clearfields"
+  description="Furniture removal in Bristol. Single items or full house. Same-day available, better than council bulky waste. From £40. Call 0117 123 4567."
+  h1="Furniture Removal Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Need one sofa collected or a full house of furniture removed? Same-day service available across Bristol. Faster, easier and more flexible than council bulky waste.
+    </p>
+  </Fragment>
+
+  <h2>Furniture Removal Made Simple</h2>
+  <p>
+    Whether you need a single mattress collected, an old three-piece suite taken away, or an entire property's worth of furniture removed, Clearfields makes it simple. We collect from any room, any floor — and we do it the same day in most cases.
+  </p>
+  <p>
+    Unlike Bristol City Council's bulky waste service, we come to you. No dragging heavy furniture to the kerb, no 2-week waits, no restrictions on what we take. Just call <strong>0117 123 4567</strong>, tell us what needs to go, and we'll give you a fixed price and a time slot.
+  </p>
+
+  <h2>What Furniture We Remove</h2>
+  <ul>
+    <li><strong>Sofas and armchairs</strong> — any size, any condition</li>
+    <li><strong>Beds and mattresses</strong> — singles, doubles, kings, bunk beds, divans</li>
+    <li><strong>Wardrobes and dressers</strong> — dismantled on site if needed</li>
+    <li><strong>Dining tables and chairs</strong> — including heavy solid wood sets</li>
+    <li><strong>Desks and office furniture</strong> — home office and <a href="/commercial-clearance/">commercial</a> furniture</li>
+    <li><strong>White goods</strong> — fridges, freezers, washing machines, cookers</li>
+    <li><strong>Garden furniture</strong> — benches, tables, parasols, barbecues</li>
+    <li><strong>Pianos and heavy items</strong> — upright pianos, safes, gym equipment</li>
+  </ul>
+
+  <h2>Furniture Removal Pricing</h2>
+  <table>
+    <thead>
+      <tr><th>Items</th><th>Our Price</th><th>Council Bulky Waste</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1 item (e.g., mattress)</td><td>From £40</td><td>£32 + 2 week wait</td></tr>
+      <tr><td>2-3 items (e.g., sofa + bed)</td><td>From £70</td><td>£64-£96 + kerbside</td></tr>
+      <tr><td>4-6 items</td><td>From £120</td><td>£128-£192 + kerbside</td></tr>
+      <tr><td>Full room of furniture</td><td>From £175</td><td>Not available</td></tr>
+      <tr><td>Full house of furniture</td><td>From £300</td><td>Not available</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Why We're Better Than Council Bulky Waste</h2>
+  <p>
+    Bristol City Council's bulky waste collection has its place, but for most people our service is faster, easier and often better value:
+  </p>
+  <table>
+    <thead>
+      <tr><th>Feature</th><th>Clearfields</th><th>Council Bulky Waste</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Turnaround</td><td>Same day / next day</td><td>2+ weeks</td></tr>
+      <tr><td>Collection from</td><td>Any room, any floor</td><td>Kerbside only</td></tr>
+      <tr><td>Time slots</td><td>2-hour windows</td><td>All-day window</td></tr>
+      <tr><td>Item types</td><td>Anything</td><td>Limited list</td></tr>
+      <tr><td>Recycling</td><td>95% recycled/donated</td><td>Standard disposal</td></tr>
+      <tr><td>Multiple items</td><td>Discounted bundles</td><td>Per-item charging</td></tr>
+    </tbody>
+  </table>
+
+  <h2>How It Works</h2>
+  <ol>
+    <li><strong>Tell us what you need removed</strong> — call <strong>0117 123 4567</strong> or WhatsApp photos. Takes 60 seconds.</li>
+    <li><strong>Get your fixed price</strong> — an exact quote within 2 hours. Price Lock Guarantee — it will not change.</li>
+    <li><strong>We collect and recycle</strong> — we arrive in a 2-hour window, collect from any room, and ensure everything is recycled or donated.</li>
+  </ol>
+
+  <h2>Where Your Furniture Goes</h2>
+  <p>
+    We believe good furniture deserves a second life. Items in usable condition are donated to Bristol charities:
+  </p>
+  <ul>
+    <li><strong>SOFA Project</strong> — providing affordable furniture to families in need</li>
+    <li><strong>Emmaus Bristol</strong> — supporting formerly homeless people through furniture resale</li>
+    <li><strong>British Heart Foundation</strong> — furniture shops across Bristol and Bath</li>
+  </ul>
+  <p>
+    Items that cannot be donated are dismantled and recycled — wood, metal, springs, foam and fabric are all separated. You receive a Charity Donation Report and Waste Transfer Notes as standard.
+  </p>
+
+  <h2>Bristol Coverage</h2>
+  <p>
+    We collect furniture from all Bristol postcodes and surrounding areas including <a href="/areas/clifton/">Clifton</a>, <a href="/areas/bedminster/">Bedminster</a>, <a href="/areas/fishponds/">Fishponds</a>, <a href="/areas/redland/">Redland</a>, <a href="/areas/bishopston/">Bishopston</a>, Horfield, Henleaze, <a href="/areas/keynsham/">Keynsham</a> and Bath. View all <a href="/areas/">areas we cover</a>.
+  </p>
+  <p>
+    Need more than just furniture removed? Our full <a href="/house-clearance/">house clearance service</a> covers everything — furniture, appliances, personal items, <a href="/house-clearance/loft-clearance/">loft contents</a>, <a href="/garden-clearance/">garden waste</a> and more. Call <strong>0117 123 4567</strong> for a free quote.
+  </p>
+</ServiceLayout>

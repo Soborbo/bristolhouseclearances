@@ -1,0 +1,226 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FloatingMobileBar from '../components/FloatingMobileBar.astro';
+import BackToTop from '../components/BackToTop.astro';
+import SchemaLocalBusiness from '../components/seo/SchemaLocalBusiness.astro';
+import { site } from '../config/site';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Contact Us' },
+];
+
+const contactSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: site.name,
+  telephone: site.phone,
+  email: site.email,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Bristol',
+    addressRegion: 'South Gloucestershire',
+    postalCode: site.address.postcode,
+    addressCountry: 'GB',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: site.phone,
+    contactType: 'customer service',
+    availableLanguage: 'English',
+    areaServed: 'GB',
+  },
+};
+---
+
+<Layout
+  title="Contact Us | Free House Clearance Quote Bristol — Clearfields"
+  description="Contact Clearfields for a free, no-obligation quote. Call 0117 123 4567, WhatsApp us photos, or fill in our online form. Response within 2 hours."
+>
+  <Header />
+  <main id="main-content">
+    <div class="bg-slate-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <Breadcrumb items={breadcrumbs} />
+      </div>
+    </div>
+
+    <section class="bg-brand-navy text-white py-12 sm:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Contact Us</h1>
+        <p class="text-xl text-slate-300 max-w-2xl">Get a free, no-obligation quote within 2 hours. Call us, WhatsApp photos, or fill in the form below.</p>
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Form -->
+        <div>
+          <h2 class="text-2xl font-bold text-brand-navy mb-6">Request a Free Quote</h2>
+          <form id="contact-form" class="space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Full Name *</label>
+                <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-colors" />
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Phone *</label>
+                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-colors" />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email *</label>
+                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-colors" />
+              </div>
+              <div>
+                <label for="postcode" class="block text-sm font-medium text-slate-700 mb-1">Postcode</label>
+                <input type="text" id="postcode" name="postcode" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-colors" />
+              </div>
+            </div>
+            <div>
+              <label for="service" class="block text-sm font-medium text-slate-700 mb-1">Service Required</label>
+              <select id="service" name="service" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-colors">
+                <option value="">Select a service...</option>
+                <option value="house-clearance">House Clearance</option>
+                <option value="probate">Probate / Bereavement Clearance</option>
+                <option value="commercial">Commercial Clearance</option>
+                <option value="garden">Garden Clearance</option>
+                <option value="furniture">Furniture Removal</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Tell us about your clearance</label>
+              <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-colors" placeholder="Property type, number of rooms, anything we should know..."></textarea>
+            </div>
+            <!-- Honeypot -->
+            <div class="hidden" aria-hidden="true">
+              <input type="text" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+            <div class="flex items-start gap-2">
+              <input type="checkbox" id="gdpr" name="gdpr" required class="mt-1 rounded border-slate-300 text-brand-green focus:ring-brand-green" />
+              <label for="gdpr" class="text-sm text-slate-600">
+                I consent to Clearfields contacting me about my enquiry. View our <a href="/privacy-policy/" class="text-brand-green hover:underline">privacy policy</a>.
+              </label>
+            </div>
+            <button type="submit" class="w-full bg-brand-green hover:bg-brand-green-dark text-white font-bold py-3.5 rounded-lg transition-colors text-lg">
+              Send Enquiry
+            </button>
+            <div id="form-status" class="hidden text-center py-3 rounded-lg text-sm font-medium"></div>
+          </form>
+        </div>
+
+        <!-- Contact info -->
+        <div class="space-y-8">
+          <div>
+            <h2 class="text-2xl font-bold text-brand-navy mb-6">Get in Touch</h2>
+            <div class="space-y-6">
+              <a href={site.phoneHref} class="flex items-start gap-4 group">
+                <div class="w-12 h-12 bg-brand-green/10 rounded-lg flex items-center justify-center shrink-0">
+                  <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-brand-navy group-hover:text-brand-green transition-colors">{site.phone}</p>
+                  <p class="text-sm text-slate-500">Call us for an immediate quote</p>
+                </div>
+              </a>
+
+              <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer" class="flex items-start gap-4 group">
+                <div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center shrink-0">
+                  <svg class="w-6 h-6 text-green-500" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-brand-navy group-hover:text-green-600 transition-colors">WhatsApp Us Photos</p>
+                  <p class="text-sm text-slate-500">Send photos for the fastest quote</p>
+                </div>
+              </a>
+
+              <a href={`mailto:${site.email}`} class="flex items-start gap-4 group">
+                <div class="w-12 h-12 bg-brand-green/10 rounded-lg flex items-center justify-center shrink-0">
+                  <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-brand-navy group-hover:text-brand-green transition-colors">{site.email}</p>
+                  <p class="text-sm text-slate-500">Email us anytime</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-brand-navy mb-3">Opening Hours</h3>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex justify-between"><span>Monday – Saturday</span><span class="font-medium">7:00am – 7:00pm</span></li>
+              <li class="flex justify-between"><span>Sunday</span><span class="font-medium">By appointment</span></li>
+              <li class="flex justify-between"><span>Bank Holidays</span><span class="font-medium">By appointment</span></li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-brand-navy mb-3">Service Area</h3>
+            <p class="text-sm text-slate-600 mb-3">We cover Bristol, Bath and all surrounding areas within a 30-mile radius, including:</p>
+            <p class="text-sm text-slate-600">
+              <strong>Bristol:</strong> Clifton, Redland, Bishopston, Bedminster, Fishponds, Totterdown, Henleaze, Southville, Knowle, Brislington.
+              <strong>South Glos:</strong> Bradley Stoke, Filton, Yate, Thornbury.
+              <strong>North Somerset:</strong> Portishead, Clevedon, Nailsea.
+              <strong>B&NES:</strong> Bath, Keynsham.
+            </p>
+            <a href="/areas/" class="inline-block mt-3 text-sm text-brand-green font-medium hover:underline">View all areas we cover →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+  <FloatingMobileBar />
+  <BackToTop />
+  <SchemaLocalBusiness />
+  <script type="application/ld+json" set:html={JSON.stringify(contactSchema)} />
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const status = document.getElementById('form-status') as HTMLDivElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    if (data.website) return; // honeypot
+
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const result = await res.json();
+
+      status.classList.remove('hidden', 'bg-red-50', 'text-red-700', 'bg-green-50', 'text-green-700');
+      if (result.success) {
+        status.classList.add('bg-green-50', 'text-green-700');
+        status.textContent = 'Thank you! We\'ll be in touch within 2 hours.';
+        form.reset();
+      } else {
+        status.classList.add('bg-red-50', 'text-red-700');
+        status.textContent = result.message || 'Something went wrong. Please try again.';
+      }
+    } catch {
+      status.classList.remove('hidden');
+      status.classList.add('bg-red-50', 'text-red-700');
+      status.textContent = 'Network error. Please call us instead.';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send Enquiry';
+    }
+  });
+</script>

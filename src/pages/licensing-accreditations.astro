@@ -1,0 +1,73 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Licensing & Accreditations' },
+];
+---
+
+<ServiceLayout
+  title="Licensing & Accreditations | EA Licensed, £10M Insured — Clearfields"
+  description="Fully licensed and insured house clearance in Bristol. Upper Tier Waste Carrier, £10M public liability, Environment Agency registered."
+  h1="Licensing & Accreditations"
+  breadcrumbs={breadcrumbs}
+  relatedServices={[
+    { title: 'House Clearance', href: '/house-clearance/', description: 'Our fully licensed residential clearance service' },
+    { title: 'Commercial Clearance', href: '/commercial-clearance/', description: 'Compliant commercial clearance with full documentation' },
+    { title: 'Environmental Policy', href: '/environmental-policy/', description: 'Our commitment to sustainable waste management' },
+  ]}
+  faqs={[
+    { q: 'How can I verify your waste carrier licence?', a: 'Our waste carrier registration can be verified on the Environment Agency public register at environment.data.gov.uk. Our registration number is available on request.' },
+    { q: 'What insurance do you carry?', a: 'We carry £10M public liability insurance, £10M employers\' liability insurance and £2M professional indemnity insurance. Certificates are available on request.' },
+    { q: 'What are Waste Transfer Notes?', a: 'Waste Transfer Notes are legally required documents that record the transfer of waste between parties. They include details of the waste type, quantity, carrier and destination. We provide these for every job.' },
+  ]}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      We're fully licensed, insured and accredited — giving you complete peace of mind that your clearance is handled legally and professionally.
+    </p>
+  </Fragment>
+
+  <h2>Waste Carrier Licence</h2>
+  <p>
+    Clearfields is registered as an <strong>Upper Tier Waste Carrier</strong> with the Environment Agency. This is the highest level of waste carrier registration and is required for any business that regularly transports controlled waste. Our registration can be independently verified on the Environment Agency's public register.
+  </p>
+
+  <h2>Insurance</h2>
+  <p>We carry comprehensive insurance to protect our customers and team:</p>
+  <ul>
+    <li><strong>£10M Public Liability Insurance</strong> — protecting your property and possessions during clearance</li>
+    <li><strong>£10M Employers' Liability Insurance</strong> — protecting our team members</li>
+    <li><strong>£2M Professional Indemnity Insurance</strong> — covering professional advice and valuations</li>
+  </ul>
+  <p>Copies of our insurance certificates are available on request.</p>
+
+  <h2>Regulatory Compliance</h2>
+  <p>We comply with all relevant UK waste and environmental legislation:</p>
+  <ul>
+    <li><strong>Environmental Protection Act 1990</strong> — Duty of Care requirements</li>
+    <li><strong>Waste (England and Wales) Regulations 2011</strong> — waste hierarchy compliance</li>
+    <li><strong>WEEE Regulations 2013</strong> — electrical and electronic equipment disposal</li>
+    <li><strong>Hazardous Waste Regulations 2005</strong> — specialist hazardous waste handling</li>
+    <li><strong>Control of Asbestos Regulations 2012</strong> — asbestos identification and management</li>
+  </ul>
+
+  <h2>Documentation We Provide</h2>
+  <p>Every clearance comes with full paperwork:</p>
+  <ul>
+    <li><strong>Waste Transfer Notes</strong> — legally required record of waste disposal</li>
+    <li><strong>Charity Donation Report</strong> — itemised list of what was donated and to whom</li>
+    <li><strong>Inventory List</strong> — available on request, particularly for probate clearances</li>
+    <li><strong>WEEE Certificates</strong> — for electrical equipment disposal</li>
+    <li><strong>Data Destruction Certificates</strong> — for <a href="/commercial-clearance/confidential-waste-disposal/">confidential waste disposal</a></li>
+  </ul>
+
+  <h2>Why Licensing Matters</h2>
+  <p>
+    Using an unlicensed waste carrier is a criminal offence that can result in fines of up to £5,000. More importantly, waste disposed of illegally can end up fly-tipped, contaminating local environments. By choosing a licensed carrier like Clearfields, you can be confident your waste is handled responsibly and legally.
+  </p>
+  <p>
+    Learn how to <a href="/guides/house-clearance-cost-bristol/">choose a reputable house clearance company</a> in our guides section.
+  </p>
+</ServiceLayout>

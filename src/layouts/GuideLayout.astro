@@ -1,0 +1,154 @@
+---
+import Layout from './Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import type { BreadcrumbItem } from '../components/Breadcrumb.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+import FloatingMobileBar from '../components/FloatingMobileBar.astro';
+import BackToTop from '../components/BackToTop.astro';
+import SchemaLocalBusiness from '../components/seo/SchemaLocalBusiness.astro';
+
+interface FAQ {
+  q: string;
+  a: string;
+}
+
+interface RelatedGuide {
+  title: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  h1: string;
+  breadcrumbs: BreadcrumbItem[];
+  publishDate?: string;
+  updatedDate?: string;
+  readingTime?: string;
+  relatedGuides?: RelatedGuide[];
+  relatedServices?: { title: string; href: string }[];
+  faqs?: FAQ[];
+}
+
+const { title, description, h1, breadcrumbs, publishDate, updatedDate, readingTime, relatedGuides = [], relatedServices = [], faqs = [] } = Astro.props;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: h1,
+  description,
+  ...(publishDate ? { datePublished: publishDate } : {}),
+  ...(updatedDate ? { dateModified: updatedDate } : {}),
+  author: { '@type': 'Organization', name: 'Clearfields' },
+  publisher: { '@type': 'Organization', name: 'Clearfields' },
+};
+
+const faqSchema = faqs.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(faq => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: { '@type': 'Answer', text: faq.a },
+  })),
+} : null;
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main id="main-content">
+    <div class="bg-slate-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <Breadcrumb items={breadcrumbs} />
+      </div>
+    </div>
+
+    <section class="bg-brand-navy text-white py-12 sm:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">{h1}</h1>
+          {(publishDate || readingTime) && (
+            <div class="flex items-center gap-4 text-slate-300 text-sm">
+              {publishDate && <span>Published: {publishDate}</span>}
+              {updatedDate && <span>Updated: {updatedDate}</span>}
+              {readingTime && <span>{readingTime} read</span>}
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <article class="lg:col-span-2 prose prose-slate prose-lg max-w-none prose-headings:text-brand-navy prose-a:text-brand-green">
+          <slot />
+
+          {faqs.length > 0 && (
+            <section class="not-prose mt-12">
+              <h2 class="text-2xl font-bold text-brand-navy mb-6">Frequently Asked Questions</h2>
+              <div class="space-y-3">
+                {faqs.map(faq => (
+                  <details class="group bg-slate-50 rounded-lg">
+                    <summary class="flex items-center justify-between cursor-pointer px-5 py-4 font-medium text-brand-navy hover:bg-slate-100 rounded-lg transition-colors">
+                      {faq.q}
+                      <svg class="w-5 h-5 shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </summary>
+                    <div class="px-5 pb-4 text-slate-600 leading-relaxed">{faq.a}</div>
+                  </details>
+                ))}
+              </div>
+            </section>
+          )}
+        </article>
+
+        <aside class="lg:col-span-1 space-y-8">
+          <div class="bg-brand-green rounded-xl p-6 text-white text-center">
+            <h3 class="text-xl font-bold mb-2">Need Help?</h3>
+            <p class="text-green-100 text-sm mb-4">Get a free, no-obligation quote</p>
+            <a href="/contact/" class="block bg-white text-brand-green font-bold py-3 rounded-lg hover:bg-green-50 transition-colors">
+              Get Free Quote
+            </a>
+          </div>
+
+          {relatedGuides.length > 0 && (
+            <div class="bg-slate-50 rounded-xl p-6">
+              <h3 class="text-lg font-bold text-brand-navy mb-4">Related Guides</h3>
+              <ul class="space-y-3">
+                {relatedGuides.map(guide => (
+                  <li>
+                    <a href={guide.href} class="text-sm text-brand-green hover:underline font-medium">{guide.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {relatedServices.length > 0 && (
+            <div class="bg-slate-50 rounded-xl p-6">
+              <h3 class="text-lg font-bold text-brand-navy mb-4">Our Services</h3>
+              <ul class="space-y-3">
+                {relatedServices.map(service => (
+                  <li>
+                    <a href={service.href} class="text-sm text-brand-green hover:underline font-medium">{service.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <slot name="sidebar" />
+        </aside>
+      </div>
+    </div>
+
+    <CTABanner />
+  </main>
+  <Footer />
+  <FloatingMobileBar />
+  <BackToTop />
+  <SchemaLocalBusiness />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+</Layout>

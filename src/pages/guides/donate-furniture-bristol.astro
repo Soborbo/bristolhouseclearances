@@ -1,0 +1,103 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Donate Furniture in Bristol' },
+];
+
+const faqs = [
+  { q: 'What condition does furniture need to be in to donate?', a: 'Donated furniture must be in usable condition — structurally sound, clean and free of significant damage or stains. Upholstered items (sofas, armchairs, mattresses) must have their fire safety labels attached, as required by the Furniture and Furnishings (Fire Safety) Regulations 1988. Items with missing labels cannot legally be resold or given away.' },
+  { q: 'Will charities collect furniture from my home?', a: 'Yes, most Bristol furniture charities offer free collection for larger items like sofas, beds, wardrobes and tables. The SOFA Project, Emmaus Bristol and the British Heart Foundation all collect from Bristol postcodes. You\'ll typically need to book a few days ahead, and items must be accessible from a ground-floor door.' },
+  { q: 'What if my furniture isn\'t good enough to donate?', a: 'If furniture is too worn or damaged for donation, you still have options. Bristol recycling centres accept furniture for free. Council bulky waste collection costs £35 for up to 3 items. Or a professional clearance service like Clearfields will collect from any room and ensure responsible disposal, recycling what we can.' },
+];
+---
+
+<GuideLayout
+  title="Donate Furniture in Bristol — Charities That Collect Free | Clearfields"
+  description="Where to donate furniture in Bristol. Directory of charities that collect sofas, beds and household items. SOFA Project, Emmaus, BHF and more."
+  h1="Where to Donate Furniture in Bristol"
+  breadcrumbs={breadcrumbs}
+  publishDate="2026-02-05"
+  readingTime="4 min"
+  relatedGuides={[
+    { title: 'Furniture Disposal Bristol', href: '/guides/furniture-disposal-bristol/' },
+    { title: 'How to Choose a Clearance Company', href: '/guides/how-to-choose-house-clearance-company/' },
+  ]}
+  relatedServices={[
+    { title: 'House Clearance', href: '/house-clearance/' },
+    { title: 'Furniture Removal', href: '/house-clearance/furniture-removal/' },
+  ]}
+  faqs={faqs}
+>
+  <p>
+    <strong>Donating furniture is one of the best things you can do with items you no longer need.</strong> It keeps usable goods out of landfill, supports charitable causes, and helps people across Bristol who are furnishing homes on tight budgets. This guide lists the main Bristol charities that accept furniture donations, what they take, and how to arrange collection.
+  </p>
+
+  <h2>1. The SOFA Project</h2>
+  <p>
+    <strong>Location:</strong> Unit 1, Mina Road, St Werburghs, Bristol BS2 9YP<br />
+    <strong>Collection:</strong> Free collection across Bristol and South Gloucestershire<br />
+    <strong>Website:</strong> sofaproject.org.uk
+  </p>
+  <p>
+    The SOFA Project is one of Bristol's most established furniture reuse charities. They accept sofas, beds, dining tables and chairs, wardrobes, chest of drawers, bookcases, desks and household appliances in working order. Items are sold at affordable prices in their St Werburghs showroom, with proceeds supporting community projects. They offer free collection for larger items — book by phone or online.
+  </p>
+
+  <h2>2. Emmaus Bristol</h2>
+  <p>
+    <strong>Location:</strong> St Philips, Bristol<br />
+    <strong>Collection:</strong> Free collection across Bristol<br />
+    <strong>Website:</strong> emmausbristol.org.uk
+  </p>
+  <p>
+    Emmaus Bristol is a social enterprise that provides homes and meaningful work for formerly homeless people. Their shop sells donated furniture, homeware and bric-a-brac. They accept most household furniture in good condition, including sofas, beds, tables, chairs, wardrobes and shelving. Emmaus offers free collection from Bristol postcodes and they are often able to collect within a few days.
+  </p>
+
+  <h2>3. British Heart Foundation (BHF)</h2>
+  <p>
+    <strong>Location:</strong> 203 Gloucester Road, Bristol BS7 8NN (plus other stores)<br />
+    <strong>Collection:</strong> Free collection for saleable items<br />
+    <strong>Website:</strong> bhf.org.uk
+  </p>
+  <p>
+    The BHF has furniture and electrical stores across Bristol that accept a wide range of donated items. They are particularly interested in good quality sofas, beds, dining sets and bedroom furniture. Their free collection service covers the greater Bristol area. Items must be in a condition they can sell — they'll assess suitability when you book.
+  </p>
+
+  <h2>4. Bristol Furniture Bank</h2>
+  <p>
+    Bristol Furniture Bank works with local housing associations and support organisations to furnish homes for people leaving homelessness, fleeing domestic abuse, or starting over after crisis. They accept essential furniture items — beds, sofas, tables, chairs and basic kitchen equipment. If you're clearing a property and have functional furniture, this is an excellent way to make a direct difference in someone's life.
+  </p>
+
+  <h2>5. Other Options</h2>
+  <ul>
+    <li><strong>Freecycle Bristol</strong> — post items on the Bristol Freecycle group and someone will collect for free</li>
+    <li><strong>Facebook Marketplace</strong> — list items as "free" for quick collection. Very active in Bristol</li>
+    <li><strong>Nextdoor</strong> — neighbourhood-based platform where locals can claim unwanted furniture</li>
+    <li><strong>Sue Ryder / Oxfam</strong> — accept smaller furniture items in their Bristol shops</li>
+  </ul>
+
+  <h2>What Can Be Donated?</h2>
+  <table>
+    <thead>
+      <tr><th>Item</th><th>Accepted?</th><th>Conditions</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Sofas and armchairs</td><td>Yes</td><td>Fire label intact, no major stains/damage</td></tr>
+      <tr><td>Beds and mattresses</td><td>Sometimes</td><td>Must be clean and stain-free, fire label intact</td></tr>
+      <tr><td>Wardrobes and drawers</td><td>Yes</td><td>Structurally sound, all parts present</td></tr>
+      <tr><td>Tables and chairs</td><td>Yes</td><td>No major damage, stable</td></tr>
+      <tr><td>Desks and bookcases</td><td>Yes</td><td>Good condition</td></tr>
+      <tr><td>White goods</td><td>Some charities</td><td>Must be in working order</td></tr>
+    </tbody>
+  </table>
+
+  <h2>How We Help with Donations</h2>
+  <p>
+    At Clearfields, we work with local <a href="/charity-partners/">charity partners</a> to ensure that reusable items from every clearance find new homes. When we clear a property, we separate items suitable for donation and arrange delivery to our partner charities. You'll receive a Charity Donation Report showing what was donated and where it went.
+  </p>
+  <p>
+    If you're clearing a property and want to maximise donations, we're happy to advise on which items charities will accept. Call us on <strong>0117 123 4567</strong> or <a href="/contact/">request a quote</a>. We'll handle the clearance and the donations in one visit.
+  </p>
+</GuideLayout>

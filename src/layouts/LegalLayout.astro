@@ -1,0 +1,47 @@
+---
+import Layout from './Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import type { BreadcrumbItem } from '../components/Breadcrumb.astro';
+import FloatingMobileBar from '../components/FloatingMobileBar.astro';
+import BackToTop from '../components/BackToTop.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  h1: string;
+  lastUpdated?: string;
+}
+
+const { title, description, h1, lastUpdated } = Astro.props;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: h1 },
+];
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main id="main-content">
+    <div class="bg-slate-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <Breadcrumb items={breadcrumbs} />
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <h1 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">{h1}</h1>
+      {lastUpdated && (
+        <p class="text-sm text-slate-500 mb-8">Last updated: {lastUpdated}</p>
+      )}
+      <div class="prose prose-slate prose-lg max-w-none prose-headings:text-brand-navy">
+        <slot />
+      </div>
+    </div>
+  </main>
+  <Footer />
+  <FloatingMobileBar />
+  <BackToTop />
+</Layout>

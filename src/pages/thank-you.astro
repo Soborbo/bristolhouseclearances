@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../config/site';
+---
+
+<Layout
+  title="Thank You | Clearfields"
+  description="Thank you for your enquiry. We'll be in touch within 2 hours."
+  noindex={true}
+>
+  <Header />
+  <main id="main-content" class="py-20 sm:py-28">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="w-16 h-16 bg-brand-green/10 rounded-full flex items-center justify-center mx-auto mb-6">
+        <svg class="w-8 h-8 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">Thank You!</h1>
+      <p class="text-lg text-slate-600 mb-8">
+        Your enquiry has been received. We'll be in touch within <strong>2 hours</strong> with your free, no-obligation quote.
+      </p>
+      <div class="bg-slate-50 rounded-xl p-6 mb-8 text-left">
+        <h2 class="font-semibold text-brand-navy mb-3">What happens next?</h2>
+        <ol class="space-y-2 text-slate-600">
+          <li class="flex gap-3">
+            <span class="w-6 h-6 bg-brand-green rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0">1</span>
+            <span>We review your enquiry and prepare a personalised quote</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="w-6 h-6 bg-brand-green rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0">2</span>
+            <span>We contact you by phone or email within 2 hours</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="w-6 h-6 bg-brand-green rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0">3</span>
+            <span>If you're happy, we schedule your clearance at a time that suits you</span>
+          </li>
+        </ol>
+      </div>
+      <p class="text-slate-500 mb-6">Need to speak to us sooner?</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href={site.phoneHref} class="inline-flex items-center gap-2 bg-brand-green hover:bg-brand-green-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+          Call {site.phone}
+        </a>
+        <a href="/" class="text-brand-green font-medium hover:underline">
+          ← Back to homepage
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+
+  <!-- Conversion tracking: fire dataLayer event for GTM to pick up -->
+  <script is:inline>
+    // Push conversion event for Google Ads / GA4 via GTM
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'quote_form_submit',
+      conversion_type: 'lead',
+      page_path: '/thank-you',
+    });
+
+    // Also fire the bhcTrackEvent if available (includes GCLID/UTM data)
+    if (typeof window.bhcTrackEvent === 'function') {
+      window.bhcTrackEvent('quote_form_submit', {
+        conversion_type: 'lead',
+      });
+    }
+  </script>
+</Layout>

@@ -1,0 +1,120 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Bristol Recycling Centres' },
+];
+
+const faqs = [
+  { q: 'Do I need to book to visit a Bristol recycling centre?', a: 'No booking is required for standard household waste. You can visit any of the three Bristol recycling centres during opening hours. The only exception is asbestos disposal at Avonmouth, which requires a prior appointment. Expect queues at peak times — weekends and bank holidays are busiest.' },
+  { q: 'Can I use Bristol recycling centres if I live outside Bristol?', a: 'Bristol recycling centres are primarily for Bristol residents. If you live in South Gloucestershire, Bath & North East Somerset, or North Somerset, you should use your own local authority\'s recycling centres. Staff may ask for proof of Bristol address (council tax bill or driving licence).' },
+  { q: 'What can\'t I take to a Bristol recycling centre?', a: 'Commercial or trade waste is not accepted at household recycling centres. Explosive materials, ammunition, radioactive waste and medical waste (needles, pharmaceutical waste) are also excluded. Tyres are accepted in limited quantities (usually 4 per visit). Asbestos is only accepted at Avonmouth by appointment.' },
+];
+---
+
+<GuideLayout
+  title="Bristol Recycling Centres — Locations, Hours & What They Accept | Clearfields"
+  description="Complete guide to Bristol's 3 recycling centres: St Philips, Hartcliffe Way and Avonmouth. Opening hours, what they accept, access rules and tips."
+  h1="Bristol Recycling Centres — Complete Guide"
+  breadcrumbs={breadcrumbs}
+  publishDate="2026-01-25"
+  readingTime="5 min"
+  relatedGuides={[
+    { title: 'Furniture Disposal Bristol', href: '/guides/furniture-disposal-bristol/' },
+    { title: 'Fridge & Freezer Disposal', href: '/guides/fridge-freezer-disposal-bristol/' },
+    { title: 'Paint & Chemicals Disposal', href: '/guides/paint-chemicals-disposal-bristol/' },
+  ]}
+  relatedServices={[
+    { title: 'House Clearance', href: '/house-clearance/' },
+    { title: 'Garden Clearance', href: '/garden-clearance/' },
+  ]}
+  faqs={faqs}
+>
+  <p>
+    <strong>Bristol has three household waste recycling centres (HWRCs)</strong> where residents can dispose of bulky items, hazardous waste and recyclables free of charge. Whether you're getting rid of furniture, electronics, garden waste or paint, knowing which centre to visit and what they accept will save you time and hassle.
+  </p>
+
+  <h2>1. St Philips Recycling Centre (Days Road)</h2>
+  <p>
+    <strong>Address:</strong> Days Road, St Philips, Bristol BS2 0QS<br />
+    <strong>Opening hours:</strong> 8:30am - 4:15pm daily (summer hours may extend to 6:15pm)
+  </p>
+  <p>
+    St Philips is the most centrally located of Bristol's three recycling centres, making it the most convenient option for residents in areas like <a href="/areas/clifton/">Clifton</a>, Redland, Montpelier, Easton and the city centre. It is also the busiest — expect queues at weekends and during school holidays.
+  </p>
+  <p><strong>What St Philips accepts:</strong></p>
+  <ul>
+    <li>General household waste and black bag waste</li>
+    <li>Furniture (wood, metal, upholstered)</li>
+    <li>Garden waste (green waste, soil, rubble)</li>
+    <li>Electrical items (WEEE) — TVs, computers, fridges, small appliances</li>
+    <li>Mattresses</li>
+    <li>Paint, chemicals, oils and batteries</li>
+    <li>Cardboard, paper, glass, textiles</li>
+    <li>Scrap metal</li>
+    <li>Plasterboard (separate bay)</li>
+  </ul>
+
+  <h2>2. Hartcliffe Way Recycling Centre</h2>
+  <p>
+    <strong>Address:</strong> Hartcliffe Way, Bedminster Down, Bristol BS13 0AJ<br />
+    <strong>Opening hours:</strong> 8:30am - 4:15pm daily (summer hours may extend to 6:15pm)
+  </p>
+  <p>
+    Hartcliffe Way serves south Bristol, including Bedminster, Knowle, Hengrove, Whitchurch and Bishopsworth. It's generally quieter than St Philips, making it a good alternative if you want to avoid queues. The site has good access for larger vehicles.
+  </p>
+  <p><strong>What Hartcliffe Way accepts:</strong></p>
+  <ul>
+    <li>All standard household recyclables and waste</li>
+    <li>Bulky items — furniture, mattresses, carpets</li>
+    <li>Garden waste, soil and rubble</li>
+    <li>Electrical items (WEEE)</li>
+    <li>Hazardous waste — paint, chemicals, oils</li>
+    <li>Wood, metal, plasterboard</li>
+    <li>Tyres (limited to 4 per visit)</li>
+  </ul>
+
+  <h2>3. Avonmouth Recycling Centre</h2>
+  <p>
+    <strong>Address:</strong> Kings Weston Lane, Avonmouth, Bristol BS11 0YR<br />
+    <strong>Opening hours:</strong> 8:30am - 4:15pm daily (summer hours may extend to 6:15pm)
+  </p>
+  <p>
+    Avonmouth is the largest of the three sites and serves north and west Bristol, including Shirehampton, Lawrence Weston, Henbury and Westbury-on-Trym. It's the only Bristol recycling centre that accepts asbestos (by prior appointment only).
+  </p>
+  <p><strong>What Avonmouth accepts:</strong></p>
+  <ul>
+    <li>Everything accepted at the other two sites</li>
+    <li><strong>Asbestos</strong> — by appointment only, must be double-wrapped in heavy-duty polythene</li>
+    <li>Larger quantities of soil, rubble and hardcore</li>
+  </ul>
+
+  <h2>Tips for Visiting</h2>
+  <ul>
+    <li><strong>Sort before you go</strong> — separate items into categories (wood, metal, electrical, general waste) to speed up your visit</li>
+    <li><strong>Go midweek</strong> — Tuesdays and Wednesdays are typically the quietest days</li>
+    <li><strong>Check vehicle restrictions</strong> — vans, trailers and large vehicles may need a permit from Bristol City Council (free to apply for online)</li>
+    <li><strong>Bring proof of address</strong> — you may be asked to show a council tax bill or driving licence to confirm you're a Bristol resident</li>
+    <li><strong>Wear sturdy footwear</strong> — recycling centres have uneven surfaces, sharp objects and moving vehicles</li>
+  </ul>
+
+  <h2>What They Don't Accept</h2>
+  <p>The following items are <strong>not accepted</strong> at any Bristol recycling centre:</p>
+  <ul>
+    <li>Commercial or trade waste (businesses must use licensed waste carriers)</li>
+    <li>Explosive materials or ammunition</li>
+    <li>Radioactive waste</li>
+    <li>Clinical or medical waste (needles, drugs)</li>
+    <li>Large quantities of building materials (small DIY amounts are fine)</li>
+  </ul>
+
+  <h2>When a Recycling Centre Trip Isn't Practical</h2>
+  <p>
+    Recycling centres are great for smaller loads, but they have limitations. If you're clearing an entire property, you'd need multiple trips with a van — which quickly becomes impractical and tiring. A professional <a href="/house-clearance/">house clearance service</a> handles everything in one visit: we collect from every room, load our vehicles, and ensure items go to the correct recycling and disposal streams.
+  </p>
+  <p>
+    To compare the costs, see our <a href="/guides/house-clearance-cost-bristol/">house clearance pricing guide</a>. Or call us on <strong>0117 123 4567</strong> for a free quote.
+  </p>
+</GuideLayout>

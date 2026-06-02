@@ -1,0 +1,87 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Fridge & Freezer Disposal Bristol' },
+];
+
+const faqs = [
+  { q: 'Can I put a fridge or freezer in a skip?', a: 'No. Fridges and freezers contain refrigerant gases that are harmful to the environment and must be safely recovered by a specialist. They are classified as WEEE (Waste Electrical and Electronic Equipment) and cannot legally be placed in skips.' },
+  { q: 'Does Bristol Council collect old fridges?', a: 'Yes. Bristol City Council\'s bulky waste service can collect fridges and freezers. The cost is £35 for up to 3 bulky items. You can book online. The item must be placed outside your property on collection day. Wait times are typically 2-4 weeks.' },
+  { q: 'Why do fridges need special disposal?', a: 'Fridges and freezers contain refrigerant gases (CFCs, HCFCs or HFCs) and insulation foam that are ozone-depleting or high global-warming-potential substances. UK WEEE regulations require these to be professionally degassed and recycled at licensed facilities to prevent environmental harm.' },
+  { q: 'Will a new fridge retailer take my old one away?', a: 'Most retailers offer a take-back service when delivering a new appliance. This is often free or costs around £15-£20. Under WEEE regulations, retailers selling electrical goods must offer customers a way to dispose of the old equivalent item. Ask when you order your new appliance.' },
+];
+---
+
+<GuideLayout
+  title="Fridge & Freezer Disposal Bristol — WEEE Compliant Removal | Clearfields"
+  description="How to dispose of a fridge or freezer in Bristol. WEEE regulations explained. Council, recycling centre and professional collection options with costs."
+  h1="Fridge & Freezer Disposal in Bristol"
+  breadcrumbs={breadcrumbs}
+  publishDate="2026-02-15"
+  readingTime="3 min"
+  relatedGuides={[
+    { title: 'Electronics Recycling Bristol', href: '/guides/electronics-recycling-bristol/' },
+    { title: 'Bristol Recycling Centres', href: '/guides/bristol-recycling-centres/' },
+    { title: 'House Clearance Cost Bristol', href: '/guides/house-clearance-cost-bristol/' },
+  ]}
+  relatedServices={[
+    { title: 'House Clearance', href: '/house-clearance/' },
+    { title: 'Furniture Removal', href: '/house-clearance/furniture-removal/' },
+  ]}
+  faqs={faqs}
+>
+  <p>
+    <strong>Fridges and freezers can't go in normal bins or skips.</strong> They contain refrigerant gases regulated under WEEE (Waste Electrical and Electronic Equipment) legislation and must be disposed of through approved channels. Here's how to get rid of your old fridge or freezer in Bristol — legally and responsibly.
+  </p>
+
+  <h2>Why Special Disposal Is Required</h2>
+  <p>
+    Fridges and freezers contain refrigerant gases — older models use CFCs or HCFCs, newer ones use HFCs. All of these are potent greenhouse gases or ozone-depleting substances. The insulation foam in many appliances also contains these gases. UK law requires that these substances are safely extracted by licensed operators before the metal and plastic components can be recycled.
+  </p>
+
+  <h2>Option 1: Retailer Take-Back</h2>
+  <p>
+    If you're buying a new fridge or freezer, the simplest option is to ask the retailer to take the old one away when they deliver the new one. Under WEEE regulations, retailers must offer a take-back route. Most large retailers (Currys, John Lewis, AO.com) offer this for free or a small fee of £15-£20. This is the easiest and most hassle-free option.
+  </p>
+
+  <h2>Option 2: Bristol Recycling Centres</h2>
+  <p>
+    All three of Bristol's <a href="/guides/bristol-recycling-centres/">household waste recycling centres</a> — St Philips, Hartcliffe Way and Avonmouth — accept fridges and freezers. There's a dedicated WEEE area at each site. Disposal is free for Bristol residents but you'll need to transport the appliance yourself. Remember that a fridge-freezer can weigh 60-80kg — you'll likely need help loading and a van or large vehicle.
+  </p>
+
+  <h2>Option 3: Council Bulky Waste Collection</h2>
+  <p>
+    Bristol City Council's bulky waste service will collect a fridge or freezer from outside your property for £35 (up to 3 items). Book online through the council website. The main drawback is the wait time of 2-4 weeks and the need to move the appliance outside yourself.
+  </p>
+
+  <h2>Option 4: Professional Collection</h2>
+  <p>
+    A <a href="/house-clearance/">professional clearance service</a> will collect your fridge or freezer from wherever it stands in your property — even from a basement or upper floor. At Clearfields, we handle WEEE-regulated appliances as part of our standard service. We ensure all items go to licensed WEEE treatment facilities. Prices start from £50 for a single appliance.
+  </p>
+
+  <h2>Cost Comparison</h2>
+  <table>
+    <thead>
+      <tr><th>Method</th><th>Cost</th><th>Wait Time</th><th>You Move It?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Retailer take-back</td><td>Free–£20</td><td>Delivery day</td><td>No</td></tr>
+      <tr><td>Recycling centre</td><td>Free</td><td>Same day</td><td>Yes — to centre</td></tr>
+      <tr><td>Council bulky waste</td><td>£35</td><td>2-4 weeks</td><td>Yes — outside</td></tr>
+      <tr><td>Professional collection</td><td>£50-£70</td><td>Same/next day</td><td>No</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Important: Never Fly-Tip Fridges</h2>
+  <p>
+    Illegal dumping of WEEE items like fridges carries severe penalties — fines of up to £50,000 and potential imprisonment. Bristol Council actively investigates fly-tipping using CCTV and forensic evidence. Beyond the legal risk, a dumped fridge leaks refrigerant gases directly into the atmosphere, causing real environmental harm.
+  </p>
+
+  <h2>Disposing of Fridges During a House Clearance</h2>
+  <p>
+    If you're clearing an entire property, fridges and freezers are included in our standard <a href="/guides/house-clearance-cost-bristol/">house clearance pricing</a>. We handle all WEEE compliance, provide Waste Transfer Notes, and ensure every appliance reaches a licensed treatment facility. Call us on <strong>0117 123 4567</strong> or <a href="/contact/">get a free quote</a>.
+  </p>
+</GuideLayout>

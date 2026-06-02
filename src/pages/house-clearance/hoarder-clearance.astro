@@ -1,0 +1,125 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'House Clearance', href: '/house-clearance/' },
+  { label: 'Hoarder Clearance' },
+];
+
+const relatedServices = [
+  { title: 'House Clearance', href: '/house-clearance/', description: 'Complete residential house clearance service' },
+  { title: 'Probate House Clearance', href: '/probate-house-clearance/', description: 'Sensitive clearance for probate and estate situations' },
+  { title: 'Bereavement Clearance', href: '/probate-house-clearance/bereavement-clearance/', description: 'Compassionate clearance after the loss of a loved one' },
+  { title: 'Downsizing Clearance', href: '/house-clearance/downsizing-clearance/', description: 'Helping families move to smaller homes with care' },
+];
+
+const faqs = [
+  { q: 'How do you approach a hoarder clearance differently from a standard house clearance?', a: 'Every hoarder clearance begins with a private, judgement-free assessment. We work at the pace of the homeowner, using a staged approach — room by room or area by area — rather than clearing everything at once. Our team is trained in hoarding awareness and understands the emotional attachment to possessions.' },
+  { q: 'Can you work with the homeowner present during the clearance?', a: 'Absolutely. In most cases we encourage the homeowner to be involved in the decision-making process. We sort items into clear categories — keep, donate, recycle, dispose — and nothing leaves the property without explicit approval. We can also work with a family member or support worker if preferred.' },
+  { q: 'How long does a hoarder clearance take in Bristol?', a: 'This depends on the severity of the situation and the level of involvement from the homeowner. A mild hoarding situation may take 1-2 days. More severe cases are typically spread over multiple visits across 1-3 weeks to allow the homeowner to adjust gradually. We never rush the process.' },
+  { q: 'What does a hoarder clearance cost?', a: 'Costs vary significantly depending on the volume of items and the number of visits required. A single-room hoarder clearance typically starts from £300, while a full property may range from £800 to £2,500+. We provide a detailed quote after the initial assessment — our Price Lock Guarantee means the price never increases.' },
+  { q: 'Is the service confidential?', a: 'Completely. We use unmarked vehicles and our team wears plain uniforms without large branding. We understand the stigma sometimes associated with hoarding and we take every step to protect your privacy. All information is treated in strict confidence.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Hoarder Clearance Bristol',
+  description: 'Sensitive, staged hoarder clearance in Bristol. Judgement-free, confidential service working at the homeowner\'s pace. Trained team, fully insured.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Clearfields',
+  },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Hoarder Clearance',
+};
+---
+
+<ServiceLayout
+  title="Hoarder Clearance Bristol | Sensitive & Confidential — Clearfields"
+  description="Specialist hoarder clearance in Bristol. Sensitive, staged approach at your pace. Judgement-free, fully confidential. Free assessment — call 0117 123 4567."
+  h1="Hoarder Clearance Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      A sensitive, staged clearance service for hoarding situations. No judgement, no pressure, no rush. We work at your pace to help you reclaim your home.
+    </p>
+  </Fragment>
+
+  <h2>Understanding Hoarding — and How We Can Help</h2>
+  <p>
+    Hoarding is recognised by the NHS as a complex condition that affects thousands of people across the UK. It is not about laziness or untidiness — it is a genuine mental health challenge that can leave people feeling overwhelmed, isolated and unable to ask for help.
+  </p>
+  <p>
+    At Clearfields, we understand this. Our hoarder clearance service is built on empathy, patience and respect. We have helped homeowners across Bristol — from terraced houses in <a href="/areas/bedminster/">Bedminster</a> to flats in <a href="/areas/fishponds/">Fishponds</a> — regain control of their living spaces without feeling judged or rushed.
+  </p>
+  <p>
+    If you or someone you care about is living in a hoarding situation, you are not alone and there is no shame in asking for support. The <a href="https://www.nhs.uk/mental-health/conditions/hoarding-disorder/" rel="noopener noreferrer" target="_blank">NHS hoarding disorder page</a> provides helpful information, and <a href="https://www.helpforhoarders.co.uk/" rel="noopener noreferrer" target="_blank">Help for Hoarders</a> offers specialist guidance and support groups.
+  </p>
+
+  <h2>Our Staged Approach to Hoarder Clearance</h2>
+  <p>
+    We never turn up with a team and strip a property bare in a single day. Our approach is carefully structured to minimise stress and give the homeowner full control throughout the process.
+  </p>
+
+  <h3>Stage 1: Private Assessment</h3>
+  <p>
+    One member of our team — not a large crew — visits the property for a private, confidential assessment. We listen, we look, and we talk through what you'd like to achieve. There is absolutely no pressure to proceed. This visit is completely free.
+  </p>
+
+  <h3>Stage 2: Personalised Plan</h3>
+  <p>
+    Based on the assessment, we create a clear plan that works for you. This might mean starting with one room, one area, or even one category of items. We agree on the pace — whether that's a single day or multiple visits spread over several weeks. You receive a written quote with our <strong>Price Lock Guarantee</strong>, so the cost never increases.
+  </p>
+
+  <h3>Stage 3: Gradual Clearance</h3>
+  <p>
+    Our small, trained team works methodically through the property. Every item is sorted with your input — we separate things into keep, donate, recycle and dispose categories. We photograph items before removal so you have a record. Donated items go to local Bristol charities including the SOFA Project and Emmaus Bristol, and you receive a full Charity Donation Report.
+  </p>
+
+  <h3>Stage 4: Follow-Up Support</h3>
+  <p>
+    After the clearance, we check in to make sure you're comfortable and happy with the results. If you'd like ongoing support, we can recommend local organisations in Bristol that provide continued help for hoarding situations.
+  </p>
+
+  <h2>Why Families and Support Workers Trust Us</h2>
+  <p>
+    Many of our hoarder clearance enquiries come from concerned family members, social workers, occupational therapists and housing associations. We are experienced in working alongside professionals and can adapt our service to fit safeguarding requirements, care plans and tenancy obligations.
+  </p>
+  <p>
+    We regularly work with Bristol City Council housing teams and local NHS mental health services to support vulnerable residents. If you are a professional referring a client, please call us on <strong>0117 123 4567</strong> to discuss the situation in confidence.
+  </p>
+
+  <h2>Confidential and Discreet</h2>
+  <p>
+    We know that privacy matters. Our vehicles are unmarked and our team wears plain clothing without large logos. Neighbours will not know the nature of our visit. All communication is confidential and we will never share details of a clearance with anyone other than the client or their authorised representative.
+  </p>
+
+  <h2>What We Clear in Hoarding Situations</h2>
+  <ul>
+    <li><strong>General household items</strong> — newspapers, packaging, clothing, kitchenware</li>
+    <li><strong>Furniture and appliances</strong> — including items buried under accumulated possessions</li>
+    <li><strong>Hazardous materials</strong> — expired food, cleaning chemicals, biological waste (handled safely)</li>
+    <li><strong>Structural access clearance</strong> — clearing hallways, stairs and doorways for safety</li>
+    <li><strong><a href="/house-clearance/loft-clearance/">Loft</a> and <a href="/house-clearance/cellar-clearance/">cellar contents</a></strong> — including areas that may not have been accessed for years</li>
+    <li><strong><a href="/garden-clearance/">Garden and external areas</a></strong> — sheds, outbuildings, driveways</li>
+  </ul>
+
+  <h2>Bristol Areas We Cover</h2>
+  <p>
+    We provide hoarder clearance services across all Bristol postcodes and surrounding areas. Recent projects include properties in <a href="/areas/clifton/">Clifton</a>, <a href="/areas/totterdown/">Totterdown</a>, Southville, Horfield, Henleaze and <a href="/areas/keynsham/">Keynsham</a>. No property is too challenging — we have cleared homes in every condition imaginable.
+  </p>
+
+  <h2>Get Help Today</h2>
+  <p>
+    Taking the first step is often the hardest part. You can call us on <strong>0117 123 4567</strong> for a private, no-obligation conversation, or send photos via WhatsApp. Everything is completely confidential. We are here to help — at your pace, on your terms.
+  </p>
+  <p>
+    If you are dealing with a <a href="/probate-house-clearance/">probate property</a> where hoarding is involved, we have specialist experience in handling these sensitive situations alongside solicitors and estate agents.
+  </p>
+</ServiceLayout>

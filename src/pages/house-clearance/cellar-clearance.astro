@@ -1,0 +1,108 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'House Clearance', href: '/house-clearance/' },
+  { label: 'Cellar Clearance' },
+];
+
+const relatedServices = [
+  { title: 'House Clearance', href: '/house-clearance/', description: 'Complete residential house clearance service' },
+  { title: 'Loft Clearance', href: '/house-clearance/loft-clearance/', description: 'Loft clearance for conversions and storage' },
+  { title: 'Hoarder Clearance', href: '/house-clearance/hoarder-clearance/', description: 'Sensitive clearance for hoarding situations' },
+  { title: 'Flat Clearance', href: '/house-clearance/flat-clearance/', description: 'Specialist flat and apartment clearance' },
+];
+
+const faqs = [
+  { q: 'Can you clear a damp cellar?', a: 'Yes. We regularly clear damp and partially flooded cellars. Our team wears appropriate protective equipment and we use dehumidifiers and pumps where necessary. Items affected by damp, mould or water damage are handled and disposed of safely in accordance with waste regulations.' },
+  { q: 'How do you get items out of a cellar with narrow stairs?', a: 'Bristol cellars are notoriously tight. We use specialist equipment including narrow trolleys, straps and rollers to navigate steep, narrow cellar stairs. Large items are dismantled where possible. We protect walls and staircases with sheeting to prevent damage during removal.' },
+  { q: 'What does a cellar clearance cost in Bristol?', a: 'A cellar clearance typically costs between £200 and £500 depending on the volume, condition of items (damp items are heavier) and ease of access. Particularly deep or hard-to-access cellars may cost more. We provide a fixed quote after seeing photos — our Price Lock Guarantee means no surprises.' },
+  { q: 'Can you clear a cellar before a conversion or tanking?', a: 'Absolutely. We work with Bristol builders and damp-proofing contractors to clear cellars ahead of conversion or tanking projects. We remove all stored items, old shelving, debris and any non-structural materials so your contractor can start with a clean space.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Cellar Clearance Bristol',
+  description: 'Professional cellar and basement clearance in Bristol. Damp cellars, confined spaces, Victorian properties. Fully insured, licensed waste carrier.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Clearfields',
+  },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Cellar Clearance',
+};
+---
+
+<ServiceLayout
+  title="Cellar Clearance Bristol | Damp Cellars & Basements — Clearfields"
+  description="Professional cellar clearance in Bristol. Damp cellars, confined spaces, Victorian basements. From £200, fully insured. Call 0117 123 4567."
+  h1="Cellar Clearance Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Specialist cellar and basement clearance across Bristol. From damp Victorian cellars to cluttered basements — we clear them safely, whatever the condition.
+    </p>
+  </Fragment>
+
+  <h2>Bristol's Cellar Clearance Specialists</h2>
+  <p>
+    Bristol is a city of cellars. The Victorian and Edwardian terraces that line streets across <a href="/areas/clifton/">Clifton</a>, <a href="/areas/totterdown/">Totterdown</a>, <a href="/areas/bedminster/">Bedminster</a> and <a href="/areas/redland/">Redland</a> almost all have cellars — and most of them are packed with decades of accumulated belongings, damp-damaged items and forgotten storage.
+  </p>
+  <p>
+    Our team specialises in clearing these challenging spaces. We understand the narrow stairways, low ceilings, poor lighting and damp conditions that are typical of Bristol cellars, and we have the equipment and experience to clear them efficiently and safely.
+  </p>
+
+  <h2>What We Clear From Cellars</h2>
+  <ul>
+    <li><strong>Stored belongings</strong> — boxes, furniture, tools, appliances, wine racks</li>
+    <li><strong>Damp-damaged items</strong> — mouldy furniture, water-damaged boxes, rotting textiles</li>
+    <li><strong>Old coal and debris</strong> — coal dust, rubble, broken shelving from original coal cellars</li>
+    <li><strong>Building materials</strong> — leftover paint, timber, tiles, plaster</li>
+    <li><strong>Hazardous items</strong> — old chemicals, paints, oils (disposed of safely under hazardous waste regulations)</li>
+    <li><strong>Old heating equipment</strong> — disused boilers, oil tanks, pipework (excluding asbestos)</li>
+  </ul>
+
+  <h2>Working in Difficult Conditions</h2>
+  <p>
+    Cellar clearance is not the same as clearing a bedroom. The challenges are real:
+  </p>
+  <ul>
+    <li><strong>Damp and flooding</strong> — we carry pumps and dehumidifiers and wear waterproof PPE</li>
+    <li><strong>Confined spaces</strong> — our team is trained for working in low-headroom environments</li>
+    <li><strong>Steep, narrow stairs</strong> — we use specialist equipment and protect your walls and flooring</li>
+    <li><strong>Poor ventilation</strong> — we assess air quality and use portable ventilation where necessary</li>
+    <li><strong>Heavy items</strong> — damp-saturated furniture and old appliances are significantly heavier than dry equivalents</li>
+  </ul>
+  <p>
+    Every cellar clearance is covered by our £10M public liability insurance, and all waste is handled by our Environment Agency licensed team.
+  </p>
+
+  <h2>Cellar Conversions and Tanking</h2>
+  <p>
+    Converting a cellar into usable living space is increasingly popular across Bristol, adding valuable square footage to period properties. Before any conversion or damp-proofing work can begin, the cellar needs to be completely cleared.
+  </p>
+  <p>
+    We work alongside builders, architects and damp-proofing specialists to prepare cellars for conversion. Need the <a href="/house-clearance/loft-clearance/">loft cleared</a> at the same time for a top-to-bottom property renovation? We'll handle both in one visit.
+  </p>
+
+  <h2>How It Works</h2>
+  <ol>
+    <li><strong>Send us photos</strong> — take a few pictures down the cellar stairs or describe the contents. Call <strong>0117 123 4567</strong> or WhatsApp us.</li>
+    <li><strong>Fixed quote</strong> — we may need a brief site visit for cellars in poor condition. Either way, you get a locked price that will not increase.</li>
+    <li><strong>We clear safely</strong> — our equipped team clears everything, protects your property during removal, and leaves the cellar clean and empty.</li>
+  </ol>
+
+  <h2>Part of a Bigger Clearance?</h2>
+  <p>
+    If you're clearing the entire property — perhaps for <a href="/probate-house-clearance/">probate</a>, a sale, or <a href="/house-clearance/downsizing-clearance/">downsizing</a> — the cellar is included as part of our full <a href="/house-clearance/">house clearance service</a>. We also clear <a href="/garden-clearance/">gardens, garages and outbuildings</a> in the same visit.
+  </p>
+  <p>
+    Call <strong>0117 123 4567</strong> for a free, no-obligation quote. We cover all Bristol postcodes and surrounding areas.
+  </p>
+</ServiceLayout>

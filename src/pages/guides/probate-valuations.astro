@@ -1,0 +1,151 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Probate Valuations' },
+];
+
+const faqs = [
+  { q: 'Do I need a professional valuation for probate?', a: 'Not always. For everyday household contents (standard furniture, clothing, kitchenware), a reasonable estimate by the executor is usually sufficient. Professional valuations are recommended for antiques, fine art, jewellery, collections and any individual item worth over £500. HMRC may challenge valuations that appear unreasonably low.' },
+  { q: 'How much does a probate valuation cost?', a: 'A single-item valuation typically costs £20-50. A full house contents valuation by a qualified valuer ranges from £150-400 depending on the volume and complexity. Auction house valuations are often free if you consign items for sale. The cost is usually paid from the estate.' },
+  { q: 'What happens if HMRC disputes a probate valuation?', a: 'HMRC can challenge valuations they consider too low. They may request supporting evidence or commission their own valuation. If the estate has undervalued assets, additional Inheritance Tax plus interest may be due. Professional valuations from qualified surveyors carry more weight with HMRC.' },
+  { q: 'Can house clearance items be sold at auction for probate?', a: 'Yes. Items of value can be consigned to auction houses, which is a transparent way to establish market value for HMRC purposes. The sale price becomes the probate value. Bristol-area auction houses like Clevedon Salerooms and Gardiner Houlgate handle estate sales regularly.' },
+];
+---
+
+<GuideLayout
+  title="Probate Valuations Guide — How They Work | Clearfields"
+  description="How probate valuations work for house clearances. What gets valued, who can value items, auction routes and HMRC requirements. Bristol executor's guide."
+  h1="Probate Valuations — What Gets Valued and How"
+  breadcrumbs={breadcrumbs}
+  publishDate="2026-03-05"
+  readingTime="5 min"
+  relatedGuides={[
+    { title: 'Probate Clearance Guide', href: '/guides/probate-clearance-guide/' },
+    { title: 'Clearing a House After Death', href: '/guides/clearing-house-after-death/' },
+  ]}
+  relatedServices={[
+    { title: 'Probate House Clearance', href: '/probate-house-clearance/' },
+    { title: 'Estate Clearance', href: '/probate-house-clearance/estate-clearance/' },
+    { title: 'House Clearance', href: '/house-clearance/' },
+  ]}
+  faqs={faqs}
+>
+  <Fragment slot="hero-subtitle">
+    Understanding probate valuations — what needs valuing, who can do it, and how to satisfy HMRC requirements when managing an estate in Bristol.
+  </Fragment>
+
+  <p>
+    When someone dies, their estate must be valued for probate and potential Inheritance Tax purposes. This includes the contents of their home — not just the property itself. As an executor managing a <a href="/probate-house-clearance/">probate house clearance</a> in Bristol, understanding what needs valuing and how the process works will save you time, money and potential complications with HMRC.
+  </p>
+
+  <h2>What Needs to Be Valued?</h2>
+  <p>
+    In principle, everything the deceased owned at the date of death has a value that forms part of the estate. In practice, HMRC is most interested in items of significant individual value. Here is how to approach it:
+  </p>
+
+  <h3>Everyday Household Contents</h3>
+  <p>
+    Standard furniture, clothing, kitchenware and general household items typically have modest second-hand value. For most estates, a reasonable lump-sum estimate is acceptable — for example, "household contents: £1,500." HMRC rarely challenges sensible estimates for everyday items.
+  </p>
+
+  <h3>Items Requiring Individual Valuation</h3>
+  <p>
+    The following categories should be individually valued:
+  </p>
+  <ul>
+    <li><strong>Antique furniture</strong> — period pieces, named makers, fine woodwork</li>
+    <li><strong>Fine art</strong> — paintings, prints, sculptures (especially signed or attributed works)</li>
+    <li><strong>Jewellery</strong> — precious metals, gemstones, designer or antique pieces</li>
+    <li><strong>Collections</strong> — stamps, coins, watches, wine, books, militaria</li>
+    <li><strong>Silverware</strong> — hallmarked silver, silver-plated items of quality</li>
+    <li><strong>Vehicles</strong> — cars, motorcycles, boats</li>
+    <li><strong>Musical instruments</strong> — pianos, guitars, orchestral instruments</li>
+  </ul>
+  <p>
+    If you are unsure whether an item has significant value, err on the side of getting it checked. Bristol properties, particularly older homes in areas like <strong>Clifton</strong>, <strong>Sneyd Park</strong> and <strong>Stoke Bishop</strong>, often contain antiques and art that owners accumulated over decades.
+  </p>
+
+  <h2>Who Can Conduct Probate Valuations?</h2>
+
+  <h3>Qualified Valuers</h3>
+  <p>
+    For items of significant value, use a qualified valuer — ideally one who is a member of a recognised professional body such as the Royal Institution of Chartered Surveyors (RICS) or the Society of Fine Art Auctioneers and Valuers (SOFAA). Their valuations carry the most weight with HMRC.
+  </p>
+
+  <h3>Auction Houses</h3>
+  <p>
+    Bristol-area auction houses are an excellent resource for probate valuations:
+  </p>
+  <ul>
+    <li><strong>Clevedon Salerooms</strong> — one of the West Country's leading auction houses, handling regular estate sales</li>
+    <li><strong>Gardiner Houlgate</strong> — based in Corsham, specialists in watches, jewellery, toys and collectibles</li>
+    <li><strong>East Bristol Auctions</strong> — Hanham-based, good for general household and vintage items</li>
+  </ul>
+  <p>
+    Many auction houses offer free valuations if you consign items for sale. This is a practical route because the sale price establishes a transparent market value that HMRC will accept.
+  </p>
+
+  <h3>Specialist Dealers</h3>
+  <p>
+    For specific categories — jewellery, books, art, musical instruments — specialist dealers can provide valuations. However, be aware that a dealer buying for stock may undervalue items. Independent valuations are more reliable for HMRC purposes.
+  </p>
+
+  <h2>The HMRC Perspective</h2>
+  <p>
+    HMRC requires the estate to be valued at the open market value on the date of death. This means the price an item would fetch if sold on the open market — not the replacement cost, insurance value or sentimental value.
+  </p>
+  <p>Key points:</p>
+  <ul>
+    <li>HMRC can challenge valuations they consider too low (or too high — overvaluation increases the estate's tax liability unnecessarily)</li>
+    <li>Professional valuations from qualified surveyors are harder for HMRC to dispute</li>
+    <li>Auction sale results provide definitive evidence of market value</li>
+    <li>Keep all valuation reports with the estate papers</li>
+  </ul>
+
+  <h2>The Auction Route</h2>
+  <p>
+    Selling items at auction is often the cleanest approach for probate purposes. The process works as follows:
+  </p>
+  <ol>
+    <li><strong>Identification</strong> — during or before the <a href="/probate-house-clearance/estate-clearance/">estate clearance</a>, items of potential value are set aside</li>
+    <li><strong>Consignment</strong> — items are taken to the auction house for cataloguing</li>
+    <li><strong>Sale</strong> — items are sold at auction, establishing their market value</li>
+    <li><strong>Proceeds</strong> — the auction house pays the estate, minus commission (typically 15-25%)</li>
+    <li><strong>Documentation</strong> — the sale record provides proof of value for HMRC</li>
+  </ol>
+  <p>
+    We can coordinate with auction houses on your behalf, transporting items of value directly from the property to the saleroom as part of the clearance.
+  </p>
+
+  <h2>Valuation Tips for Executors</h2>
+  <ul>
+    <li><strong>Photograph everything</strong> before the clearance — this protects you if questions arise later</li>
+    <li><strong>Check for hallmarks</strong> on silver and gold items — a simple magnifying glass check can identify valuable pieces</li>
+    <li><strong>Look inside books</strong> — first editions, signed copies and antiquarian books can be worth hundreds or thousands</li>
+    <li><strong>Do not clean or polish antiques</strong> — improper cleaning can reduce value significantly</li>
+    <li><strong>Keep pairs and sets together</strong> — a pair of chairs is worth more than two individual chairs</li>
+    <li><strong>Check attics and cellars</strong> — valuable items are often stored and forgotten in <a href="/house-clearance/loft-clearance/">lofts</a> and <a href="/house-clearance/cellar-clearance/">cellars</a></li>
+  </ul>
+
+  <h2>How We Help With Probate Valuations</h2>
+  <p>
+    While we are not professional valuers, our experienced team can identify items that are likely to have significant value during a clearance. We will:
+  </p>
+  <ul>
+    <li>Flag items we believe should be professionally valued before disposal</li>
+    <li>Photograph and set aside potential valuables for executor review</li>
+    <li>Transport items to auction houses or valuers if requested</li>
+    <li>Provide itemised records of all items removed</li>
+  </ul>
+  <p>
+    Our team has cleared hundreds of Bristol properties and has a good eye for items that warrant further investigation. We work closely with <a href="/for-solicitors/">Bristol solicitors</a> managing probate estates and understand what documentation is needed.
+  </p>
+
+  <h2>Get Expert Advice</h2>
+  <p>
+    If you are managing a probate estate in Bristol and need guidance on valuations and clearance, <a href="/contact/">contact us</a> or call <strong>0117 123 4567</strong>. We are happy to discuss the process and recommend appropriate valuers for your situation.
+  </p>
+</GuideLayout>

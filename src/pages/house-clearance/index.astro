@@ -1,0 +1,124 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'House Clearance' },
+];
+
+const relatedServices = [
+  { title: 'Hoarder Clearance', href: '/house-clearance/hoarder-clearance/', description: 'Sensitive, staged clearance for hoarding situations' },
+  { title: 'End of Tenancy Clearance', href: '/house-clearance/end-of-tenancy-clearance/', description: 'Fast turnaround for landlords and letting agents' },
+  { title: 'Loft Clearance', href: '/house-clearance/loft-clearance/', description: 'Clear your loft for conversion or storage' },
+  { title: 'Furniture Removal', href: '/house-clearance/furniture-removal/', description: 'Individual items or full house of furniture' },
+  { title: 'Downsizing Clearance', href: '/house-clearance/downsizing-clearance/', description: 'Helping families move to smaller homes' },
+  { title: 'Flat Clearance', href: '/house-clearance/flat-clearance/', description: 'Specialist flat and apartment clearance' },
+];
+
+const faqs = [
+  { q: 'How much does a house clearance cost in Bristol?', a: 'A typical house clearance in Bristol costs between £300 and £900 depending on property size, volume of items and access. We provide free, no-obligation quotes — your price is locked once agreed and will never go up.' },
+  { q: 'How long does a house clearance take?', a: 'Most 2-3 bedroom houses are cleared within a single day. Larger properties or those with significant contents may take 2 days. We always confirm the timeline before starting.' },
+  { q: 'What happens to my items after clearance?', a: 'We recycle or donate at least 95% of everything we clear. Usable items go to local charities including the SOFA Project and Emmaus Bristol. We provide a Charity Donation Report so you can see exactly where your items went.' },
+  { q: 'Do I need to be present during the clearance?', a: 'No — many of our clients arrange key collection or lockbox access. We send live photo updates throughout the clearance so you can see progress in real time.' },
+  { q: 'Can you clear a house with items still inside?', a: 'Absolutely. We handle everything from furniture and appliances to clothing, kitchenware and general household items. Just tell us what (if anything) you want to keep and we take care of the rest.' },
+  { q: 'Are you licensed to carry waste?', a: 'Yes. We are a licensed Upper Tier Waste Carrier registered with the Environment Agency. We carry £10M public liability insurance and provide Waste Transfer Notes for every job.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'House Clearance Bristol',
+  description: 'Professional house clearance service in Bristol. Same-day available, 95% recycling rate, Price Lock Guarantee.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Clearfields',
+  },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'House Clearance',
+};
+---
+
+<ServiceLayout
+  title="House Clearance Bristol | Same Day, From £175 — Clearfields"
+  description="Professional house clearance in Bristol. Price Lock Guarantee, 95% recycling, same-day available. Free quotes within 2 hours. Call 0117 123 4567."
+  h1="House Clearance Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Professional, fully insured house clearance across Bristol and surrounding areas. Price Lock Guarantee — your quote never goes up. 95% of items recycled or donated to charity.
+    </p>
+  </Fragment>
+
+  <h2>Bristol's Most Trusted House Clearance Service</h2>
+  <p>
+    Whether you're clearing a family home, preparing a property for sale, or dealing with a difficult situation, Clearfields provides a complete, hassle-free service. We handle everything — from the smallest studio flat to the largest detached home — with professionalism, care and respect.
+  </p>
+  <p>
+    Based in Bristol, we've cleared over 500 properties across BS1 to BS49 postcodes. Our team understands the unique challenges of Bristol properties — from narrow Victorian terraces in <a href="/areas/totterdown/">Totterdown</a> to large period homes in <a href="/areas/clifton/">Clifton</a>.
+  </p>
+
+  <h2>What's Included in Our House Clearance</h2>
+  <ul>
+    <li><strong>Full property clearance</strong> — every room, loft, garage and garden</li>
+    <li><strong>All furniture and appliances</strong> — sofas, beds, fridges, washing machines, everything</li>
+    <li><strong>Careful sorting</strong> — we separate items for recycling, charity donation and responsible disposal</li>
+    <li><strong>Besom clean</strong> — we leave every room swept and tidy</li>
+    <li><strong>Waste Transfer Notes</strong> — full paperwork for your records</li>
+    <li><strong>Charity Donation Report</strong> — proof of where your items went</li>
+  </ul>
+
+  <h2>How Our House Clearance Works</h2>
+  <p>We keep it simple with a 3-step process:</p>
+  <ol>
+    <li><strong>Send us photos</strong> — WhatsApp photos of the property or call us on 0117 123 4567. It takes 60 seconds.</li>
+    <li><strong>Get your locked quote</strong> — within 2 hours you'll have a fixed price. It won't go up on the day, guaranteed.</li>
+    <li><strong>We clear and clean</strong> — our uniformed team arrives on time, clears everything, and leaves the property spotless.</li>
+  </ol>
+
+  <h2>Property Types We Clear</h2>
+  <p>No property is too large or too small. We regularly clear:</p>
+  <ul>
+    <li>1-2 bedroom flats and apartments</li>
+    <li>3-4 bedroom family homes</li>
+    <li>5+ bedroom detached and period properties</li>
+    <li>Student lets and HMOs</li>
+    <li>Bungalows and retirement properties</li>
+    <li><a href="/house-clearance/hoarder-clearance/">Hoarder properties</a> (sensitive, staged approach)</li>
+  </ul>
+
+  <h2>House Clearance Pricing</h2>
+  <p>Our pricing is transparent and competitive. Every quote includes loading, transport, disposal and a besom clean:</p>
+  <table>
+    <thead>
+      <tr><th>Property Size</th><th>Typical Price</th><th>Timeframe</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1 bed flat / studio</td><td>£175 – £300</td><td>2-4 hours</td></tr>
+      <tr><td>2-3 bed house</td><td>£300 – £500</td><td>4-6 hours</td></tr>
+      <tr><td>4-5 bed house</td><td>£500 – £900</td><td>1 day</td></tr>
+      <tr><td>Large / heavily furnished</td><td>From £900</td><td>1-2 days</td></tr>
+    </tbody>
+  </table>
+  <p>
+    Want a more detailed breakdown? Read our <a href="/guides/house-clearance-cost-bristol/">complete guide to house clearance costs in Bristol</a>.
+  </p>
+
+  <h2>Our Bristol Coverage</h2>
+  <p>
+    We cover all of Bristol, Bath and surrounding areas within a 30-mile radius. Our busiest areas include <a href="/areas/clifton/">Clifton</a>, <a href="/areas/redland/">Redland</a>, <a href="/areas/bishopston/">Bishopston</a>, <a href="/areas/bedminster/">Bedminster</a>, <a href="/areas/fishponds/">Fishponds</a> and <a href="/areas/keynsham/">Keynsham</a>. View all <a href="/areas/">areas we cover</a>.
+  </p>
+
+  <h2>Why Choose Clearfields?</h2>
+  <ul>
+    <li><strong>Price Lock Guarantee</strong> — your quote never goes up on the day</li>
+    <li><strong>We Never Cancel</strong> — guaranteed to turn up, every time</li>
+    <li><strong>95% Recycling Rate</strong> — we recycle or donate the vast majority of items</li>
+    <li><strong>Same-Day Available</strong> — for urgent clearances, we can often be there today</li>
+    <li><strong>EA Licensed & Fully Insured</strong> — £10M public liability insurance</li>
+    <li><strong>4.9★ Google Reviews</strong> — trusted by 200+ happy customers</li>
+  </ul>
+</ServiceLayout>

@@ -1,0 +1,109 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Commercial Clearance', href: '/commercial-clearance/' },
+  { label: 'Warehouse Clearance' },
+];
+
+const relatedServices = [
+  { title: 'Commercial Clearance', href: '/commercial-clearance/', description: 'Full commercial clearance services across Bristol' },
+  { title: 'Office Clearance', href: '/commercial-clearance/office-clearance/', description: 'Office furniture, IT equipment and fit-out clearance' },
+  { title: 'Shop Clearance', href: '/commercial-clearance/shop-clearance/', description: 'Retail unit fixtures, stock and shopfitting clearance' },
+];
+
+const faqs = [
+  { q: 'Can you dismantle and remove warehouse racking?', a: 'Yes. Our team is experienced in dismantling pallet racking, shelving systems, mezzanine floors and conveyor systems. We have the equipment to handle heavy-duty industrial racking safely. Usable racking can be sold on your behalf or recycled as scrap metal.' },
+  { q: 'How do you handle bulk stock clearance?', a: 'We can clear bulk stock of any type — palletised goods, loose stock, raw materials, packaging. Where stock has residual value, we can arrange bulk sale to clearance buyers or route to auction. Otherwise, materials are recycled wherever possible.' },
+  { q: 'Do you clear hazardous materials from warehouses?', a: 'We handle a range of hazardous materials including chemicals, oils, solvents and batteries, in compliance with hazardous waste regulations. Materials requiring specialist disposal are processed through licensed hazardous waste facilities. We provide full documentation.' },
+  { q: 'What size of warehouse can you clear?', a: 'We clear units from small lock-up storage to large distribution centres. For units over 10,000 sq ft, we typically deploy multiple teams and heavy plant. We\'ve cleared warehouses across Bristol\'s industrial areas including Avonmouth, St Philips, Brislington and Yate.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Warehouse Clearance Bristol',
+  description: 'Industrial warehouse clearance in Bristol. Racking, pallets, bulk stock, machinery. Heavy plant available. Full waste documentation and compliance.',
+  provider: { '@type': 'LocalBusiness', name: 'Clearfields' },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Warehouse Clearance',
+};
+---
+
+<ServiceLayout
+  title="Warehouse Clearance Bristol | Industrial & Bulk Clearance — Clearfields"
+  description="Industrial warehouse clearance in Bristol. Racking, pallets, bulk stock, machinery removal. Avonmouth, St Philips, Brislington. Waste Transfer Notes. Call 0117 123 4567."
+  h1="Warehouse Clearance Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Heavy-duty warehouse and industrial clearance across Bristol. We dismantle racking, clear bulk stock and remove machinery — leaving your unit empty and ready for handover.
+    </p>
+  </Fragment>
+
+  <h2>Industrial Clearance Experts</h2>
+  <p>
+    Clearfields provides specialist warehouse and industrial unit clearance for businesses, landlords and insolvency practitioners across Bristol and the surrounding area. From lock-up units in St Philips to large distribution centres in Avonmouth, we have the team, vehicles and equipment to handle clearances of any scale.
+  </p>
+
+  <h2>What We Clear</h2>
+  <ul>
+    <li><strong>Racking and shelving</strong> — pallet racking, cantilever racking, longspan shelving, mezzanine floors</li>
+    <li><strong>Bulk stock</strong> — palletised goods, loose stock, raw materials, packaging</li>
+    <li><strong>Machinery and equipment</strong> — forklifts, conveyor systems, compressors, workbenches</li>
+    <li><strong>Office areas</strong> — warehouse offices, welfare facilities, canteens</li>
+    <li><strong>Waste and debris</strong> — construction waste, redundant materials, general rubbish</li>
+    <li><strong>Hazardous materials</strong> — oils, chemicals, batteries, fluorescent tubes</li>
+  </ul>
+
+  <h2>Racking Dismantling and Removal</h2>
+  <p>
+    Warehouse racking requires specialist handling. Our team dismantles pallet racking, shelving systems and mezzanine structures safely and efficiently. Where racking is in good condition, we can arrange resale — potentially offsetting your clearance costs. Damaged or obsolete racking is recycled as scrap metal.
+  </p>
+
+  <h2>Bulk and Volume Clearance</h2>
+  <p>
+    Large-scale clearances demand large-scale logistics. For major warehouse clearances, we deploy:
+  </p>
+  <ul>
+    <li>Multiple clearance teams working simultaneously</li>
+    <li>Large-capacity vehicles including tipper trucks and roll-on-roll-off skips</li>
+    <li>Forklift and telehandler support where needed</li>
+    <li>Dedicated project manager for coordination</li>
+  </ul>
+
+  <h2>Bristol Industrial Areas We Cover</h2>
+  <p>
+    We regularly clear warehouses and industrial units across Bristol's key commercial zones:
+  </p>
+  <ul>
+    <li><strong>Avonmouth and Severnside</strong> — distribution centres and logistics hubs</li>
+    <li><strong>St Philips and Temple Gate</strong> — mixed industrial and commercial</li>
+    <li><strong>Brislington Trading Estate</strong> — light industrial and storage</li>
+    <li><strong>Yate and Emersons Green</strong> — modern industrial parks</li>
+    <li><strong>South Bristol</strong> — Hengrove, Hartcliffe and Whitchurch industrial areas</li>
+  </ul>
+
+  <h2>Warehouse Clearance Pricing</h2>
+  <table>
+    <thead>
+      <tr><th>Unit Size</th><th>Typical Price</th><th>Includes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Small unit / lock-up</td><td>£500 – £1,000</td><td>Contents clearance, Waste Transfer Notes</td></tr>
+      <tr><td>Medium warehouse</td><td>£1,000 – £3,000</td><td>Racking removal, bulk clearance</td></tr>
+      <tr><td>Large distribution centre</td><td>From £3,000</td><td>Bespoke quote after survey</td></tr>
+    </tbody>
+  </table>
+  <p>
+    If your warehouse includes office space, our <a href="/commercial-clearance/office-clearance/">office clearance team</a> handles that alongside the industrial clearance. For <a href="/commercial-clearance/confidential-waste-disposal/">confidential waste</a> found in warehouse offices, we provide secure shredding and data destruction with certificates.
+  </p>
+  <p>
+    We also work with executors clearing commercial property as part of an estate — see our <a href="/probate-house-clearance/estate-clearance/">estate clearance service</a> for more details. Call <strong>0117 123 4567</strong> for a free survey and quote.
+  </p>
+</ServiceLayout>

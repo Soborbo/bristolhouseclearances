@@ -1,0 +1,57 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { site } from '../config/site';
+---
+
+<LegalLayout
+  title="Terms & Conditions — Clearfields"
+  description="Terms and conditions for Clearfields services. Booking, cancellation, pricing and liability."
+  h1="Terms & Conditions"
+  lastUpdated="March 2026"
+>
+  <h2>1. Definitions</h2>
+  <p>"The Company" refers to Clearfields. "The Client" refers to any individual or organisation engaging our services. "The Service" refers to any clearance, removal or related service we provide.</p>
+
+  <h2>2. Quotations</h2>
+  <p>All quotations are free of charge and valid for 30 days from issue. Our Price Lock Guarantee means the quoted price will not increase on the day of clearance, provided the scope of work matches the original quotation. If additional items or work are identified on site, any increase will be agreed with the Client before proceeding.</p>
+
+  <h2>3. Booking and Payment</h2>
+  <ul>
+    <li>Bookings are confirmed via phone, email or WhatsApp</li>
+    <li>Payment is due on completion of the clearance unless otherwise agreed</li>
+    <li>We accept bank transfer, debit/credit card and cash</li>
+    <li>For large or multi-day clearances, a 25% deposit may be required</li>
+  </ul>
+
+  <h2>4. Cancellation</h2>
+  <p>The Client may cancel or reschedule a booking with at least 24 hours' notice at no charge. Cancellations with less than 24 hours' notice may incur a cancellation fee of up to 25% of the quoted price.</p>
+
+  <h2>5. The Clearance</h2>
+  <ul>
+    <li>The Client must ensure we have adequate access to the property on the agreed date</li>
+    <li>Items to be retained must be clearly identified and separated before our arrival, or clearly communicated in advance</li>
+    <li>Once items are loaded onto our vehicles, they are considered collected for disposal/donation and cannot be returned</li>
+    <li>We will leave the property in a besom-clean condition (swept and tidy)</li>
+  </ul>
+
+  <h2>6. Items of Value</h2>
+  <p>We will make reasonable efforts to identify items of potential value during a clearance. However, we cannot be held responsible for items not identified as valuable by the Client prior to clearance. For probate and estate clearances, we recommend a pre-clearance walkthrough.</p>
+
+  <h2>7. Hazardous Materials</h2>
+  <p>The Client must inform us of any known hazardous materials on the property (e.g., asbestos, chemicals, gas cylinders). Additional charges may apply for the safe handling and disposal of hazardous waste. We reserve the right to refuse clearance of materials we deem unsafe.</p>
+
+  <h2>8. Insurance and Liability</h2>
+  <p>Clearfields carries £10M public liability insurance. We take every care to avoid damage to the property during clearance. In the unlikely event of accidental damage, claims must be notified within 7 days. Our liability is limited to the cost of repair or the market value of the damaged item, whichever is lower.</p>
+
+  <h2>9. Environmental Responsibility</h2>
+  <p>We are a licensed Upper Tier Waste Carrier registered with the Environment Agency. All waste is disposed of in accordance with the Environmental Protection Act 1990 and associated regulations. Waste Transfer Notes are provided for every job.</p>
+
+  <h2>10. Privacy</h2>
+  <p>Your personal data is handled in accordance with our <a href="/privacy-policy/">Privacy Policy</a> and GDPR requirements.</p>
+
+  <h2>11. Complaints</h2>
+  <p>If you are not satisfied with our service, please contact us at <a href={`mailto:${site.email}`}>{site.email}</a> or <a href={site.phoneHref}>{site.phone}</a>. We aim to resolve all complaints within 5 working days.</p>
+
+  <h2>12. Governing Law</h2>
+  <p>These terms are governed by English law. Any disputes will be subject to the exclusive jurisdiction of the English courts.</p>
+</LegalLayout>

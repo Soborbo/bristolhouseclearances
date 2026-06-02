@@ -1,0 +1,120 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABanner from '../../components/sections/CTABanner.astro';
+import FloatingMobileBar from '../../components/FloatingMobileBar.astro';
+import BackToTop from '../../components/BackToTop.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Case Studies' },
+];
+
+const caseStudies = [
+  {
+    slug: 'probate-clearance-clifton-victorian-townhouse',
+    title: 'Probate Clearance — Victorian Townhouse, Clifton',
+    service: 'Probate Clearance',
+    area: 'Clifton',
+    property: '4-bed Victorian townhouse',
+    challenge: 'Three floors of 40+ years of accumulation. Valuable antiques mixed with general household items.',
+    outcome: '2-day clearance with full inventory. 12 items flagged for auction, raising £3,200 for the estate.',
+    recyclingRate: '97%',
+    duration: '2 days',
+  },
+  {
+    slug: 'hoarder-clearance-staged-approach',
+    title: 'Hoarder Clearance — Staged Approach',
+    service: 'Hoarder Clearance',
+    area: 'South Bristol',
+    property: '3-bed semi-detached',
+    challenge: 'Severe hoarding across all rooms. Client needed a sensitive, gradual approach over multiple visits.',
+    outcome: 'Completed over 3 visits across 2 weeks. Client was supported throughout. Property returned to habitable condition.',
+    recyclingRate: '92%',
+    duration: '3 visits over 2 weeks',
+  },
+  {
+    slug: 'commercial-office-clearance-temple-quarter',
+    title: 'Commercial Office Clearance — Temple Quarter',
+    service: 'Commercial Clearance',
+    area: 'Temple Quarter',
+    property: 'Open-plan office (2,500 sq ft)',
+    challenge: 'IT equipment requiring WEEE-compliant disposal. 15 desks, server room, filing cabinets. Weekend-only access.',
+    outcome: 'Cleared in a single Saturday. WEEE certificates and data destruction certificates provided. Office ready for new tenant Monday.',
+    recyclingRate: '96%',
+    duration: '1 day (weekend)',
+  },
+];
+---
+
+<Layout
+  title="Case Studies | Real Clearance Projects — Clearfields"
+  description="Real house clearance case studies from Bristol. Probate, hoarder, commercial and residential clearance projects with outcomes and recycling rates."
+>
+  <Header />
+  <main id="main-content">
+    <div class="bg-slate-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <Breadcrumb items={breadcrumbs} />
+      </div>
+    </div>
+
+    <section class="bg-brand-navy text-white py-12 sm:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Case Studies</h1>
+        <p class="text-xl text-slate-300 max-w-2xl">Real clearance projects from across Bristol. See how we handle different property types, challenges and service requirements.</p>
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="space-y-8">
+        {caseStudies.map(study => (
+          <div class="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 hover:shadow-md transition-shadow">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="bg-brand-green/10 text-brand-green text-xs font-semibold px-3 py-1 rounded-full">{study.service}</span>
+              <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">{study.area}</span>
+            </div>
+            <h2 class="text-xl font-bold text-brand-navy mb-4">{study.title}</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+              <div>
+                <p class="text-xs text-slate-500 uppercase font-semibold">Property</p>
+                <p class="text-sm text-slate-700">{study.property}</p>
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 uppercase font-semibold">Duration</p>
+                <p class="text-sm text-slate-700">{study.duration}</p>
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 uppercase font-semibold">Recycling Rate</p>
+                <p class="text-sm text-brand-green font-semibold">{study.recyclingRate}</p>
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 uppercase font-semibold">Service</p>
+                <p class="text-sm text-slate-700">{study.service}</p>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div>
+                <p class="text-sm font-semibold text-brand-navy">The Challenge</p>
+                <p class="text-sm text-slate-600">{study.challenge}</p>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-brand-navy">The Outcome</p>
+                <p class="text-sm text-slate-600">{study.outcome}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <CTABanner />
+  </main>
+  <Footer />
+  <FloatingMobileBar />
+  <BackToTop />
+</Layout>

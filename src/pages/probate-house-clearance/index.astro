@@ -1,0 +1,125 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Probate House Clearance' },
+];
+
+const relatedServices = [
+  { title: 'Bereavement Clearance', href: '/probate-house-clearance/bereavement-clearance/', description: 'Compassionate clearance after the loss of a loved one' },
+  { title: 'Estate Clearance', href: '/probate-house-clearance/estate-clearance/', description: 'Full estate clearance with valuation and inventory' },
+  { title: 'House Clearance', href: '/house-clearance/', description: 'General residential house clearance service' },
+];
+
+const faqs = [
+  { q: 'Can I clear a house before probate is granted?', a: 'Yes, in most cases. As executor, you can arrange a clearance before the Grant of Probate is issued — this is common when the property needs to be sold or secured. We recommend keeping a record of any valuable items removed, and we provide a full inventory as standard.' },
+  { q: 'How do you handle valuable items during a probate clearance?', a: 'We carefully sort through all items and flag anything potentially valuable — antiques, jewellery, artwork, collectibles. We can arrange professional valuations and, if instructed, route items to auction houses. Nothing is disposed of without your explicit approval.' },
+  { q: 'Do you work with solicitors and estate agents?', a: 'Yes, we regularly work alongside Bristol solicitors and estate agents handling probate cases. We offer priority scheduling, direct invoicing and can liaise directly with legal representatives. Visit our For Solicitors page for more details.' },
+  { q: 'How long does a probate clearance take?', a: 'Most probate clearances are completed within 1-2 days. We can work to specific timescales if you have exchange or completion deadlines. For properties with significant contents, we may recommend a staged approach over 2-3 visits.' },
+  { q: 'What paperwork do you provide?', a: 'We provide Waste Transfer Notes (legally required), a Charity Donation Report showing where items were donated, a full inventory of items cleared, and professional invoicing suitable for estate accounts.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Probate House Clearance Bristol',
+  description: 'Sensitive probate and bereavement house clearance in Bristol. Working with executors, solicitors and families. Full inventory and charity donation reports.',
+  provider: { '@type': 'LocalBusiness', name: 'Clearfields' },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Probate House Clearance',
+};
+---
+
+<ServiceLayout
+  title="Probate House Clearance Bristol | Sensitive & Professional — Clearfields"
+  description="Compassionate probate house clearance in Bristol. We work with executors, solicitors and families. Full inventory, charity donations, Waste Transfer Notes."
+  h1="Probate House Clearance Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Dealing with a loved one's property is never easy. Our experienced team provides compassionate, professional probate clearance — handling everything with sensitivity, dignity and care.
+    </p>
+  </Fragment>
+
+  <h2>Compassionate Probate Clearance You Can Trust</h2>
+  <p>
+    Losing a loved one is one of life's most difficult experiences. The responsibility of clearing their home — often filled with decades of memories — can feel overwhelming. Clearfields has helped hundreds of Bristol families navigate this process with dignity and care.
+  </p>
+  <p>
+    We understand that this isn't just a house clearance — it's someone's life. That's why our probate team is specifically trained to work sensitively, taking the time to sort through belongings carefully and ensuring nothing of sentimental or financial value is overlooked.
+  </p>
+
+  <h2>What Makes Our Probate Service Different</h2>
+  <ul>
+    <li><strong>Dedicated probate coordinator</strong> — a single point of contact throughout</li>
+    <li><strong>Careful item sorting</strong> — we flag valuables, personal papers, photos and sentimental items</li>
+    <li><strong>Professional valuations</strong> — we can arrange antique and jewellery valuations</li>
+    <li><strong>Charity donations</strong> — usable items go to local Bristol charities</li>
+    <li><strong>Full inventory</strong> — itemised list suitable for probate records</li>
+    <li><strong>Solicitor liaison</strong> — we work directly with your legal team</li>
+  </ul>
+
+  <h2>Understanding the Probate Process</h2>
+  <p>
+    As an executor, you have a legal duty to manage the deceased's estate responsibly. This includes securing the property, identifying valuable items for the estate, and clearing the property for sale or transfer. Here's how we support you:
+  </p>
+  <ol>
+    <li><strong>Initial assessment</strong> — we visit the property (or review photos) and provide a detailed quote</li>
+    <li><strong>Pre-clearance sort</strong> — we identify items of value, personal documents and sentimental belongings for your review</li>
+    <li><strong>Clearance day</strong> — our team carefully clears the property, room by room</li>
+    <li><strong>Post-clearance</strong> — you receive Waste Transfer Notes, Charity Donation Report and full inventory</li>
+  </ol>
+
+  <h2>Handling Valuable Items</h2>
+  <p>
+    Many probate properties contain items of unexpected value — from antique furniture and collectible china to vintage jewellery and first-edition books. Our team is trained to recognise potentially valuable items and will always flag them for your attention before any disposal.
+  </p>
+  <p>
+    Where requested, we can arrange:
+  </p>
+  <ul>
+    <li>Professional antique and fine art valuations</li>
+    <li>Auction house consignment (we work with several Bristol auction houses)</li>
+    <li>Specialist jewellery and watch valuations</li>
+    <li>Book and vinyl collection assessment</li>
+  </ul>
+
+  <h2>Working with Solicitors</h2>
+  <p>
+    We work regularly with Bristol solicitors managing probate cases. Our <a href="/for-solicitors/">solicitor referral service</a> offers:
+  </p>
+  <ul>
+    <li>Priority scheduling to meet completion deadlines</li>
+    <li>Direct invoicing to the estate</li>
+    <li>Liaison with property agents for marketing preparation</li>
+    <li>Professional documentation for estate records</li>
+  </ul>
+
+  <h2>Sensitive Approach</h2>
+  <p>
+    We never rush a probate clearance. If family members want to walk through the property first to collect personal items, we encourage that. If you'd prefer not to be present, we handle everything with the same level of care — sending photo updates throughout the day.
+  </p>
+  <p>
+    For particularly emotional clearances, including <a href="/probate-house-clearance/bereavement-clearance/">bereavement situations</a>, we can recommend local bereavement support services.
+  </p>
+
+  <h2>Probate Clearance Pricing</h2>
+  <table>
+    <thead>
+      <tr><th>Property Size</th><th>Typical Price</th><th>Includes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1-2 bed</td><td>£300 – £500</td><td>Full clearance + inventory</td></tr>
+      <tr><td>3-4 bed</td><td>£500 – £900</td><td>Full clearance + inventory + valuations flagged</td></tr>
+      <tr><td>5+ bed / large estate</td><td>From £900</td><td>Staged clearance + inventory + valuation arrangements</td></tr>
+    </tbody>
+  </table>
+  <p>
+    For a comprehensive guide, read our <a href="/guides/clearing-house-after-death/">guide to clearing a house after death</a> and our <a href="/guides/house-clearance-cost-bristol/">Bristol clearance cost guide</a>.
+  </p>
+</ServiceLayout>

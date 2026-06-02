@@ -1,0 +1,148 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'House Clearance vs Skip Hire' },
+];
+
+const faqs = [
+  { q: 'Is a house clearance more expensive than skip hire?', a: 'Not necessarily. When you factor in the cost of skip hire, the permit, and the time spent loading the skip yourself, house clearance is often comparable or better value. A typical 8-yard skip costs £250-350 in Bristol, but you do all the work. House clearance includes everything.' },
+  { q: 'When is skip hire the better option?', a: 'Skip hire can be better if you\'re doing DIY renovation work, are physically able to load it yourself, only have construction waste (rubble, timber), or want to clear at your own pace over several days.' },
+  { q: 'What can\'t go in a skip?', a: 'Skips cannot accept mattresses, fridges/freezers, TVs and monitors, tyres, asbestos, gas bottles, chemicals or paint. These items all require specialist disposal. A house clearance company handles all of these.' },
+  { q: 'Do I need a permit for a skip in Bristol?', a: 'If the skip is placed on a public road (which it usually is in terraced streets), you need a skip permit from Bristol City Council. This costs around £40-60 and can take several days to process.' },
+];
+---
+
+<GuideLayout
+  title="House Clearance vs Skip Hire — Which Is Better? | Clearfields"
+  description="House clearance vs skip hire in Bristol — full comparison of costs, pros, cons and when each option makes sense. Make the right choice for your situation."
+  h1="House Clearance vs Skip Hire — Which Should You Choose?"
+  breadcrumbs={breadcrumbs}
+  publishDate="2026-02-01"
+  readingTime="6 min"
+  relatedGuides={[
+    { title: 'House Clearance Cost Bristol', href: '/guides/house-clearance-cost-bristol/' },
+    { title: 'Clearing a House After Death', href: '/guides/clearing-house-after-death/' },
+  ]}
+  relatedServices={[
+    { title: 'House Clearance', href: '/house-clearance/' },
+    { title: 'Furniture Removal', href: '/house-clearance/furniture-removal/' },
+    { title: 'Garden Clearance', href: '/garden-clearance/' },
+  ]}
+  faqs={faqs}
+>
+  <p>
+    <strong>When you need to clear a property in Bristol, you essentially have three options: hire a house clearance company, hire a skip, or use Bristol Council's bulky waste collection.</strong> Each has its place, but they suit very different situations. This guide helps you decide which is right for you.
+  </p>
+
+  <h2>Side-by-Side Comparison</h2>
+  <table>
+    <thead>
+      <tr><th>Factor</th><th>House Clearance</th><th>Skip Hire</th><th>Council Bulky Waste</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Typical cost</strong></td><td>£300–£600</td><td>£250–£350 + permit</td><td>£35 for 3 items</td></tr>
+      <tr><td><strong>Labour</strong></td><td>All included</td><td>You load it</td><td>You place at kerb</td></tr>
+      <tr><td><strong>Speed</strong></td><td>Same day available</td><td>3-7 days lead time</td><td>2-4 weeks wait</td></tr>
+      <tr><td><strong>Items accepted</strong></td><td>Everything</td><td>Most (not mattresses, fridges)</td><td>Limited range & quantity</td></tr>
+      <tr><td><strong>Recycling rate</strong></td><td>95%+ (ours)</td><td>Varies (typically 60-80%)</td><td>Council recycled</td></tr>
+      <tr><td><strong>Permit needed?</strong></td><td>No</td><td>Yes (if on road)</td><td>No</td></tr>
+      <tr><td><strong>Best for</strong></td><td>Full property clears, probate, no lifting</td><td>DIY renovation, gradual clearance</td><td>A few specific items</td></tr>
+    </tbody>
+  </table>
+
+  <h2>House Clearance — Pros and Cons</h2>
+
+  <h3>Pros</h3>
+  <ul>
+    <li><strong>Zero effort</strong> — the team handles everything from start to finish</li>
+    <li><strong>Same-day available</strong> — no waiting for delivery</li>
+    <li><strong>Everything accepted</strong> — including mattresses, fridges, chemicals, electronics</li>
+    <li><strong>High recycling rate</strong> — we recycle 95%+ of items</li>
+    <li><strong>No permit needed</strong> — we use our own vehicles</li>
+    <li><strong>Charity donations</strong> — usable items go to local charities</li>
+    <li><strong>Clean finish</strong> — property left swept and tidy</li>
+  </ul>
+
+  <h3>Cons</h3>
+  <ul>
+    <li>Generally costs more than skip hire alone (but includes all labour)</li>
+    <li>You need to book a specific date and time</li>
+    <li>Less suited to gradual, DIY clearances over several days</li>
+  </ul>
+
+  <h2>Skip Hire — Pros and Cons</h2>
+
+  <h3>Pros</h3>
+  <ul>
+    <li><strong>Flexible timing</strong> — hire for 1-14 days, fill at your own pace</li>
+    <li><strong>Good for renovation waste</strong> — rubble, timber, plasterboard</li>
+    <li><strong>You're in control</strong> — decide what goes and when</li>
+  </ul>
+
+  <h3>Cons</h3>
+  <ul>
+    <li><strong>You do all the lifting</strong> — loading a skip is hard physical work</li>
+    <li><strong>Skip permit required</strong> — £40-60 in Bristol, takes days to process</li>
+    <li><strong>Restricted items</strong> — no mattresses, fridges, tyres, chemicals, asbestos</li>
+    <li><strong>Limited space</strong> — an 8-yard skip fills up faster than you think</li>
+    <li><strong>Can block parking</strong> — neighbours may not be pleased</li>
+    <li><strong>Lower recycling rate</strong> — mixed skip contents are harder to sort</li>
+  </ul>
+
+  <h2>Skip Hire Costs in Bristol (2026)</h2>
+  <table>
+    <thead>
+      <tr><th>Skip Size</th><th>Hire Cost</th><th>Capacity</th><th>Permit</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>4-yard (mini)</td><td>£180–£250</td><td>30-40 bags</td><td>£40-60</td></tr>
+      <tr><td>6-yard (midi)</td><td>£220–£300</td><td>50-60 bags</td><td>£40-60</td></tr>
+      <tr><td>8-yard (builder's)</td><td>£250–£350</td><td>60-80 bags</td><td>£40-60</td></tr>
+      <tr><td>12-yard (large)</td><td>£350–£450</td><td>100-120 bags</td><td>£40-60</td></tr>
+    </tbody>
+  </table>
+  <p><em>Prices are approximate and vary by provider. Skip permit costs are set by Bristol City Council.</em></p>
+
+  <h2>Bristol Council Bulky Waste Collection</h2>
+  <p>Bristol City Council offers a bulky waste collection service at £35 for up to 3 items. This is useful for individual items (a sofa, fridge, mattress) but impractical for a full house clearance:</p>
+  <ul>
+    <li>Maximum 3 items per booking</li>
+    <li>Wait time of 2-4 weeks</li>
+    <li>Items must be placed at the kerbside by 7am on collection day</li>
+    <li>Limited to specific item types</li>
+  </ul>
+
+  <h2>Decision Matrix — Which Should You Choose?</h2>
+  <p><strong>Choose house clearance if:</strong></p>
+  <ul>
+    <li>You're clearing a whole property (or most of one)</li>
+    <li>You can't or don't want to do heavy lifting</li>
+    <li>You need items like mattresses, fridges or electronics removed</li>
+    <li>You want it done quickly (same day or next day)</li>
+    <li>You're an executor dealing with a <a href="/probate-house-clearance/">probate clearance</a></li>
+    <li>You care about recycling and charity donation</li>
+  </ul>
+
+  <p><strong>Choose skip hire if:</strong></p>
+  <ul>
+    <li>You're doing renovation work (rubble, plasterboard, timber)</li>
+    <li>You're physically fit and have time to load it yourself</li>
+    <li>You want to clear gradually over several days</li>
+    <li>You have off-road space for the skip (driveway)</li>
+  </ul>
+
+  <p><strong>Choose council collection if:</strong></p>
+  <ul>
+    <li>You only have 1-3 large items to dispose of</li>
+    <li>You can wait 2-4 weeks</li>
+    <li>Budget is the primary concern</li>
+  </ul>
+
+  <h2>Get a Quote</h2>
+  <p>
+    Not sure which option is right for you? <a href="/contact/">Contact us</a> for a free, no-obligation quote. We'll be honest — if skip hire or council collection makes more sense for your situation, we'll tell you. For full pricing details, see our <a href="/guides/house-clearance-cost-bristol/">Bristol house clearance cost guide</a>.
+  </p>
+</GuideLayout>

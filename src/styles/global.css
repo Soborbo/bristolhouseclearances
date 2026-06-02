@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-brand-green: #16a34a;
+  --color-brand-green-dark: #15803d;
+  --color-brand-navy: #1e3a5f;
+  --color-brand-navy-dark: #152d4a;
+  --color-brand-grey: #f8fafc;
+  --color-brand-grey-dark: #e2e8f0;
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Prose table styling */
+.prose table {
+  @apply w-full text-sm border-collapse;
+}
+.prose thead {
+  @apply bg-brand-navy text-white;
+}
+.prose thead th {
+  @apply px-4 py-3 text-left font-semibold text-sm;
+}
+.prose tbody td {
+  @apply px-4 py-3 border-b border-slate-200;
+}
+.prose tbody tr:nth-child(even) {
+  @apply bg-slate-50;
+}
+.prose tbody tr:hover {
+  @apply bg-slate-100;
+}
+
+/* Prose strong green highlight for key selling points */
+.prose h2 {
+  @apply border-b border-slate-200 pb-2;
+}
+
+/* Ordered list with branded numbers */
+.prose ol > li::marker {
+  @apply text-brand-green font-bold;
+}
+
+/* Prose link underline on hover */
+.prose a {
+  @apply no-underline hover:underline;
+}

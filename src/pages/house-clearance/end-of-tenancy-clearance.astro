@@ -1,0 +1,120 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'House Clearance', href: '/house-clearance/' },
+  { label: 'End of Tenancy Clearance' },
+];
+
+const relatedServices = [
+  { title: 'House Clearance', href: '/house-clearance/', description: 'Complete residential house clearance service' },
+  { title: 'Landlord Clearance', href: '/house-clearance/landlord-clearance/', description: 'Priority clearance accounts for landlords and agents' },
+  { title: 'Flat Clearance', href: '/house-clearance/flat-clearance/', description: 'Specialist flat and apartment clearance' },
+  { title: 'Furniture Removal', href: '/house-clearance/furniture-removal/', description: 'Individual items or full house of furniture removed' },
+];
+
+const faqs = [
+  { q: 'How quickly can you do an end of tenancy clearance?', a: 'We offer same-day and next-day end of tenancy clearances across Bristol. For urgent jobs — such as when a new tenant is moving in — we can often attend within hours. Call 0117 123 4567 for availability today.' },
+  { q: 'Can you clear a property if the tenant has abandoned it?', a: 'Yes. We regularly clear properties where tenants have left without notice, leaving belongings behind. We photograph and document everything before removal to protect you legally. We recommend confirming with your solicitor that the tenancy has been properly terminated before we attend.' },
+  { q: 'Do you work with letting agents?', a: 'Absolutely. We work with letting agents across Bristol and offer direct invoicing, priority scheduling and key collection. Many agents add us to their preferred supplier list for fast turnaround between tenancies.' },
+  { q: 'What does an end of tenancy clearance cost?', a: 'A single room or small amount of abandoned items starts from around £120. A full flat clearance typically costs £175-£400, and a full house ranges from £300-£700. We provide free quotes within 2 hours — send us photos via WhatsApp for the fastest response.' },
+  { q: 'Can you clean the property after clearing it?', a: 'We include a besom clean (swept and tidy) as standard with every clearance. If you need a full professional end of tenancy clean, we can recommend trusted local cleaning partners who often attend the same day we finish.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'End of Tenancy Clearance Bristol',
+  description: 'Fast end of tenancy clearance in Bristol. Same-day available for landlords and letting agents. Abandoned belongings, furniture, waste — all cleared and documented.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Clearfields',
+  },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'End of Tenancy Clearance',
+};
+---
+
+<ServiceLayout
+  title="End of Tenancy Clearance Bristol | Same Day, From £120 — Clearfields"
+  description="Fast end of tenancy clearance in Bristol. Same-day available for landlords and letting agents. Items documented, 95% recycled. Call 0117 123 4567."
+  h1="End of Tenancy Clearance Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Fast, reliable end of tenancy clearance for landlords and letting agents across Bristol. Same-day service available. Your property cleared and ready for the next tenant.
+    </p>
+  </Fragment>
+
+  <h2>Get Your Property Tenant-Ready — Fast</h2>
+  <p>
+    When a tenancy ends and belongings are left behind, every day the property sits empty costs you money. Clearfields provides rapid end of tenancy clearance across all Bristol postcodes — with same-day service available for urgent jobs.
+  </p>
+  <p>
+    Whether a tenant has moved out and left a few items or abandoned a fully furnished property, we handle the complete clearance. From student lets in <a href="/areas/fishponds/">Fishponds</a> and Stokes Croft to family rentals in <a href="/areas/bishopston/">Bishopston</a> and <a href="/areas/redland/">Redland</a>, we know Bristol's rental market and the pressures landlords face between tenancies.
+  </p>
+
+  <h2>What We Clear</h2>
+  <ul>
+    <li><strong>Abandoned furniture</strong> — beds, sofas, wardrobes, desks, everything</li>
+    <li><strong>White goods</strong> — fridges, washing machines, tumble dryers, cookers</li>
+    <li><strong>General waste</strong> — bags of rubbish, broken items, packaging</li>
+    <li><strong>Personal belongings</strong> — photographed and documented before removal</li>
+    <li><strong><a href="/garden-clearance/">Garden waste</a></strong> — overgrown areas, broken garden furniture, shed contents</li>
+    <li><strong>Student accommodation</strong> — end of year clearances for student lets and HMOs</li>
+  </ul>
+
+  <h2>Why Landlords and Letting Agents Choose Us</h2>
+  <p>
+    Time is money in property management. Here's what makes our end of tenancy clearance different:
+  </p>
+  <ul>
+    <li><strong>Same-day available</strong> — call before 10am and we can often attend the same day</li>
+    <li><strong>2-hour quotes</strong> — send WhatsApp photos and get a fixed price within 2 hours</li>
+    <li><strong>Price Lock Guarantee</strong> — the price we quote is the price you pay, no surprises</li>
+    <li><strong>Full documentation</strong> — photographic record of items cleared, Waste Transfer Notes for compliance</li>
+    <li><strong>Direct invoicing</strong> — we invoice the management company or landlord directly</li>
+    <li><strong>Besom clean included</strong> — every room left swept and tidy</li>
+  </ul>
+
+  <h2>How It Works</h2>
+  <ol>
+    <li><strong>Send us photos</strong> — WhatsApp images of the property or call us on <strong>0117 123 4567</strong>. Takes 60 seconds.</li>
+    <li><strong>Get your locked quote</strong> — fixed price within 2 hours. No hidden fees, guaranteed.</li>
+    <li><strong>We clear same day or next day</strong> — our uniformed team arrives on time, clears everything, and provides full paperwork.</li>
+  </ol>
+
+  <h2>End of Tenancy Clearance Pricing</h2>
+  <table>
+    <thead>
+      <tr><th>Property Type</th><th>Typical Price</th><th>Turnaround</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Single room / few items</td><td>£120 – £200</td><td>1-2 hours</td></tr>
+      <tr><td>1 bed flat</td><td>£175 – £300</td><td>2-4 hours</td></tr>
+      <tr><td>2-3 bed house</td><td>£300 – £500</td><td>4-6 hours</td></tr>
+      <tr><td>HMO / student let</td><td>£400 – £700</td><td>4-8 hours</td></tr>
+    </tbody>
+  </table>
+  <p>
+    For a full pricing breakdown, see our <a href="/guides/house-clearance-cost-bristol/">guide to house clearance costs in Bristol</a>.
+  </p>
+
+  <h2>Covering All Bristol Rental Hotspots</h2>
+  <p>
+    We clear rental properties across every Bristol postcode, with particular experience in the city's busiest rental areas: <a href="/areas/clifton/">Clifton</a>, Cotham, <a href="/areas/redland/">Redland</a>, Stokes Croft, <a href="/areas/bedminster/">Bedminster</a>, Southville, <a href="/areas/fishponds/">Fishponds</a> and the Harbourside. View all <a href="/areas/">areas we cover</a>.
+  </p>
+  <p>
+    Managing multiple properties? Ask about our <a href="/house-clearance/landlord-clearance/">landlord clearance accounts</a> for priority scheduling and volume discounts across your portfolio.
+  </p>
+
+  <h2>Book Your End of Tenancy Clearance</h2>
+  <p>
+    Call <strong>0117 123 4567</strong> or send WhatsApp photos for a free, no-obligation quote within 2 hours. Same-day clearance available across Bristol.
+  </p>
+</ServiceLayout>

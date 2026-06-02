@@ -1,0 +1,107 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'House Clearance', href: '/house-clearance/' },
+  { label: 'Landlord Clearance' },
+];
+
+const relatedServices = [
+  { title: 'End of Tenancy Clearance', href: '/house-clearance/end-of-tenancy-clearance/', description: 'Fast turnaround clearance between tenancies' },
+  { title: 'Flat Clearance', href: '/house-clearance/flat-clearance/', description: 'Specialist flat and apartment clearance' },
+  { title: 'Furniture Removal', href: '/house-clearance/furniture-removal/', description: 'Individual items or full property furniture removal' },
+  { title: 'House Clearance', href: '/house-clearance/', description: 'Complete residential house clearance service' },
+];
+
+const faqs = [
+  { q: 'What is a landlord clearance account?', a: 'A landlord clearance account gives you priority scheduling, a dedicated contact, volume discounts across your portfolio, and direct invoicing. There is no minimum commitment — you simply benefit from faster response times and preferential rates every time you need a clearance.' },
+  { q: 'Can you attend at short notice?', a: 'Yes. Account holders receive priority scheduling, and we can often attend the same day for urgent clearances. For non-urgent jobs, we typically schedule within 24-48 hours. Call 0117 123 4567 and mention your account.' },
+  { q: 'Do you provide documentation for deposit disputes?', a: 'Absolutely. We provide a full photographic record of items cleared, timestamped before-and-after photos, Waste Transfer Notes, and a detailed invoice. This documentation is regularly used in deposit dispute proceedings and is accepted by all major deposit schemes.' },
+  { q: 'Can you handle multiple properties at once?', a: 'Yes. We regularly clear multiple properties for portfolio landlords in a single day. This is particularly common at the end of the academic year for student lets. We can schedule a rolling programme across your entire portfolio.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Landlord Clearance Service Bristol',
+  description: 'Priority clearance service for Bristol landlords and letting agents. Volume discounts, same-day available, full documentation for deposit disputes.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Clearfields',
+  },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Landlord Clearance Service',
+};
+---
+
+<ServiceLayout
+  title="Landlord Clearance Bristol | Priority Accounts for Landlords — Clearfields"
+  description="Priority clearance service for Bristol landlords and letting agents. Volume discounts, same-day available, full documentation. Call 0117 123 4567."
+  h1="Landlord Clearance Service Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      A dedicated clearance service built for landlords and property managers. Priority scheduling, volume discounts and full documentation — across your entire Bristol portfolio.
+    </p>
+  </Fragment>
+
+  <h2>Built for Bristol Landlords</h2>
+  <p>
+    If you manage rental properties in Bristol, you know that tenant turnaround needs to be fast, documented and cost-effective. Clearfields offers a dedicated landlord clearance service designed around the realities of property management.
+  </p>
+  <p>
+    Whether you own a single buy-to-let in <a href="/areas/bedminster/">Bedminster</a> or a portfolio of 50+ student lets across <a href="/areas/fishponds/">Fishponds</a> and Cotham, we provide a consistent, reliable service with the paperwork you need for compliance and deposit disputes.
+  </p>
+
+  <h2>Landlord Account Benefits</h2>
+  <ul>
+    <li><strong>Priority scheduling</strong> — your jobs go to the front of the queue, with same-day attendance available</li>
+    <li><strong>Dedicated contact</strong> — a single point of contact who knows your portfolio</li>
+    <li><strong>Volume discounts</strong> — preferential rates that improve as you use the service more</li>
+    <li><strong>Direct invoicing</strong> — professional invoices to your company, management agent or accountant</li>
+    <li><strong>Full documentation pack</strong> — Waste Transfer Notes, photographic evidence, itemised inventory</li>
+    <li><strong>Deposit dispute support</strong> — documentation accepted by DPS, TDS and MyDeposits</li>
+  </ul>
+
+  <h2>Common Landlord Clearance Scenarios</h2>
+  <p>We handle every situation a landlord encounters:</p>
+  <ul>
+    <li><strong><a href="/house-clearance/end-of-tenancy-clearance/">End of tenancy clearance</a></strong> — abandoned items and general mess left by outgoing tenants</li>
+    <li><strong>Tenant eviction clearance</strong> — court-ordered clearances with full photographic records</li>
+    <li><strong>Student let turnarounds</strong> — bulk clearances at the end of the academic year</li>
+    <li><strong>Property refurbishment prep</strong> — strip-outs ahead of renovation or refurbishment</li>
+    <li><strong>Portfolio acquisition clearance</strong> — clearing multiple properties after a portfolio purchase</li>
+    <li><strong><a href="/house-clearance/furniture-removal/">Furniture removal</a></strong> — removing old furniture ahead of re-furnishing</li>
+  </ul>
+
+  <h2>How It Works for Landlords</h2>
+  <ol>
+    <li><strong>Set up your account</strong> — a quick phone call or email to register. No contracts, no minimum spend.</li>
+    <li><strong>Request a clearance</strong> — send photos via WhatsApp or call your dedicated contact. Get a locked quote within 2 hours.</li>
+    <li><strong>We attend on your schedule</strong> — same-day, next-day, or at a time that works for your tenancy calendar.</li>
+    <li><strong>Receive your documentation</strong> — full paperwork emailed within 24 hours of completion.</li>
+  </ol>
+
+  <h2>Bristol Portfolio Coverage</h2>
+  <p>
+    We cover all Bristol postcodes and surrounding areas. We work with landlords and agents managing properties across <a href="/areas/clifton/">Clifton</a>, <a href="/areas/redland/">Redland</a>, <a href="/areas/bishopston/">Bishopston</a>, Kingsdown, St Andrews, Easton, Horfield, Filton, <a href="/areas/keynsham/">Keynsham</a> and beyond. View all <a href="/areas/">areas we cover</a>.
+  </p>
+
+  <h2>Working With Letting Agents</h2>
+  <p>
+    We partner with letting agents across Bristol and offer the same account benefits. If you are a letting agent looking for a reliable clearance partner, we can integrate into your processes — attending key handovers, liaising directly with tenants where needed, and providing documentation that slots straight into your compliance records.
+  </p>
+  <p>
+    For properties requiring <a href="/garden-clearance/">garden clearance</a> alongside an internal clearance, we handle both in a single visit to minimise disruption and cost.
+  </p>
+
+  <h2>Open a Landlord Account</h2>
+  <p>
+    Call <strong>0117 123 4567</strong> or email us to set up your landlord account. There is no paperwork, no minimum spend and no lock-in. You simply get priority access and better rates from your very first clearance.
+  </p>
+</ServiceLayout>

@@ -1,0 +1,159 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = 'House Clearance Bristol | Same Day, Price Locked, Zero to Landfill — Clearfields',
+  description = "Bristol's most transparent house clearance service. Instant quotes via WhatsApp photos. Price Lock Guarantee — your quote never goes up. Same-day available. 95% recycled.",
+  noindex = false,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/og-image.jpg', Astro.site);
+
+// GTM container ID — replace with real ID when ready
+const GTM_ID = import.meta.env.PUBLIC_GTM_ID || '';
+---
+
+<!doctype html>
+<html lang="en-GB" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:site_name" content="Clearfields" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Preload hero font — non-blocking with preload + swap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Google Tag Manager (head) — only loads when GTM_ID is set -->
+    {GTM_ID && (
+      <script is:inline set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`} />
+    )}
+
+    <!-- CookieYes integration point — replace COOKIEYES_ID with real ID -->
+    <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/COOKIEYES_ID/script.js"></script> -->
+
+    <title>{title}</title>
+
+    <slot name="head" />
+  </head>
+  <body class="font-sans text-slate-800 bg-white antialiased">
+    <!-- GTM noscript fallback -->
+    {GTM_ID && (
+      <noscript>
+        <iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`} height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      </noscript>
+    )}
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-brand-green focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">
+      Skip to main content
+    </a>
+    <slot />
+
+    <!-- GCLID / UTM persistence + dataLayer events -->
+    <script is:inline>
+      // Persist GCLID and UTM params in localStorage for 90 days
+      (function() {
+        const params = new URLSearchParams(window.location.search);
+        const trackingKeys = ['gclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'fbclid', 'msclkid'];
+        const expiry = 90 * 24 * 60 * 60 * 1000; // 90 days
+
+        trackingKeys.forEach(key => {
+          const val = params.get(key);
+          if (val) {
+            localStorage.setItem(`bhc_${key}`, JSON.stringify({ value: val, expires: Date.now() + expiry }));
+          }
+        });
+
+        // Clean expired entries
+        trackingKeys.forEach(key => {
+          try {
+            const stored = JSON.parse(localStorage.getItem(`bhc_${key}`) || 'null');
+            if (stored && stored.expires < Date.now()) {
+              localStorage.removeItem(`bhc_${key}`);
+            }
+          } catch { /* ignore parse errors */ }
+        });
+      })();
+
+      // Helper: get stored tracking value
+      window.bhcGetTracking = function(key) {
+        try {
+          const stored = JSON.parse(localStorage.getItem(`bhc_${key}`) || 'null');
+          return stored && stored.expires > Date.now() ? stored.value : null;
+        } catch { return null; }
+      };
+
+      // DataLayer push helper
+      window.dataLayer = window.dataLayer || [];
+      window.bhcTrackEvent = function(event, data) {
+        const trackingData = {
+          event,
+          ...data,
+          gclid: window.bhcGetTracking('bhc_gclid'),
+          utm_source: window.bhcGetTracking('bhc_utm_source'),
+          utm_medium: window.bhcGetTracking('bhc_utm_medium'),
+          utm_campaign: window.bhcGetTracking('bhc_utm_campaign'),
+        };
+        window.dataLayer.push(trackingData);
+
+        // sendBeacon fallback for form submissions
+        if (event === 'quote_form_submit' || event === 'contact_form_submit') {
+          if (navigator.sendBeacon) {
+            const blob = new Blob([JSON.stringify(trackingData)], { type: 'application/json' });
+            navigator.sendBeacon('/api/track', blob);
+          }
+        }
+      };
+
+      // Track page view
+      window.dataLayer.push({
+        event: 'page_view',
+        page_path: window.location.pathname,
+        page_title: document.title,
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Commercial Clearance' },
+];
+
+const relatedServices = [
+  { title: 'Office Clearance', href: '/commercial-clearance/office-clearance/', description: 'Desks, IT equipment, office furniture and fit-outs' },
+  { title: 'Shop Clearance', href: '/commercial-clearance/shop-clearance/', description: 'Retail units, shopfitting and stock clearance' },
+  { title: 'Warehouse Clearance', href: '/commercial-clearance/warehouse-clearance/', description: 'Industrial units, racking and bulk clearance' },
+  { title: 'Confidential Waste Disposal', href: '/commercial-clearance/confidential-waste-disposal/', description: 'Secure document and data destruction' },
+];
+
+const faqs = [
+  { q: 'Do you provide Waste Transfer Notes?', a: 'Yes, we provide Waste Transfer Notes for every commercial job as required by law. We also provide Duty of Care documentation and can supply monthly waste reports for businesses requiring regular clearance.' },
+  { q: 'Can you work outside normal business hours?', a: 'Absolutely. We understand that many commercial clearances need to happen outside business hours to minimise disruption. We offer evening, weekend and bank holiday clearance at competitive rates.' },
+  { q: 'How do you handle IT equipment and WEEE waste?', a: 'We follow WEEE (Waste Electrical and Electronic Equipment) regulations for all electrical items. IT equipment is securely wiped or physically destroyed. We provide certificates of destruction for data-bearing devices.' },
+  { q: 'Do you offer regular commercial clearance contracts?', a: 'Yes, we provide ongoing clearance contracts for businesses, landlords and property management companies. These include priority scheduling, fixed pricing and monthly reporting.' },
+  { q: 'Are you compliant with commercial waste regulations?', a: 'We are an Upper Tier Waste Carrier registered with the Environment Agency. We comply with the Environmental Protection Act 1990, Duty of Care regulations, and WEEE Directive. We carry £10M public liability and £10M employer\'s liability insurance.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Commercial Clearance Bristol',
+  description: 'Professional commercial clearance in Bristol. Offices, shops, warehouses and industrial units. WEEE compliant, Duty of Care documentation provided.',
+  provider: { '@type': 'LocalBusiness', name: 'Clearfields' },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Commercial Clearance',
+};
+---
+
+<ServiceLayout
+  title="Commercial Clearance Bristol | Offices, Shops & Warehouses — Clearfields"
+  description="Professional commercial clearance in Bristol. Offices, retail units, warehouses. WEEE compliant, out-of-hours available, Duty of Care documentation. Free quotes."
+  h1="Commercial Clearance Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Professional commercial clearance for offices, retail units, warehouses and industrial premises across Bristol. Fully compliant, insured and available out of hours.
+    </p>
+  </Fragment>
+
+  <h2>Commercial Clearance Specialists</h2>
+  <p>
+    From a single office to a multi-storey warehouse, Clearfields provides fast, compliant commercial clearance services across Bristol and the wider South West. We work with businesses, landlords, property managers and insolvency practitioners to clear commercial premises efficiently and responsibly.
+  </p>
+
+  <h2>Commercial Services We Offer</h2>
+  <ul>
+    <li><strong><a href="/commercial-clearance/office-clearance/">Office clearance</a></strong> — desks, chairs, IT equipment, filing cabinets, partitions</li>
+    <li><strong><a href="/commercial-clearance/shop-clearance/">Shop clearance</a></strong> — retail fixtures, shelving, stock, signage</li>
+    <li><strong><a href="/commercial-clearance/warehouse-clearance/">Warehouse clearance</a></strong> — racking, pallets, industrial equipment, bulk stock</li>
+    <li><strong><a href="/commercial-clearance/confidential-waste-disposal/">Confidential waste disposal</a></strong> — secure document shredding and data destruction</li>
+    <li><strong>Factory and industrial clearance</strong> — machinery, tools, materials</li>
+    <li><strong>Pub and restaurant clearance</strong> — kitchen equipment, furniture, fixtures</li>
+  </ul>
+
+  <h2>Full Regulatory Compliance</h2>
+  <p>Commercial waste disposal is heavily regulated. As your clearance partner, we ensure full compliance with:</p>
+  <ul>
+    <li><strong>Duty of Care</strong> — Environmental Protection Act 1990</li>
+    <li><strong>Waste Transfer Notes</strong> — provided for every job, retained for 2 years</li>
+    <li><strong>WEEE Directive</strong> — proper disposal of electrical and electronic equipment</li>
+    <li><strong>Data Protection</strong> — secure destruction of data-bearing devices with certificates</li>
+    <li><strong>Hazardous Waste Regulations</strong> — specialist handling of hazardous materials</li>
+  </ul>
+
+  <h2>Sectors We Serve</h2>
+  <p>We work across all commercial sectors in Bristol including:</p>
+  <ul>
+    <li>Professional services and corporate offices</li>
+    <li>Retail and hospitality</li>
+    <li>Healthcare and dental practices</li>
+    <li>Education — schools, colleges and universities</li>
+    <li>Construction and fit-out companies</li>
+    <li>Property management and letting agents</li>
+    <li>Councils and housing associations</li>
+  </ul>
+
+  <h2>Out-of-Hours Availability</h2>
+  <p>
+    We understand that commercial clearances often need to happen outside of normal business hours to avoid disruption to your operations or neighbouring businesses. We offer:
+  </p>
+  <ul>
+    <li>Evening and overnight clearances</li>
+    <li>Weekend and bank holiday service</li>
+    <li>Staged clearances over multiple visits</li>
+    <li>Emergency and same-day commercial clearance</li>
+  </ul>
+
+  <h2>Commercial Pricing</h2>
+  <p>Commercial clearance is priced based on volume, access and timing. Typical costs:</p>
+  <table>
+    <thead>
+      <tr><th>Premises Type</th><th>Typical Price</th><th>Includes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Small office (1-5 desks)</td><td>£300 – £600</td><td>Furniture, IT, Waste Transfer Notes</td></tr>
+      <tr><td>Large office (10+ desks)</td><td>£600 – £1,500</td><td>Full clearance, WEEE compliance</td></tr>
+      <tr><td>Retail unit</td><td>£400 – £1,200</td><td>Fixtures, stock, signage</td></tr>
+      <tr><td>Warehouse / industrial</td><td>From £1,000</td><td>Bespoke pricing based on survey</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Council & Housing Association Work</h2>
+  <p>
+    We provide clearance services for Bristol City Council, South Gloucestershire Council, housing associations and property management companies. Our <a href="/contact/">commercial team</a> can discuss framework agreements, SLAs and ongoing contracts.
+  </p>
+</ServiceLayout>

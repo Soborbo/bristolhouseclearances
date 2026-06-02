@@ -1,0 +1,113 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Probate House Clearance', href: '/probate-house-clearance/' },
+  { label: 'Estate Clearance' },
+];
+
+const relatedServices = [
+  { title: 'Probate House Clearance', href: '/probate-house-clearance/', description: 'Full probate clearance with documentation for executors' },
+  { title: 'Bereavement Clearance', href: '/probate-house-clearance/bereavement-clearance/', description: 'Compassionate clearance after the loss of a loved one' },
+  { title: 'House Clearance', href: '/house-clearance/', description: 'General residential house clearance in Bristol' },
+];
+
+const faqs = [
+  { q: 'What is the difference between estate clearance and house clearance?', a: 'An estate clearance includes professional valuation of contents, a detailed inventory suitable for probate records, and the option to route valuable items to auction. A standard house clearance focuses on efficient removal. Estate clearance is the right choice when the property may contain items of significant financial value or when formal records are required for legal purposes.' },
+  { q: 'Do you provide valuations for probate?', a: 'We provide indicative valuations to help executors understand the approximate worth of estate contents. For formal probate valuations required by HMRC, we work with RICS-accredited valuers and can arrange these on your behalf. We also have relationships with several Bristol auction houses for items best sold at auction.' },
+  { q: 'Can you route items to auction on our behalf?', a: 'Yes. We work with established auction houses in Bristol and the South West including specialist fine art, antiques and jewellery auctioneers. We handle the logistics — cataloguing, photography, transport and consignment — so you don\'t have to. Sale proceeds go directly to the estate.' },
+  { q: 'How detailed is the inventory you provide?', a: 'Our estate inventory includes a room-by-room itemised list with descriptions, condition notes, and indicative values where applicable. We also photograph key items. The inventory is provided in a professional format suitable for submission to solicitors, HMRC and probate courts.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Estate Clearance Bristol',
+  description: 'Professional estate clearance in Bristol with valuation, inventory and auction routing. For executors, solicitors and families managing estates.',
+  provider: { '@type': 'LocalBusiness', name: 'Clearfields' },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Estate Clearance',
+};
+---
+
+<ServiceLayout
+  title="Estate Clearance Bristol | Valuation & Inventory — Clearfields"
+  description="Professional estate clearance in Bristol with valuations, detailed inventory and auction routing. For executors and solicitors. Waste Transfer Notes provided."
+  h1="Estate Clearance Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Comprehensive estate clearance with professional valuations, detailed inventory and auction routing. Helping executors and solicitors manage estate contents with care and accountability.
+    </p>
+  </Fragment>
+
+  <h2>More Than a Clearance — A Complete Estate Service</h2>
+  <p>
+    When a property contains items of significant value — antiques, fine art, jewellery, collectibles — a standard house clearance isn't enough. Our estate clearance service ensures that every item is properly assessed, documented and handled appropriately, whether that means auction, private sale, charity donation or responsible disposal.
+  </p>
+  <p>
+    Clearfields has managed estate clearances across some of Bristol's finest properties, from Georgian townhouses in Clifton to substantial family homes in Stoke Bishop and Long Ashton. We understand what executors and solicitors need: accuracy, documentation and accountability.
+  </p>
+
+  <h2>What's Included in Our Estate Clearance</h2>
+  <ul>
+    <li><strong>Pre-clearance assessment</strong> — on-site survey to identify items of value</li>
+    <li><strong>Professional valuation</strong> — indicative values for estate contents; formal RICS valuations arranged on request</li>
+    <li><strong>Detailed inventory</strong> — room-by-room itemised list with descriptions, conditions and photographs</li>
+    <li><strong>Auction routing</strong> — valuable items consigned to appropriate auction houses</li>
+    <li><strong>Charity donations</strong> — usable items donated to local Bristol charities with a full Donation Report</li>
+    <li><strong>Waste Transfer Notes</strong> — legal documentation for all disposed items</li>
+    <li><strong>Property left clean</strong> — broom-clean finish as standard, deep clean available</li>
+  </ul>
+
+  <h2>The Estate Clearance Process</h2>
+  <ol>
+    <li><strong>Instruction</strong> — you contact us as executor, solicitor or family representative. We discuss the property, timescales and any specific requirements.</li>
+    <li><strong>Survey</strong> — we visit the property and conduct a thorough assessment. We flag potentially valuable items and provide a detailed quote.</li>
+    <li><strong>Valuation</strong> — we provide indicative values and, where appropriate, arrange specialist valuations for antiques, art, jewellery or collections.</li>
+    <li><strong>Family review</strong> — before clearance, family members have the opportunity to collect personal and sentimental items.</li>
+    <li><strong>Clearance</strong> — our team clears the property room by room, routing items to auction, charity or disposal as agreed.</li>
+    <li><strong>Documentation</strong> — you receive the full inventory, valuation notes, Waste Transfer Notes and Charity Donation Report.</li>
+  </ol>
+
+  <h2>Auction Partnerships</h2>
+  <p>
+    We work with established auction houses across the South West to ensure estate items achieve the best possible prices. Our auction routing covers:
+  </p>
+  <ul>
+    <li>General antiques and collectibles</li>
+    <li>Fine art and prints</li>
+    <li>Jewellery, watches and silver</li>
+    <li>Vintage and retro furniture</li>
+    <li>Books, maps and ephemera</li>
+    <li>Specialist collections (coins, stamps, militaria, vinyl)</li>
+  </ul>
+
+  <h2>For Solicitors and Legal Professionals</h2>
+  <p>
+    We regularly work with Bristol solicitors handling probate, divorce and insolvency cases. Our documentation is designed to meet legal requirements, and we can liaise directly with your office. Visit our <a href="/for-solicitors/">solicitor referral page</a> for details on our professional partnership programme.
+  </p>
+  <p>
+    If the estate involves a sensitive <a href="/probate-house-clearance/bereavement-clearance/">bereavement situation</a>, our team adapts their approach accordingly — combining professional estate management with the compassion that families need.
+  </p>
+
+  <h2>Estate Clearance Pricing</h2>
+  <table>
+    <thead>
+      <tr><th>Estate Size</th><th>Typical Price</th><th>Includes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Small estate (1-2 bed)</td><td>£400 – £650</td><td>Clearance + inventory + valuation flags</td></tr>
+      <tr><td>Medium estate (3-4 bed)</td><td>£650 – £1,100</td><td>Full service + auction routing</td></tr>
+      <tr><td>Large estate (5+ bed)</td><td>From £1,100</td><td>Staged clearance + specialist valuations</td></tr>
+    </tbody>
+  </table>
+  <p>
+    For more on the <a href="/probate-house-clearance/">probate clearance process</a>, visit our pillar page. You can also read our <a href="/guides/house-clearance-cost-bristol/">Bristol clearance cost guide</a> for a full pricing breakdown. Need a <a href="/commercial-clearance/">commercial property</a> cleared as part of an estate? We handle that too.
+  </p>
+</ServiceLayout>

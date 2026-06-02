@@ -1,0 +1,81 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABanner from '../../components/sections/CTABanner.astro';
+import FloatingMobileBar from '../../components/FloatingMobileBar.astro';
+import BackToTop from '../../components/BackToTop.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides' },
+];
+
+const guides = [
+  // Cost & Pricing
+  { title: 'House Clearance Cost Bristol — 2026 Guide', href: '/guides/house-clearance-cost-bristol/', description: 'Full pricing breakdown for house clearance in Bristol. From £175 for a 1-bed to £900+ for large properties.', category: 'Cost' },
+  { title: 'House Clearance vs Skip Hire', href: '/guides/house-clearance-vs-skip-hire/', description: 'Direct comparison of costs, pros and cons. Decision matrix to help you choose the right option.', category: 'Comparison' },
+  { title: 'Council Bulky Waste vs House Clearance', href: '/guides/council-bulky-waste-vs-house-clearance/', description: 'Compare Bristol Council collection with professional clearance. Costs, waiting times and practicalities.', category: 'Comparison' },
+  { title: 'DIY vs Professional House Clearance', href: '/guides/diy-vs-professional-house-clearance/', description: 'When to clear a house yourself and when to call in the professionals. Honest comparison.', category: 'Comparison' },
+  // Probate & Bereavement
+  { title: 'Clearing a House After Death', href: '/guides/clearing-house-after-death/', description: 'Compassionate guide for executors. Legal requirements, practical steps and emotional support.', category: 'How-To' },
+  { title: "Probate Clearance — Executor's Complete Guide", href: '/guides/probate-clearance-guide/', description: 'Everything executors need to know about clearing a property during probate.', category: 'How-To' },
+  { title: 'Probate Valuations Explained', href: '/guides/probate-valuations/', description: 'How probate valuations work, what gets valued, and auction routes for estate items.', category: 'How-To' },
+  // Practical How-To
+  { title: 'How to Prepare for a House Clearance', href: '/guides/how-to-prepare-for-house-clearance/', description: 'Practical checklist of what to do before the clearance team arrives.', category: 'How-To' },
+  { title: 'House Clearance Checklist', href: '/guides/house-clearance-checklist/', description: 'Step-by-step printable checklist for clearing a house in Bristol.', category: 'How-To' },
+  { title: 'What Companies Do With Your Stuff', href: '/guides/what-house-clearance-companies-do-with-stuff/', description: 'Where your items go after clearance — recycling, charity, disposal explained.', category: 'How-To' },
+  { title: 'How to Choose a House Clearance Company', href: '/guides/how-to-choose-house-clearance-company/', description: "Buyer's guide: what to check, red flags to watch for, and questions to ask.", category: 'How-To' },
+  // Charity & Donation
+  { title: 'Charity House Clearance in Bristol', href: '/guides/charity-house-clearance-bristol/', description: 'Guide to donating items to Bristol charities. SOFA Project, Emmaus, BHF and more.', category: 'Charity' },
+  { title: 'Where to Donate Furniture in Bristol', href: '/guides/donate-furniture-bristol/', description: 'Directory of Bristol furniture donation charities with contact details and collection info.', category: 'Charity' },
+  // Item Disposal
+  { title: 'Mattress Disposal Bristol', href: '/guides/mattress-disposal-bristol/', description: 'How to dispose of a mattress in Bristol. Council, recycling centres and clearance options.', category: 'Item Disposal' },
+  { title: 'Furniture Disposal Bristol', href: '/guides/furniture-disposal-bristol/', description: 'Options for getting rid of old furniture in Bristol — donation, collection and recycling.', category: 'Item Disposal' },
+  { title: 'Fridge & Freezer Disposal Bristol', href: '/guides/fridge-freezer-disposal-bristol/', description: 'WEEE-compliant fridge and freezer disposal in Bristol. Options, costs and regulations.', category: 'Item Disposal' },
+  { title: 'Electronics Recycling Bristol', href: '/guides/electronics-recycling-bristol/', description: 'Where to recycle electronics in Bristol. WEEE regulations and data security.', category: 'Item Disposal' },
+  { title: 'Paint & Chemical Disposal Bristol', href: '/guides/paint-chemicals-disposal-bristol/', description: 'How to safely dispose of paint, chemicals and oils in Bristol.', category: 'Item Disposal' },
+  // Local Info
+  { title: 'Bristol Recycling Centres Guide', href: '/guides/bristol-recycling-centres/', description: 'Complete guide to St Philips, Hartcliffe Way and Avonmouth recycling centres.', category: 'Local Info' },
+];
+---
+
+<Layout
+  title="Guides | House Clearance Advice & Resources — Clearfields"
+  description="Free guides to house clearance in Bristol. Pricing, how-to, comparisons and expert advice. Help making informed clearance decisions."
+>
+  <Header />
+  <main id="main-content">
+    <div class="bg-slate-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <Breadcrumb items={breadcrumbs} />
+      </div>
+    </div>
+
+    <section class="bg-brand-navy text-white py-12 sm:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">House Clearance Guides</h1>
+        <p class="text-xl text-slate-300 max-w-2xl">Free, expert guides to help you make informed decisions about house clearance in Bristol.</p>
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {guides.map(guide => (
+          <a href={guide.href} class="group bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg hover:border-brand-green transition-all">
+            <span class="inline-block bg-brand-green/10 text-brand-green text-xs font-semibold px-3 py-1 rounded-full mb-3">{guide.category}</span>
+            <h2 class="text-lg font-bold text-brand-navy group-hover:text-brand-green transition-colors mb-2">{guide.title}</h2>
+            <p class="text-sm text-slate-500">{guide.description}</p>
+            <span class="inline-block mt-4 text-sm text-brand-green font-medium">Read guide →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <CTABanner />
+  </main>
+  <Footer />
+  <FloatingMobileBar />
+  <BackToTop />
+</Layout>

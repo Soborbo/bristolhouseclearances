@@ -1,0 +1,109 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Garden Clearance', href: '/garden-clearance/' },
+  { label: 'Outbuilding Clearance' },
+];
+
+const relatedServices = [
+  { title: 'Garden Clearance', href: '/garden-clearance/', description: 'Complete garden clearance including green waste and structures' },
+  { title: 'Garage Clearance', href: '/garden-clearance/garage-clearance/', description: 'Full garage clearance and conversion prep' },
+  { title: 'Shed Clearance', href: '/garden-clearance/shed-clearance/', description: 'Shed contents clearance and dismantling' },
+];
+
+const faqs = [
+  { q: 'What counts as an outbuilding?', a: 'An outbuilding is any structure in your garden or grounds that isn\'t the main dwelling. This includes workshops, summerhouses, garden rooms, stables, barns, storage buildings, portacabins, greenhouses, conservatories (detached) and any converted or unconverted structures. We clear them all.' },
+  { q: 'Can you dismantle and remove a large outbuilding?', a: 'Yes. We dismantle timber, metal and composite outbuildings of all sizes. For brick or stone structures, we can clear the contents and internal fittings, and coordinate with demolition contractors for the structure itself if needed.' },
+  { q: 'Do you clear workshop machinery and equipment?', a: 'We clear workshop contents including workbenches, power tools, hand tools, compressors, welding equipment, timber stock and materials. Items of value can be routed to auction or specialist resale. Hazardous materials (oils, solvents, paint) are disposed of through licensed facilities.' },
+  { q: 'How do you access outbuildings in difficult locations?', a: 'Many outbuildings are at the bottom of gardens, down narrow paths or across lawns. We use barrows, hand-carry and ground-protection boards to access difficult spots without damaging your garden. For very large or remote structures, we discuss access during the quote visit.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Outbuilding Clearance Bristol',
+  description: 'Outbuilding clearance in Bristol. Workshops, summerhouses, stables, garden rooms. Contents cleared, structures dismantled and removed.',
+  provider: { '@type': 'LocalBusiness', name: 'Clearfields' },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Outbuilding Clearance',
+};
+---
+
+<ServiceLayout
+  title="Outbuilding Clearance Bristol | Workshops, Summerhouses & Stables — Clearfields"
+  description="Outbuilding clearance in Bristol. Workshops, summerhouses, stables, garden rooms. Contents cleared and structures dismantled. Free quotes. Call 0117 123 4567."
+  h1="Outbuilding Clearance Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Workshops, summerhouses, stables and garden rooms — we clear the contents and dismantle the structure, leaving your grounds ready for whatever comes next.
+    </p>
+  </Fragment>
+
+  <h2>Clearing Every Type of Outbuilding</h2>
+  <p>
+    Bristol properties — particularly the larger homes in Stoke Bishop, Long Ashton, Failand and the surrounding villages — often have outbuildings that have accumulated years of belongings. Whether it's a workshop full of tools, a summerhouse packed with garden furniture, or stables that haven't seen a horse in decades, Clearfields handles the complete job: contents out, structure down, site clear.
+  </p>
+
+  <h2>Types of Outbuilding We Clear</h2>
+  <ul>
+    <li><strong>Workshops</strong> — woodworking shops, metalwork spaces, hobby workshops</li>
+    <li><strong>Summerhouses and garden rooms</strong> — timber, log cabin and composite structures</li>
+    <li><strong>Stables and tack rooms</strong> — equestrian buildings and associated storage</li>
+    <li><strong>Barns and storage buildings</strong> — agricultural and domestic storage</li>
+    <li><strong>Portacabins and containers</strong> — temporary structures and shipping containers</li>
+    <li><strong>Greenhouses and conservatories</strong> — glass, polycarbonate and aluminium structures</li>
+    <li><strong>Garden offices</strong> — insulated and wired garden buildings</li>
+  </ul>
+
+  <h2>Contents Clearance</h2>
+  <p>
+    Outbuildings tend to contain a wide mix of items — from valuable tools and equipment to decades of accumulated clutter. We sort through everything carefully:
+  </p>
+  <ul>
+    <li><strong>Valuable items</strong> — tools, machinery and equipment flagged for your attention or routed to auction</li>
+    <li><strong>Usable items</strong> — furniture, sports equipment, household goods donated to Bristol charities</li>
+    <li><strong>Hazardous materials</strong> — paints, chemicals, oils, treated timber processed through licensed facilities</li>
+    <li><strong>Recyclables</strong> — metals, timber, plastics separated for recycling</li>
+  </ul>
+
+  <h2>Structure Dismantling and Removal</h2>
+  <p>
+    Once the contents are cleared, we dismantle the outbuilding itself. Timber structures are taken apart panel by panel. Roofing, cladding, windows and doors are separated for recycling. The base or footings are removed where possible, and the site is left level and tidy.
+  </p>
+  <p>
+    For brick, stone or block-built outbuildings, we clear the interior and all fixtures. If the structure itself needs demolishing, we can coordinate with trusted Bristol demolition contractors on your behalf.
+  </p>
+
+  <h2>Difficult Access? No Problem</h2>
+  <p>
+    Many outbuildings sit at the end of long gardens, behind gates, down slopes or in spots that vehicles can't reach. Our teams are experienced in hand-carrying materials through narrow paths and across lawns. We use ground-protection boards to prevent damage to grass and planting, and barrows to move heavy items efficiently.
+  </p>
+
+  <h2>Outbuilding Clearance Pricing</h2>
+  <table>
+    <thead>
+      <tr><th>Service</th><th>Typical Price</th><th>Details</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Contents only (small)</td><td>£150 – £300</td><td>Clear contents, structure stays</td></tr>
+      <tr><td>Contents only (large)</td><td>£300 – £600</td><td>Workshop or barn contents</td></tr>
+      <tr><td>Contents + dismantle</td><td>£400 – £800</td><td>Clear and remove timber structure</td></tr>
+      <tr><td>Large / complex</td><td>From £800</td><td>Bespoke quote after survey</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Related Services</h2>
+  <p>
+    Outbuilding clearance often forms part of a bigger project. If you're clearing the full garden, see our <a href="/garden-clearance/">garden clearance service</a>. For sheds specifically, our <a href="/garden-clearance/shed-clearance/">shed clearance</a> page covers smaller structures. Need the garage done too? Our <a href="/garden-clearance/garage-clearance/">garage clearance</a> team handles that.
+  </p>
+  <p>
+    For properties being cleared as part of an estate or after bereavement, our <a href="/probate-house-clearance/">probate clearance team</a> coordinates the outbuildings alongside the main house clearance. Call <strong>0117 123 4567</strong> for a free quote.
+  </p>
+</ServiceLayout>

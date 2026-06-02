@@ -1,0 +1,58 @@
+---
+import Container from '../ui/Container.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+import faqs from '../../content/faqs/faqs.json';
+
+const categories = [...new Set(faqs.map((f: any) => f.category))];
+---
+
+<section id="faq" class="py-16 lg:py-20 bg-white">
+  <Container>
+    <SectionHeading title="Frequently Asked Questions" />
+
+    <div class="max-w-3xl mx-auto space-y-8">
+      {categories.map((category) => (
+        <div>
+          <h3 class="text-lg font-semibold text-brand-navy mb-3">{category}</h3>
+          <div class="space-y-2">
+            {faqs
+              .filter((f: any) => f.category === category)
+              .map((faq: any) => (
+                <details class="group rounded-xl border border-slate-200 bg-white">
+                  <summary class="flex items-center justify-between cursor-pointer px-5 py-4 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-xl transition-colors list-none">
+                    <span>{faq.question}</span>
+                    <svg
+                      class="w-5 h-5 shrink-0 text-slate-400 group-open:rotate-180 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </summary>
+                  <div class="px-5 pb-4 text-sm text-slate-600 leading-relaxed">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<!-- FAQPage Schema -->
+<script is:inline type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq: any) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    },
+  })),
+})} />

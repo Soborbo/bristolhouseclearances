@@ -1,0 +1,104 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Commercial Clearance', href: '/commercial-clearance/' },
+  { label: 'Shop Clearance' },
+];
+
+const relatedServices = [
+  { title: 'Commercial Clearance', href: '/commercial-clearance/', description: 'Full range of commercial clearance services in Bristol' },
+  { title: 'Office Clearance', href: '/commercial-clearance/office-clearance/', description: 'Office furniture, IT equipment and fit-out clearance' },
+  { title: 'Confidential Waste Disposal', href: '/commercial-clearance/confidential-waste-disposal/', description: 'Secure document and data destruction' },
+];
+
+const faqs = [
+  { q: 'Can you clear a shop that still has stock?', a: 'Yes. We can clear remaining stock alongside fixtures and fittings. Where stock has resale value, we can advise on options including bulk sale, donation to charity, or auction. We handle everything from clothing and electronics to perishable goods (disposed of appropriately).' },
+  { q: 'Do you remove shopfitting and fixtures?', a: 'Absolutely. We remove shelving, display units, counters, EPOS systems, signage, mannequins, lighting rigs, window displays, security systems and all other fixtures. We can strip a retail unit back to bare shell ready for the next tenant or a complete refit.' },
+  { q: 'How quickly can you clear a retail unit?', a: 'Most small to medium retail units are cleared within a single day. Larger units or department store-style spaces may take 2-3 days. We offer priority scheduling if you have lease deadlines, and emergency same-day clearance is available subject to capacity.' },
+  { q: 'Do you work with landlords and letting agents?', a: 'Yes, we regularly work with Bristol commercial landlords and letting agents to clear units between tenancies. We offer direct invoicing, priority scheduling and can coordinate with fit-out contractors for seamless transitions.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Shop Clearance Bristol',
+  description: 'Professional shop and retail unit clearance in Bristol. Fixtures, stock, shopfitting removal. Strip to bare shell for next tenant. Fast turnaround.',
+  provider: { '@type': 'LocalBusiness', name: 'Clearfields' },
+  areaServed: { '@type': 'City', name: 'Bristol' },
+  serviceType: 'Shop Clearance',
+};
+---
+
+<ServiceLayout
+  title="Shop Clearance Bristol | Retail Unit & Stock Clearance — Clearfields"
+  description="Professional shop clearance in Bristol. Retail fixtures, stock, shopfitting removal. Strip to shell for next tenant. Fast turnaround, Waste Transfer Notes. Call 0117 123 4567."
+  h1="Shop Clearance Bristol"
+  breadcrumbs={breadcrumbs}
+  relatedServices={relatedServices}
+  faqs={faqs}
+  schema={serviceSchema}
+>
+  <Fragment slot="hero-subtitle">
+    <p class="text-xl text-slate-300 max-w-2xl">
+      Fast, efficient shop and retail unit clearance across Bristol. We remove fixtures, fittings, stock and signage — leaving your unit ready for the next tenant or a complete refit.
+    </p>
+  </Fragment>
+
+  <h2>Retail Clearance for Every Type of Shop</h2>
+  <p>
+    From independent boutiques on Gloucester Road to high-street chains in Broadmead and Cabot Circus, Clearfields has helped retailers, landlords and insolvency practitioners clear retail premises quickly and efficiently. Whether you're closing, relocating or refitting, we strip units back to bare shell so you can move on without delay.
+  </p>
+
+  <h2>What We Remove</h2>
+  <ul>
+    <li><strong>Fixtures and fittings</strong> — shelving, display units, counters, cabinets, gondolas</li>
+    <li><strong>Shopfitting</strong> — built-in units, wall displays, window fixtures, lighting rigs</li>
+    <li><strong>Stock</strong> — remaining inventory, damaged goods, samples</li>
+    <li><strong>EPOS and technology</strong> — tills, card terminals, security tags, CCTV systems</li>
+    <li><strong>Signage</strong> — external signs, window graphics, fascia boards, A-boards</li>
+    <li><strong>Back-of-house</strong> — staff room furniture, storage racking, packaging materials</li>
+  </ul>
+
+  <h2>Strip to Shell Service</h2>
+  <p>
+    Our most popular option for landlords and fit-out companies is a full strip to shell. We remove everything down to bare walls and floor, including:
+  </p>
+  <ul>
+    <li>All fixtures and fittings</li>
+    <li>Floor coverings (carpet, vinyl, tiles)</li>
+    <li>Suspended ceiling tiles and grid</li>
+    <li>Non-structural partitions</li>
+    <li>All waste and debris</li>
+  </ul>
+  <p>
+    The unit is left broom-clean and ready for handover or refit. We coordinate with your <a href="/commercial-clearance/office-clearance/">office clearance</a> if there's a back-office component, and can handle <a href="/commercial-clearance/confidential-waste-disposal/">confidential waste</a> such as customer records, employment files and financial documents.
+  </p>
+
+  <h2>Stock Clearance Options</h2>
+  <p>
+    Remaining stock doesn't have to go to waste. Depending on the type and condition, we can:
+  </p>
+  <ul>
+    <li><strong>Donate to charity</strong> — usable goods go to local Bristol charities</li>
+    <li><strong>Arrange bulk sale</strong> — connect you with clearance buyers</li>
+    <li><strong>Route to auction</strong> — specialist stock and equipment auctions</li>
+    <li><strong>Responsible disposal</strong> — items that can't be reused are recycled where possible</li>
+  </ul>
+
+  <h2>Shop Clearance Pricing</h2>
+  <table>
+    <thead>
+      <tr><th>Unit Size</th><th>Typical Price</th><th>Includes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Small retail unit</td><td>£400 – £800</td><td>Fixtures, fittings, Waste Transfer Notes</td></tr>
+      <tr><td>Medium retail unit</td><td>£800 – £1,500</td><td>Full strip to shell</td></tr>
+      <tr><td>Large / department</td><td>From £1,500</td><td>Bespoke quote after survey</td></tr>
+    </tbody>
+  </table>
+  <p>
+    For larger commercial operations involving storage or distribution space, see our <a href="/commercial-clearance/warehouse-clearance/">warehouse clearance service</a>. If you need a residential property cleared alongside a business premises, our <a href="/house-clearance/">house clearance</a> team can handle both. Call <strong>0117 123 4567</strong> for a free quote.
+  </p>
+</ServiceLayout>
