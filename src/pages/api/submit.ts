@@ -68,8 +68,8 @@ export const POST: APIRoute = async ({ request }) => {
         await resend.emails.send({
           from: fromEmail,
           to: contact.email,
-          subject: 'Your Clearfields Quote Request',
-          text: `Dear ${contact.firstName},\n\nThank you for your quote request. Your estimated price is £${priceResult.total.toFixed(2)}.\n\nWe'll review your details and send you a firm, locked-in quote within 2 hours.\n\nWant it faster? Send us photos via WhatsApp or call us on 0117 123 4567.\n\nBest regards,\nClearfields`,
+          subject: 'Your Bristol House Clearances Quote Request',
+          text: `Dear ${contact.firstName},\n\nThank you for your quote request. Your estimated price is £${priceResult.total.toFixed(2)}.\n\nWe'll review your details and send you a firm, locked-in quote within 2 hours.\n\nWant it faster? Send us photos via WhatsApp or call us on 0117 123 4567.\n\nBest regards,\nBristol House Clearances`,
         });
       } catch (emailErr) {
         console.error('Email send failed:', emailErr);

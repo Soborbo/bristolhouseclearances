@@ -81,7 +81,7 @@ function getNearbyAreas(currentSlug: string, regionSlug: string) {
 {isRegion ? (
   <!-- Regional Hub Page -->
   <Layout
-    title={`House Clearance ${region.name} | Clearfields`}
+    title={`House Clearance ${region.name} | Bristol House Clearances`}
     description={`Professional house clearance across ${region.name}. Covering ${getAreasByRegion(region.slug).map(a => a.name).slice(0, 5).join(', ')} and more. Free quotes, same-day available.`}
   >
     <Header />
@@ -107,7 +107,7 @@ function getNearbyAreas(currentSlug: string, regionSlug: string) {
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div class="lg:col-span-2 prose prose-slate prose-lg max-w-none prose-headings:text-brand-navy prose-a:text-brand-green">
             <p>
-              Clearfields provides professional, fully insured clearance services across all of {region.name}. Whether you need a full <a href="/house-clearance/">house clearance</a>, <a href="/probate-house-clearance/">probate clearance</a>, <a href="/commercial-clearance/">commercial clearance</a> or <a href="/garden-clearance/">garden clearance</a>, our local team is ready to help.
+              Bristol House Clearances provides professional, fully insured clearance services across all of {region.name}. Whether you need a full <a href="/house-clearance/">house clearance</a>, <a href="/probate-house-clearance/">probate clearance</a>, <a href="/commercial-clearance/">commercial clearance</a> or <a href="/garden-clearance/">garden clearance</a>, our local team is ready to help.
             </p>
 
             <h2>Areas We Cover in {region.name}</h2>
@@ -162,7 +162,7 @@ function getNearbyAreas(currentSlug: string, regionSlug: string) {
 ) : area ? (
   <!-- Individual Area Page -->
   <AreaLayout
-    title={`House Clearance ${area.name} | From £175, Same Day — Clearfields`}
+    title={`House Clearance ${area.name} | From £175, Same Day — Bristol House Clearances`}
     description={`Professional house clearance in ${area.name}, Bristol. Price Lock Guarantee, 95% recycling, same-day available. Covering ${area.postcodes.join(', ')} postcodes. Free quotes.`}
     h1={`House Clearance in ${area.name}`}
     area={area.name}

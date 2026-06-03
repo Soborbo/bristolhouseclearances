@@ -190,7 +190,7 @@ export function StepDetails({ state, dispatch }: Props) {
             class="mt-0.5 w-5 h-5 rounded border-slate-300 text-brand-green focus:ring-brand-green"
           />
           <span class="text-xs text-slate-600 leading-relaxed">
-            I agree to Clearfields contacting me about my quote. We'll never share your details with third parties.
+            I agree to Bristol House Clearances contacting me about my quote. We'll never share your details with third parties.
           </span>
         </label>
         {errors.gdpr && <p class="text-xs text-red-500">{errors.gdpr}</p>}

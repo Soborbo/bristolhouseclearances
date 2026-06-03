@@ -41,8 +41,8 @@ const articleSchema = {
   description,
   ...(publishDate ? { datePublished: publishDate } : {}),
   ...(updatedDate ? { dateModified: updatedDate } : {}),
-  author: { '@type': 'Organization', name: 'Clearfields' },
-  publisher: { '@type': 'Organization', name: 'Clearfields' },
+  author: { '@type': 'Organization', name: 'Bristol House Clearances' },
+  publisher: { '@type': 'Organization', name: 'Bristol House Clearances' },
 };
 
 const faqSchema = faqs.length > 0 ? {

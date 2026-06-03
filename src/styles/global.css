@@ -1,55 +1,133 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* ============================================================================
+   BRISTOL HOUSE CLEARANCES — "Bright & Optimistic" design system
+   Confident cobalt + a sunshine pop + soft rounded shapes. Friendly, value-led.
+   Typeface: Plus Jakarta Sans.
+   NOTE: existing brand + neutral tokens are remapped so one file re-skins
+   every page; cobalt replaces the old green, ink replaces navy.
+============================================================================ */
+
 @theme {
-  --color-brand-green: #16a34a;
-  --color-brand-green-dark: #15803d;
-  --color-brand-navy: #1e3a5f;
-  --color-brand-navy-dark: #152d4a;
-  --color-brand-grey: #f8fafc;
-  --color-brand-grey-dark: #e2e8f0;
-  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* ---- brand tokens (remapped) ---- */
+  --color-brand-green: #2e50e0;      /* primary — cobalt */
+  --color-brand-green-dark: #2340bd;
+  --color-brand-navy: #10172a;       /* ink — dark sections / headings */
+  --color-brand-navy-dark: #0b1020;
+  --color-brand-grey: #f3f5fc;
+  --color-brand-grey-dark: #e7eaf6;
+
+  /* ---- named Bright tokens ---- */
+  --color-cobalt: #2e50e0;
+  --color-cobalt-dark: #2340bd;
+  --color-ink: #10172a;
+  --color-sun: #ffc73c;
+  --color-sun-dark: #e0a500;
+  --color-sky: #dee6ff;
+  --color-paper: #fbfbf7;
+  --color-line: #e7e8ef;
+
+  /* ---- cool neutral scale (overrides slate, used site-wide) ---- */
+  --color-slate-50:  #f5f6fb;
+  --color-slate-100: #eceffa;
+  --color-slate-200: #dfe3f1;
+  --color-slate-300: #c6cce0;
+  --color-slate-400: #99a0bb;
+  --color-slate-500: #6c7391;
+  --color-slate-600: #515974;
+  --color-slate-700: #393f57;
+  --color-slate-800: #20263a;
+  --color-slate-900: #131829;
+
+  /* ---- cobalt-tinted "green" utilities used in markup ---- */
+  --color-green-50:  #eef2ff;
+  --color-green-100: #dee6ff;
+  --color-green-400: #6f86ee;
+  --color-green-500: #3f60e6;
+
+  --color-yellow-400: #ffc73c;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+@layer base {
+  body {
+    background-color: var(--color-paper);
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  ::selection { background: var(--color-cobalt); color: #fff; }
+  :focus-visible { outline: 2px solid var(--color-cobalt); outline-offset: 2px; }
+  summary::-webkit-details-marker { display: none; }
+}
+
+/* ---- utilities ---- */
 @utility scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
+  &::-webkit-scrollbar { display: none; }
+}
+
+@utility eyebrow {
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@utility lift {
+  transition: transform 0.35s var(--ease-out-soft), box-shadow 0.35s var(--ease-out-soft);
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 26px 50px -28px rgba(16, 23, 42, 0.4);
   }
 }
 
-/* Prose table styling */
-.prose table {
-  @apply w-full text-sm border-collapse;
-}
-.prose thead {
-  @apply bg-brand-navy text-white;
-}
-.prose thead th {
-  @apply px-4 py-3 text-left font-semibold text-sm;
-}
-.prose tbody td {
-  @apply px-4 py-3 border-b border-slate-200;
-}
-.prose tbody tr:nth-child(even) {
-  @apply bg-slate-50;
-}
-.prose tbody tr:hover {
-  @apply bg-slate-100;
+/* reveal-on-scroll (driven by Layout.astro) */
+@layer base {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s var(--ease-out-soft), transform 0.7s var(--ease-out-soft);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  [data-reveal].is-visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] { opacity: 1 !important; transform: none !important; transition: none; }
+  }
 }
 
-/* Prose strong green highlight for key selling points */
-.prose h2 {
-  @apply border-b border-slate-200 pb-2;
-}
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.animate-marquee { animation: marquee 32s linear infinite; }
+.marquee-track:hover .animate-marquee { animation-play-state: paused; }
 
-/* Ordered list with branded numbers */
-.prose ol > li::marker {
-  @apply text-brand-green font-bold;
-}
+@keyframes wob { 0%,100% { transform: rotate(7deg); } 50% { transform: rotate(-5deg); } }
+.animate-wob { animation: wob 6s ease-in-out infinite; }
 
-/* Prose link underline on hover */
-.prose a {
-  @apply no-underline hover:underline;
+/* ============================================================================
+   Prose (guides / legal)
+============================================================================ */
+.prose {
+  --tw-prose-body: var(--color-slate-700);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-links: var(--color-cobalt);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-counters: var(--color-cobalt);
+  --tw-prose-bullets: var(--color-cobalt);
+  --tw-prose-quote-borders: var(--color-sun);
 }
+.prose table { @apply w-full text-sm border-collapse; }
+.prose thead { @apply text-white; background: var(--color-cobalt); }
+.prose thead th { @apply px-4 py-3 text-left font-semibold text-sm; }
+.prose tbody td { @apply px-4 py-3; border-bottom: 1px solid var(--color-line); }
+.prose tbody tr:nth-child(even) { background: var(--color-slate-50); }
+.prose tbody tr:hover { background: var(--color-slate-100); }
+.prose h2 { border-bottom: 1px solid var(--color-line); @apply pb-2; }
+.prose ol > li::marker { color: var(--color-cobalt); @apply font-bold; }
+.prose a { @apply no-underline hover:underline; }

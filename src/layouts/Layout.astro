@@ -8,8 +8,8 @@ interface Props {
 }
 
 const {
-  title = 'House Clearance Bristol | Same Day, Price Locked, Zero to Landfill — Clearfields',
-  description = "Bristol's most transparent house clearance service. Instant quotes via WhatsApp photos. Price Lock Guarantee — your quote never goes up. Same-day available. 95% recycled.",
+  title = 'House Clearance Bristol — Fair Fixed Prices from £60 | Bristol House Clearances',
+  description = "Friendly, fully-insured house, probate & commercial clearance across Bristol. Fair fixed prices from £60, agreed up front — free quote in 2 hours, no hidden fees, 95% kept out of landfill.",
   noindex = false,
 } = Astro.props;
 
@@ -38,7 +38,7 @@ const GTM_ID = import.meta.env.PUBLIC_GTM_ID || '';
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content="en_GB" />
-    <meta property="og:site_name" content="Clearfields" />
+    <meta property="og:site_name" content="Bristol House Clearances" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -46,23 +46,23 @@ const GTM_ID = import.meta.env.PUBLIC_GTM_ID || '';
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <!-- Preload hero font — non-blocking with preload + swap -->
+    <!-- Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
       media="print"
       onload="this.media='all'"
     />
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
       />
     </noscript>
@@ -154,6 +154,34 @@ const GTM_ID = import.meta.env.PUBLIC_GTM_ID || '';
         page_path: window.location.pathname,
         page_title: document.title,
       });
+    </script>
+
+    <!-- Reveal-on-scroll + count-up -->
+    <script is:inline>
+      (function () {
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var els = document.querySelectorAll('[data-reveal]');
+        if (reduce || !('IntersectionObserver' in window)) {
+          els.forEach(function (el) { el.classList.add('is-visible'); });
+        } else {
+          var ro = new IntersectionObserver(function (es) {
+            es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); ro.unobserve(e.target); } });
+          }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+          els.forEach(function (el) { ro.observe(el); });
+        }
+        function countUp(el) {
+          var target = parseFloat(el.getAttribute('data-count')), pre = el.getAttribute('data-prefix') || '', suf = el.getAttribute('data-suffix') || '', t0 = null;
+          function step(ts) { if (!t0) t0 = ts; var p = Math.min((ts - t0) / 1100, 1), v = Math.round(target * (1 - Math.pow(1 - p, 3))); el.textContent = pre + v.toLocaleString('en-GB') + suf; if (p < 1) requestAnimationFrame(step); }
+          requestAnimationFrame(step);
+        }
+        var cs = document.querySelectorAll('[data-count]');
+        if (reduce || !('IntersectionObserver' in window)) {
+          cs.forEach(function (el) { el.textContent = (el.getAttribute('data-prefix') || '') + parseFloat(el.getAttribute('data-count')).toLocaleString('en-GB') + (el.getAttribute('data-suffix') || ''); });
+        } else {
+          var co = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { countUp(e.target); co.unobserve(e.target); } }); }, { threshold: 0.6 });
+          cs.forEach(function (el) { co.observe(el); });
+        }
+      })();
     </script>
   </body>
 </html>

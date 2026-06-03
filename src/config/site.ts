@@ -1,13 +1,14 @@
 export const site = {
-  name: 'Clearfields',
-  shortName: 'Clearfields',
-  domain: 'clearfields.co.uk',
-  url: 'https://clearfields.co.uk',
+  name: 'Bristol House Clearances',
+  shortName: 'Bristol House Clearances',
+  shortNameAbbr: 'BHC',
+  domain: 'bristolhouseclearances.co.uk',
+  url: 'https://bristolhouseclearances.co.uk',
   phone: '0117 123 4567',
   phoneHref: 'tel:+441171234567',
   whatsapp: '447123456789',
   whatsappUrl: 'https://wa.me/447123456789',
-  email: 'hello@clearfields.co.uk',
+  email: 'hello@bristolhouseclearances.co.uk',
   address: {
     street: 'Bristol',
     city: 'Bristol',
@@ -22,8 +23,8 @@ export const site = {
     { days: 'Sunday', open: 'By appointment', close: '' },
   ],
   social: {
-    facebook: 'https://www.facebook.com/clearfields',
-    google: 'https://g.page/clearfields',
+    facebook: 'https://www.facebook.com/bristolhouseclearances',
+    google: 'https://g.page/bristolhouseclearances',
   },
   legal: {
     wasteCarrierLicence: 'CBDU000000',
@@ -34,12 +35,13 @@ export const site = {
     insuranceProfessionalIndemnity: '£2M',
   },
   brand: {
-    primary: '#16a34a',
-    primaryDark: '#15803d',
-    navy: '#1e3a5f',
-    navyDark: '#152d4a',
-    accent: '#F6A623',
-    background: '#FAFAF8',
-    text: '#1A1A1A',
+    primary: '#2e50e0',      // cobalt
+    primaryDark: '#2340bd',
+    navy: '#10172a',         // ink
+    navyDark: '#0b1020',
+    accent: '#ffc73c',       // sunshine
+    background: '#fbfbf7',
+    text: '#10172a',
   },
+  tagline: 'Clear the clutter, keep the calm.',
 } as const;

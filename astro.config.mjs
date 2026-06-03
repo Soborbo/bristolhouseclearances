@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://clearfields.co.uk',
+  site: 'https://bristolhouseclearances.co.uk',
   output: 'static',
   adapter: cloudflare({
     imageService: 'compile',

@@ -1,0 +1,26 @@
+---
+/**
+ * ValueStrip — cobalt reassurance band. Pricing is the decider, so we make
+ * the value promises loud and immediate.
+ */
+const items = [
+  { b: 'Free quote in 2 hours', s: 'Send photos, get a price' },
+  { b: 'Price agreed up front', s: "It won't change on the day" },
+  { b: 'No hidden fees', s: 'No call-out charges, ever' },
+  { b: 'We pay you back', s: 'Saleable items credited' },
+];
+---
+
+<section class="bg-cobalt text-white">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+    {items.map((it, i) => (
+      <div class:list={['flex items-start gap-3 px-6 py-6 lg:px-8', i < 3 ? 'lg:border-r border-white/15' : '']}>
+        <svg class="w-6 h-6 text-sun shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+        <div>
+          <p class="font-bold leading-tight">{it.b}</p>
+          <p class="text-sm text-white/75 mt-0.5">{it.s}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
