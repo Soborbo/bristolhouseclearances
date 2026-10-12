@@ -1,0 +1,3 @@
+# Legacy WordPress URLs (GSC impressions) -> 301 to the closest live page.
+/home /  301
+/home/ /  301
