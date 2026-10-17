@@ -11,3 +11,9 @@ TURNSTILE_SITE_KEY = ""
 # SHEETS_WEBHOOK_URL
 # ADMIN_EMAIL
 # FROM_EMAIL
+
+# Workers Logs: persists invocation logs, console output and uncaught
+# exceptions (7-day retention), queryable in the dashboard and the
+# Observability API/MCP.
+[observability]
+enabled = true
