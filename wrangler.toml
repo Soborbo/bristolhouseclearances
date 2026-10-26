@@ -13,7 +13,8 @@ TURNSTILE_SITE_KEY = ""
 # FROM_EMAIL
 
 # Workers Logs: persists invocation logs, console output and uncaught
-# exceptions (7-day retention), queryable in the dashboard and the
-# Observability API/MCP.
+# exceptions, queryable in the dashboard and the Observability API/MCP.
+# Retention depends on the Workers plan: 7 days on Workers Paid, 3 days on
+# Workers Free.
 [observability]
 enabled = true
